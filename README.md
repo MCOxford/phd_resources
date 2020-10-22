@@ -4,11 +4,11 @@ This repository contains all the files, code an results used for the PhD thesis 
 ## Summary of contents
 
 * chapter-4 - PRISM models and results for chapter 4 (Modelling the Gossip Protocols)
-* chapter-5 - PRISM models and results for chapter 5 (Improving our Analysis Using IDTMC Model Checking). To run PRISM for the models in this folder, you will need a forked version of PRISM which can be found [here](https://github.com/MCOxford/prism). At the moment, building IDTMCs can only be done using the explicit engine (```sh -ex``` option)
+* chapter-5 - PRISM models and results for chapter 5 (Improving our Analysis Using IDTMC Model Checking). To run PRISM for the models in this folder, you will need a forked version of PRISM which can be found [here](https://github.com/MCOxford/prism). At the moment, building IDTMCs can only be done using the explicit engine (```-ex``` option)
 * chapter-6 - PRISM models and results for chapter 6 (Model Parameter Optimisation)
 * python - [Python3](https://www.python.org/) source code 
-	* create-prism-models - Automatically create ```sh .prism``` files by providing the model necessary parameters and client data
-	* optimise-model - Use libraries designed for hyperparameter optimisation ([hyperopt](https://github.com/hyperopt/hyperopt), [benderopt](https://github.com/Dreem-Organization/benderopt)) to find suggested model parameters to produce 'bad' scenarios for gossip protocol properties. The libraries apply the tree-structured Parzen estimator approach (see [Bergstra et al](https://www.lri.fr/~kegl/research/PDFs/BeBaBeKe11.pdf)). Package requirements can be found in ```sh requirements.txt```
+	* create-prism-models - Automatically create ```.prism``` files by providing the model necessary parameters and client data
+	* optimise-model - Use libraries designed for hyperparameter optimisation ([hyperopt](https://github.com/hyperopt/hyperopt), [benderopt](https://github.com/Dreem-Organization/benderopt)) to find suggested model parameters to produce 'bad' scenarios for gossip protocol properties. The libraries apply the tree-structured Parzen estimator approach (see [Bergstra et al](https://www.lri.fr/~kegl/research/PDFs/BeBaBeKe11.pdf)). Package requirements can be found in ```requirements.txt```
 
 ## Related Work
 
