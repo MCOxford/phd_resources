@@ -1,0 +1,1201 @@
+//Code for the paper 'Quantitative Verification of Certificate Transparency Gossip Protocols'
+
+dtmc
+
+//--------------
+// CLIENTS
+//--------------
+
+const bool c0_flag = true;
+
+//initial states for each client
+const bool c1_sth_init = false;
+const bool c2_sth_init = false;
+const bool c3_sth_init = false;
+const bool c4_sth_init = false;
+const bool c5_sth_init = false;
+const bool c6_sth_init = false;
+const bool c7_sth_init = false;
+const bool c8_sth_init = false;
+const bool c9_sth_init = false;
+const bool c10_sth_init = false;
+const bool c11_sth_init = false;
+const bool c12_sth_init = false;
+const bool c13_sth_init = false;
+const bool c14_sth_init = false;
+const bool c15_sth_init = false;
+const bool c16_sth_init = false;
+const bool c17_sth_init = false;
+const bool c18_sth_init = false;
+const bool c19_sth_init = false;
+const bool c20_sth_init = false;
+const bool c21_sth_init = false;
+const bool c22_sth_init = false;
+const bool c23_sth_init = false;
+const bool c24_sth_init = false;
+const bool c25_sth_init = false;
+const bool c26_sth_init = false;
+const bool c27_sth_init = false;
+const bool c28_sth_init = false;
+const bool c29_sth_init = false;
+const bool c30_sth_init = false;
+const bool c31_sth_init = false;
+const bool c32_sth_init = false;
+const bool c33_sth_init = false;
+const bool c34_sth_init = false;
+const bool c35_sth_init = false;
+const bool c36_sth_init = false;
+const bool c37_sth_init = false;
+const bool c38_sth_init = false;
+const bool c39_sth_init = false;
+const bool c40_sth_init = false;
+const bool c41_sth_init = false;
+const bool c42_sth_init = false;
+const bool c43_sth_init = false;
+const bool c44_sth_init = false;
+const bool c45_sth_init = false;
+const bool c46_sth_init = false;
+const bool c47_sth_init = false;
+const bool c48_sth_init = false;
+const bool c49_sth_init = false;
+const bool c50_sth_init = true;
+
+
+//client connect rates
+prob g1= 0.8;
+prob g2= 0.8;
+prob g3= 0.8;
+prob g4= 0.8;
+prob g5= 0.8;
+prob g6= 0.8;
+prob g7= 0.8;
+prob g8= 0.8;
+prob g9= 0.8;
+prob g10= 0.8;
+prob g11= 0.8;
+prob g12= 0.8;
+prob g13= 0.6;
+prob g14= 0.6;
+prob g15= 0.6;
+prob g16= 0.6;
+prob g17= 0.6;
+prob g18= 0.6;
+prob g19= 0.6;
+prob g20= 0.6;
+prob g21= 0.6;
+prob g22= 0.6;
+prob g23= 0.6;
+prob g24= 0.6;
+prob g25= 0.6;
+prob g26= 0.6;
+prob g27= 0.6;
+prob g28= 0.6;
+prob g29= 0.6;
+prob g30= 0.6;
+prob g31= 0.6;
+prob g32= 0.6;
+prob g33= 0.6;
+prob g34= 0.6;
+prob g35= 0.6;
+prob g36= 0.6;
+prob g37= 0.6;
+prob g38= 0.6;
+prob g39= 0.6;
+prob g40= 0.6;
+prob g41= 0.6;
+prob g42= 0.6;
+prob g43= 0.6;
+prob g44= 0.2;
+prob g45= 0.2;
+prob g46= 0.2;
+prob g47= 0.2;
+prob g48= 0.2;
+prob g49= 0.2;
+prob g50= 0.2;
+
+
+//client profiles
+prob p_1_1 = 1/50;
+prob p_1_2 = 7/25;
+prob p_1_3 = 7/10;
+prob p_1_4 = 0;
+prob p_1_5 = 0;
+
+prob p_2_1 = 1/50;
+prob p_2_2 = 7/25;
+prob p_2_3 = 7/10;
+prob p_2_4 = 0;
+prob p_2_5 = 0;
+
+prob p_3_1 = 1/50;
+prob p_3_2 = 7/25;
+prob p_3_3 = 7/10;
+prob p_3_4 = 0;
+prob p_3_5 = 0;
+
+prob p_4_1 = 1/50;
+prob p_4_2 = 7/25;
+prob p_4_3 = 7/10;
+prob p_4_4 = 0;
+prob p_4_5 = 0;
+
+prob p_5_1 = 1/50;
+prob p_5_2 = 7/25;
+prob p_5_3 = 7/10;
+prob p_5_4 = 0;
+prob p_5_5 = 0;
+
+prob p_6_1 = 1/50;
+prob p_6_2 = 7/25;
+prob p_6_3 = 7/10;
+prob p_6_4 = 0;
+prob p_6_5 = 0;
+
+prob p_7_1 = 1/50;
+prob p_7_2 = 7/25;
+prob p_7_3 = 7/10;
+prob p_7_4 = 0;
+prob p_7_5 = 0;
+
+prob p_8_1 = 1/50;
+prob p_8_2 = 7/25;
+prob p_8_3 = 7/10;
+prob p_8_4 = 0;
+prob p_8_5 = 0;
+
+prob p_9_1 = 1/50;
+prob p_9_2 = 7/25;
+prob p_9_3 = 7/10;
+prob p_9_4 = 0;
+prob p_9_5 = 0;
+
+prob p_10_1 = 1/50;
+prob p_10_2 = 7/25;
+prob p_10_3 = 7/10;
+prob p_10_4 = 0;
+prob p_10_5 = 0;
+
+prob p_11_1 = 1/50;
+prob p_11_2 = 7/25;
+prob p_11_3 = 7/10;
+prob p_11_4 = 0;
+prob p_11_5 = 0;
+
+prob p_12_1 = 1/50;
+prob p_12_2 = 7/25;
+prob p_12_3 = 7/10;
+prob p_12_4 = 0;
+prob p_12_5 = 0;
+
+prob p_13_1 = 1/50;
+prob p_13_2 = 7/25;
+prob p_13_3 = 0;
+prob p_13_4 = 7/10;
+prob p_13_5 = 0;
+
+prob p_14_1 = 1/50;
+prob p_14_2 = 7/25;
+prob p_14_3 = 0;
+prob p_14_4 = 7/10;
+prob p_14_5 = 0;
+
+prob p_15_1 = 1/50;
+prob p_15_2 = 7/25;
+prob p_15_3 = 0;
+prob p_15_4 = 7/10;
+prob p_15_5 = 0;
+
+prob p_16_1 = 1/50;
+prob p_16_2 = 7/25;
+prob p_16_3 = 0;
+prob p_16_4 = 7/10;
+prob p_16_5 = 0;
+
+prob p_17_1 = 1/50;
+prob p_17_2 = 7/25;
+prob p_17_3 = 0;
+prob p_17_4 = 7/10;
+prob p_17_5 = 0;
+
+prob p_18_1 = 1/50;
+prob p_18_2 = 7/25;
+prob p_18_3 = 0;
+prob p_18_4 = 7/10;
+prob p_18_5 = 0;
+
+prob p_19_1 = 1/50;
+prob p_19_2 = 7/25;
+prob p_19_3 = 0;
+prob p_19_4 = 7/10;
+prob p_19_5 = 0;
+
+prob p_20_1 = 1/50;
+prob p_20_2 = 7/25;
+prob p_20_3 = 0;
+prob p_20_4 = 7/10;
+prob p_20_5 = 0;
+
+prob p_21_1 = 1/50;
+prob p_21_2 = 7/25;
+prob p_21_3 = 0;
+prob p_21_4 = 7/10;
+prob p_21_5 = 0;
+
+prob p_22_1 = 1/50;
+prob p_22_2 = 7/25;
+prob p_22_3 = 0;
+prob p_22_4 = 7/10;
+prob p_22_5 = 0;
+
+prob p_23_1 = 1/50;
+prob p_23_2 = 7/25;
+prob p_23_3 = 0;
+prob p_23_4 = 7/10;
+prob p_23_5 = 0;
+
+prob p_24_1 = 1/50;
+prob p_24_2 = 7/25;
+prob p_24_3 = 0;
+prob p_24_4 = 7/10;
+prob p_24_5 = 0;
+
+prob p_25_1 = 1/50;
+prob p_25_2 = 7/25;
+prob p_25_3 = 0;
+prob p_25_4 = 7/10;
+prob p_25_5 = 0;
+
+prob p_26_1 = 1/50;
+prob p_26_2 = 7/25;
+prob p_26_3 = 0;
+prob p_26_4 = 7/10;
+prob p_26_5 = 0;
+
+prob p_27_1 = 1/50;
+prob p_27_2 = 7/25;
+prob p_27_3 = 0;
+prob p_27_4 = 7/10;
+prob p_27_5 = 0;
+
+prob p_28_1 = 1/50;
+prob p_28_2 = 7/25;
+prob p_28_3 = 0;
+prob p_28_4 = 7/10;
+prob p_28_5 = 0;
+
+prob p_29_1 = 1/50;
+prob p_29_2 = 7/25;
+prob p_29_3 = 0;
+prob p_29_4 = 7/10;
+prob p_29_5 = 0;
+
+prob p_30_1 = 1/50;
+prob p_30_2 = 7/25;
+prob p_30_3 = 0;
+prob p_30_4 = 7/10;
+prob p_30_5 = 0;
+
+prob p_31_1 = 1/50;
+prob p_31_2 = 7/25;
+prob p_31_3 = 0;
+prob p_31_4 = 7/10;
+prob p_31_5 = 0;
+
+prob p_32_1 = 1/50;
+prob p_32_2 = 7/25;
+prob p_32_3 = 0;
+prob p_32_4 = 7/10;
+prob p_32_5 = 0;
+
+prob p_33_1 = 1/50;
+prob p_33_2 = 7/25;
+prob p_33_3 = 0;
+prob p_33_4 = 7/10;
+prob p_33_5 = 0;
+
+prob p_34_1 = 1/50;
+prob p_34_2 = 7/25;
+prob p_34_3 = 0;
+prob p_34_4 = 7/10;
+prob p_34_5 = 0;
+
+prob p_35_1 = 1/50;
+prob p_35_2 = 7/25;
+prob p_35_3 = 0;
+prob p_35_4 = 7/10;
+prob p_35_5 = 0;
+
+prob p_36_1 = 1/50;
+prob p_36_2 = 7/25;
+prob p_36_3 = 0;
+prob p_36_4 = 7/10;
+prob p_36_5 = 0;
+
+prob p_37_1 = 1/50;
+prob p_37_2 = 7/25;
+prob p_37_3 = 0;
+prob p_37_4 = 7/10;
+prob p_37_5 = 0;
+
+prob p_38_1 = 1/50;
+prob p_38_2 = 7/25;
+prob p_38_3 = 0;
+prob p_38_4 = 7/10;
+prob p_38_5 = 0;
+
+prob p_39_1 = 1/50;
+prob p_39_2 = 7/25;
+prob p_39_3 = 0;
+prob p_39_4 = 7/10;
+prob p_39_5 = 0;
+
+prob p_40_1 = 1/50;
+prob p_40_2 = 7/25;
+prob p_40_3 = 0;
+prob p_40_4 = 7/10;
+prob p_40_5 = 0;
+
+prob p_41_1 = 1/50;
+prob p_41_2 = 7/25;
+prob p_41_3 = 0;
+prob p_41_4 = 7/10;
+prob p_41_5 = 0;
+
+prob p_42_1 = 1/50;
+prob p_42_2 = 7/25;
+prob p_42_3 = 0;
+prob p_42_4 = 7/10;
+prob p_42_5 = 0;
+
+prob p_43_1 = 1/50;
+prob p_43_2 = 7/25;
+prob p_43_3 = 0;
+prob p_43_4 = 7/10;
+prob p_43_5 = 0;
+
+prob p_44_1 = 1/50;
+prob p_44_2 = 7/25;
+prob p_44_3 = 0;
+prob p_44_4 = 0;
+prob p_44_5 = 7/10;
+
+prob p_45_1 = 1/50;
+prob p_45_2 = 7/25;
+prob p_45_3 = 0;
+prob p_45_4 = 0;
+prob p_45_5 = 7/10;
+
+prob p_46_1 = 1/50;
+prob p_46_2 = 7/25;
+prob p_46_3 = 0;
+prob p_46_4 = 0;
+prob p_46_5 = 7/10;
+
+prob p_47_1 = 1/50;
+prob p_47_2 = 7/25;
+prob p_47_3 = 0;
+prob p_47_4 = 0;
+prob p_47_5 = 7/10;
+
+prob p_48_1 = 1/50;
+prob p_48_2 = 7/25;
+prob p_48_3 = 0;
+prob p_48_4 = 0;
+prob p_48_5 = 7/10;
+
+prob p_49_1 = 1/50;
+prob p_49_2 = 7/25;
+prob p_49_3 = 0;
+prob p_49_4 = 0;
+prob p_49_5 = 7/10;
+
+prob p_50_1 = 1/50;
+prob p_50_2 = 7/25;
+prob p_50_3 = 0;
+prob p_50_4 = 0;
+prob p_50_5 = 7/10;
+
+
+module Client1 
+
+	//global state
+	c1 : [0..5] init 0;
+	//connectivity state
+	c1s : [0..5] init 0;
+	//current tree size of the data stored by the client
+	c1_sth : bool init c1_sth_init;
+	//skip the round?
+	c1_skip : bool init false;
+	//has it had its turn choosing?
+	c1_flag : bool init false;
+
+	//client decides randomly to participate in the round.
+	[] c0_flag & c1=0 -> g1 : (c1'=1) + 1-g1 : (c1'=1) & (c1_skip'=true);
+	//client randomly chooses a server if participating in the round.
+	[] c0_flag & c1_skip=false & c1=1 -> p_1_1 : (c1_flag'=true)&(c1'=2)&(c1s'=1) +
+					     p_1_2 : (c1_flag'=true)&(c1'=2)&(c1s'=2) +
+					     p_1_3 : (c1_flag'=true)&(c1'=2)&(c1s'=3) +
+					     p_1_4 : (c1_flag'=true)&(c1'=2)&(c1s'=4) +
+					     p_1_5 : (c1_flag'=true)&(c1'=2)&(c1s'=5);
+	[] c0_flag & c1_skip=true & c1=1 -> (c1_flag'=true)&(c1'=2);
+	//client updates itself using data retrieved from server so long as c1_skip=false or c1_sth=true.
+	[update] serverg & c50_flag & c1_skip=false & c1=2 & connected_server_has_sth  -> (c1'=3) & (c1_sth'=true);
+	[update] serverg & c50_flag & c1=2 & ((c1_skip=false & !connected_server_has_sth) | c1_skip=true) -> (c1'=3);
+	//round complete - reset if there is a client who is not yet updated. Otherwise, stop.
+	[round_complete] c1=3 & !clients_all_updated -> (c1'=0) & (c1s'=0) & (c1_skip'=false) & (c1_flag'=false);
+	[round_complete] c1=3 & clients_all_updated -> (c1'=4);
+	//self-looping state - go here when every client is updated.
+	[END] c1=4 -> true;
+
+endmodule
+
+formula connected_server_has_sth = ((c1s=1 & s1_sth) | (c1s=2 & s2_sth) | (c1s=3 & s3_sth) | (c1s=4 & s4_sth) | (c1s=5 & s5_sth));
+formula clients_all_updated = c1_sth&c2_sth&c3_sth&c4_sth&c5_sth&c6_sth&c7_sth&c8_sth&c9_sth&c10_sth&c11_sth&c12_sth&c13_sth&c14_sth&c15_sth&c16_sth&c17_sth&c18_sth&c19_sth&c20_sth&c21_sth&c22_sth&c23_sth&c24_sth&c25_sth&c26_sth&c27_sth&c28_sth&c29_sth&c30_sth&c31_sth&c32_sth&c33_sth&c34_sth&c35_sth&c36_sth&c37_sth&c38_sth&c39_sth&c40_sth&c41_sth&c42_sth&c43_sth&c44_sth&c45_sth&c46_sth&c47_sth&c48_sth&c49_sth&c50_sth;
+formula serverg = s1_flag&s2_flag&s3_flag&s4_flag&s5_flag;
+
+module Client2=Client1[p_1_1=p_2_1,p_1_2=p_2_2,p_1_3=p_2_3,p_1_4=p_2_4,p_1_5=p_2_5,
+g1=g2,
+c1=c2,
+c1s=c2s,
+c1_sth=c2_sth,
+c2_sth=c1_sth,
+c1_skip=c2_skip,
+c1_sth_init = c2_sth_init,
+c1_flag=c2_flag,
+c0_flag=c1_flag] endmodule
+
+module Client3=Client1[p_1_1=p_3_1,p_1_2=p_3_2,p_1_3=p_3_3,p_1_4=p_3_4,p_1_5=p_3_5,
+g1=g3,
+c1=c3,
+c1s=c3s,
+c1_sth=c3_sth,
+c3_sth=c1_sth,
+c1_skip=c3_skip,
+c1_sth_init = c3_sth_init,
+c1_flag=c3_flag,
+c0_flag=c2_flag] endmodule
+
+module Client4=Client1[p_1_1=p_4_1,p_1_2=p_4_2,p_1_3=p_4_3,p_1_4=p_4_4,p_1_5=p_4_5,
+g1=g4,
+c1=c4,
+c1s=c4s,
+c1_sth=c4_sth,
+c4_sth=c1_sth,
+c1_skip=c4_skip,
+c1_sth_init = c4_sth_init,
+c1_flag=c4_flag,
+c0_flag=c3_flag] endmodule
+
+module Client5=Client1[p_1_1=p_5_1,p_1_2=p_5_2,p_1_3=p_5_3,p_1_4=p_5_4,p_1_5=p_5_5,
+g1=g5,
+c1=c5,
+c1s=c5s,
+c1_sth=c5_sth,
+c5_sth=c1_sth,
+c1_skip=c5_skip,
+c1_sth_init = c5_sth_init,
+c1_flag=c5_flag,
+c0_flag=c4_flag] endmodule
+
+module Client6=Client1[p_1_1=p_6_1,p_1_2=p_6_2,p_1_3=p_6_3,p_1_4=p_6_4,p_1_5=p_6_5,
+g1=g6,
+c1=c6,
+c1s=c6s,
+c1_sth=c6_sth,
+c6_sth=c1_sth,
+c1_skip=c6_skip,
+c1_sth_init = c6_sth_init,
+c1_flag=c6_flag,
+c0_flag=c5_flag] endmodule
+
+module Client7=Client1[p_1_1=p_7_1,p_1_2=p_7_2,p_1_3=p_7_3,p_1_4=p_7_4,p_1_5=p_7_5,
+g1=g7,
+c1=c7,
+c1s=c7s,
+c1_sth=c7_sth,
+c7_sth=c1_sth,
+c1_skip=c7_skip,
+c1_sth_init = c7_sth_init,
+c1_flag=c7_flag,
+c0_flag=c6_flag] endmodule
+
+module Client8=Client1[p_1_1=p_8_1,p_1_2=p_8_2,p_1_3=p_8_3,p_1_4=p_8_4,p_1_5=p_8_5,
+g1=g8,
+c1=c8,
+c1s=c8s,
+c1_sth=c8_sth,
+c8_sth=c1_sth,
+c1_skip=c8_skip,
+c1_sth_init = c8_sth_init,
+c1_flag=c8_flag,
+c0_flag=c7_flag] endmodule
+
+module Client9=Client1[p_1_1=p_9_1,p_1_2=p_9_2,p_1_3=p_9_3,p_1_4=p_9_4,p_1_5=p_9_5,
+g1=g9,
+c1=c9,
+c1s=c9s,
+c1_sth=c9_sth,
+c9_sth=c1_sth,
+c1_skip=c9_skip,
+c1_sth_init = c9_sth_init,
+c1_flag=c9_flag,
+c0_flag=c8_flag] endmodule
+
+module Client10=Client1[p_1_1=p_10_1,p_1_2=p_10_2,p_1_3=p_10_3,p_1_4=p_10_4,p_1_5=p_10_5,
+g1=g10,
+c1=c10,
+c1s=c10s,
+c1_sth=c10_sth,
+c10_sth=c1_sth,
+c1_skip=c10_skip,
+c1_sth_init = c10_sth_init,
+c1_flag=c10_flag,
+c0_flag=c9_flag] endmodule
+
+module Client11=Client1[p_1_1=p_11_1,p_1_2=p_11_2,p_1_3=p_11_3,p_1_4=p_11_4,p_1_5=p_11_5,
+g1=g11,
+c1=c11,
+c1s=c11s,
+c1_sth=c11_sth,
+c11_sth=c1_sth,
+c1_skip=c11_skip,
+c1_sth_init = c11_sth_init,
+c1_flag=c11_flag,
+c0_flag=c10_flag] endmodule
+
+module Client12=Client1[p_1_1=p_12_1,p_1_2=p_12_2,p_1_3=p_12_3,p_1_4=p_12_4,p_1_5=p_12_5,
+g1=g12,
+c1=c12,
+c1s=c12s,
+c1_sth=c12_sth,
+c12_sth=c1_sth,
+c1_skip=c12_skip,
+c1_sth_init = c12_sth_init,
+c1_flag=c12_flag,
+c0_flag=c11_flag] endmodule
+
+module Client13=Client1[p_1_1=p_13_1,p_1_2=p_13_2,p_1_3=p_13_3,p_1_4=p_13_4,p_1_5=p_13_5,
+g1=g13,
+c1=c13,
+c1s=c13s,
+c1_sth=c13_sth,
+c13_sth=c1_sth,
+c1_skip=c13_skip,
+c1_sth_init = c13_sth_init,
+c1_flag=c13_flag,
+c0_flag=c12_flag] endmodule
+
+module Client14=Client1[p_1_1=p_14_1,p_1_2=p_14_2,p_1_3=p_14_3,p_1_4=p_14_4,p_1_5=p_14_5,
+g1=g14,
+c1=c14,
+c1s=c14s,
+c1_sth=c14_sth,
+c14_sth=c1_sth,
+c1_skip=c14_skip,
+c1_sth_init = c14_sth_init,
+c1_flag=c14_flag,
+c0_flag=c13_flag] endmodule
+
+module Client15=Client1[p_1_1=p_15_1,p_1_2=p_15_2,p_1_3=p_15_3,p_1_4=p_15_4,p_1_5=p_15_5,
+g1=g15,
+c1=c15,
+c1s=c15s,
+c1_sth=c15_sth,
+c15_sth=c1_sth,
+c1_skip=c15_skip,
+c1_sth_init = c15_sth_init,
+c1_flag=c15_flag,
+c0_flag=c14_flag] endmodule
+
+module Client16=Client1[p_1_1=p_16_1,p_1_2=p_16_2,p_1_3=p_16_3,p_1_4=p_16_4,p_1_5=p_16_5,
+g1=g16,
+c1=c16,
+c1s=c16s,
+c1_sth=c16_sth,
+c16_sth=c1_sth,
+c1_skip=c16_skip,
+c1_sth_init = c16_sth_init,
+c1_flag=c16_flag,
+c0_flag=c15_flag] endmodule
+
+module Client17=Client1[p_1_1=p_17_1,p_1_2=p_17_2,p_1_3=p_17_3,p_1_4=p_17_4,p_1_5=p_17_5,
+g1=g17,
+c1=c17,
+c1s=c17s,
+c1_sth=c17_sth,
+c17_sth=c1_sth,
+c1_skip=c17_skip,
+c1_sth_init = c17_sth_init,
+c1_flag=c17_flag,
+c0_flag=c16_flag] endmodule
+
+module Client18=Client1[p_1_1=p_18_1,p_1_2=p_18_2,p_1_3=p_18_3,p_1_4=p_18_4,p_1_5=p_18_5,
+g1=g18,
+c1=c18,
+c1s=c18s,
+c1_sth=c18_sth,
+c18_sth=c1_sth,
+c1_skip=c18_skip,
+c1_sth_init = c18_sth_init,
+c1_flag=c18_flag,
+c0_flag=c17_flag] endmodule
+
+module Client19=Client1[p_1_1=p_19_1,p_1_2=p_19_2,p_1_3=p_19_3,p_1_4=p_19_4,p_1_5=p_19_5,
+g1=g19,
+c1=c19,
+c1s=c19s,
+c1_sth=c19_sth,
+c19_sth=c1_sth,
+c1_skip=c19_skip,
+c1_sth_init = c19_sth_init,
+c1_flag=c19_flag,
+c0_flag=c18_flag] endmodule
+
+module Client20=Client1[p_1_1=p_20_1,p_1_2=p_20_2,p_1_3=p_20_3,p_1_4=p_20_4,p_1_5=p_20_5,
+g1=g20,
+c1=c20,
+c1s=c20s,
+c1_sth=c20_sth,
+c20_sth=c1_sth,
+c1_skip=c20_skip,
+c1_sth_init = c20_sth_init,
+c1_flag=c20_flag,
+c0_flag=c19_flag] endmodule
+
+module Client21=Client1[p_1_1=p_21_1,p_1_2=p_21_2,p_1_3=p_21_3,p_1_4=p_21_4,p_1_5=p_21_5,
+g1=g21,
+c1=c21,
+c1s=c21s,
+c1_sth=c21_sth,
+c21_sth=c1_sth,
+c1_skip=c21_skip,
+c1_sth_init = c21_sth_init,
+c1_flag=c21_flag,
+c0_flag=c20_flag] endmodule
+
+module Client22=Client1[p_1_1=p_22_1,p_1_2=p_22_2,p_1_3=p_22_3,p_1_4=p_22_4,p_1_5=p_22_5,
+g1=g22,
+c1=c22,
+c1s=c22s,
+c1_sth=c22_sth,
+c22_sth=c1_sth,
+c1_skip=c22_skip,
+c1_sth_init = c22_sth_init,
+c1_flag=c22_flag,
+c0_flag=c21_flag] endmodule
+
+module Client23=Client1[p_1_1=p_23_1,p_1_2=p_23_2,p_1_3=p_23_3,p_1_4=p_23_4,p_1_5=p_23_5,
+g1=g23,
+c1=c23,
+c1s=c23s,
+c1_sth=c23_sth,
+c23_sth=c1_sth,
+c1_skip=c23_skip,
+c1_sth_init = c23_sth_init,
+c1_flag=c23_flag,
+c0_flag=c22_flag] endmodule
+
+module Client24=Client1[p_1_1=p_24_1,p_1_2=p_24_2,p_1_3=p_24_3,p_1_4=p_24_4,p_1_5=p_24_5,
+g1=g24,
+c1=c24,
+c1s=c24s,
+c1_sth=c24_sth,
+c24_sth=c1_sth,
+c1_skip=c24_skip,
+c1_sth_init = c24_sth_init,
+c1_flag=c24_flag,
+c0_flag=c23_flag] endmodule
+
+module Client25=Client1[p_1_1=p_25_1,p_1_2=p_25_2,p_1_3=p_25_3,p_1_4=p_25_4,p_1_5=p_25_5,
+g1=g25,
+c1=c25,
+c1s=c25s,
+c1_sth=c25_sth,
+c25_sth=c1_sth,
+c1_skip=c25_skip,
+c1_sth_init = c25_sth_init,
+c1_flag=c25_flag,
+c0_flag=c24_flag] endmodule
+
+module Client26=Client1[p_1_1=p_26_1,p_1_2=p_26_2,p_1_3=p_26_3,p_1_4=p_26_4,p_1_5=p_26_5,
+g1=g26,
+c1=c26,
+c1s=c26s,
+c1_sth=c26_sth,
+c26_sth=c1_sth,
+c1_skip=c26_skip,
+c1_sth_init = c26_sth_init,
+c1_flag=c26_flag,
+c0_flag=c25_flag] endmodule
+
+module Client27=Client1[p_1_1=p_27_1,p_1_2=p_27_2,p_1_3=p_27_3,p_1_4=p_27_4,p_1_5=p_27_5,
+g1=g27,
+c1=c27,
+c1s=c27s,
+c1_sth=c27_sth,
+c27_sth=c1_sth,
+c1_skip=c27_skip,
+c1_sth_init = c27_sth_init,
+c1_flag=c27_flag,
+c0_flag=c26_flag] endmodule
+
+module Client28=Client1[p_1_1=p_28_1,p_1_2=p_28_2,p_1_3=p_28_3,p_1_4=p_28_4,p_1_5=p_28_5,
+g1=g28,
+c1=c28,
+c1s=c28s,
+c1_sth=c28_sth,
+c28_sth=c1_sth,
+c1_skip=c28_skip,
+c1_sth_init = c28_sth_init,
+c1_flag=c28_flag,
+c0_flag=c27_flag] endmodule
+
+module Client29=Client1[p_1_1=p_29_1,p_1_2=p_29_2,p_1_3=p_29_3,p_1_4=p_29_4,p_1_5=p_29_5,
+g1=g29,
+c1=c29,
+c1s=c29s,
+c1_sth=c29_sth,
+c29_sth=c1_sth,
+c1_skip=c29_skip,
+c1_sth_init = c29_sth_init,
+c1_flag=c29_flag,
+c0_flag=c28_flag] endmodule
+
+module Client30=Client1[p_1_1=p_30_1,p_1_2=p_30_2,p_1_3=p_30_3,p_1_4=p_30_4,p_1_5=p_30_5,
+g1=g30,
+c1=c30,
+c1s=c30s,
+c1_sth=c30_sth,
+c30_sth=c1_sth,
+c1_skip=c30_skip,
+c1_sth_init = c30_sth_init,
+c1_flag=c30_flag,
+c0_flag=c29_flag] endmodule
+
+module Client31=Client1[p_1_1=p_31_1,p_1_2=p_31_2,p_1_3=p_31_3,p_1_4=p_31_4,p_1_5=p_31_5,
+g1=g31,
+c1=c31,
+c1s=c31s,
+c1_sth=c31_sth,
+c31_sth=c1_sth,
+c1_skip=c31_skip,
+c1_sth_init = c31_sth_init,
+c1_flag=c31_flag,
+c0_flag=c30_flag] endmodule
+
+module Client32=Client1[p_1_1=p_32_1,p_1_2=p_32_2,p_1_3=p_32_3,p_1_4=p_32_4,p_1_5=p_32_5,
+g1=g32,
+c1=c32,
+c1s=c32s,
+c1_sth=c32_sth,
+c32_sth=c1_sth,
+c1_skip=c32_skip,
+c1_sth_init = c32_sth_init,
+c1_flag=c32_flag,
+c0_flag=c31_flag] endmodule
+
+module Client33=Client1[p_1_1=p_33_1,p_1_2=p_33_2,p_1_3=p_33_3,p_1_4=p_33_4,p_1_5=p_33_5,
+g1=g33,
+c1=c33,
+c1s=c33s,
+c1_sth=c33_sth,
+c33_sth=c1_sth,
+c1_skip=c33_skip,
+c1_sth_init = c33_sth_init,
+c1_flag=c33_flag,
+c0_flag=c32_flag] endmodule
+
+module Client34=Client1[p_1_1=p_34_1,p_1_2=p_34_2,p_1_3=p_34_3,p_1_4=p_34_4,p_1_5=p_34_5,
+g1=g34,
+c1=c34,
+c1s=c34s,
+c1_sth=c34_sth,
+c34_sth=c1_sth,
+c1_skip=c34_skip,
+c1_sth_init = c34_sth_init,
+c1_flag=c34_flag,
+c0_flag=c33_flag] endmodule
+
+module Client35=Client1[p_1_1=p_35_1,p_1_2=p_35_2,p_1_3=p_35_3,p_1_4=p_35_4,p_1_5=p_35_5,
+g1=g35,
+c1=c35,
+c1s=c35s,
+c1_sth=c35_sth,
+c35_sth=c1_sth,
+c1_skip=c35_skip,
+c1_sth_init = c35_sth_init,
+c1_flag=c35_flag,
+c0_flag=c34_flag] endmodule
+
+module Client36=Client1[p_1_1=p_36_1,p_1_2=p_36_2,p_1_3=p_36_3,p_1_4=p_36_4,p_1_5=p_36_5,
+g1=g36,
+c1=c36,
+c1s=c36s,
+c1_sth=c36_sth,
+c36_sth=c1_sth,
+c1_skip=c36_skip,
+c1_sth_init = c36_sth_init,
+c1_flag=c36_flag,
+c0_flag=c35_flag] endmodule
+
+module Client37=Client1[p_1_1=p_37_1,p_1_2=p_37_2,p_1_3=p_37_3,p_1_4=p_37_4,p_1_5=p_37_5,
+g1=g37,
+c1=c37,
+c1s=c37s,
+c1_sth=c37_sth,
+c37_sth=c1_sth,
+c1_skip=c37_skip,
+c1_sth_init = c37_sth_init,
+c1_flag=c37_flag,
+c0_flag=c36_flag] endmodule
+
+module Client38=Client1[p_1_1=p_38_1,p_1_2=p_38_2,p_1_3=p_38_3,p_1_4=p_38_4,p_1_5=p_38_5,
+g1=g38,
+c1=c38,
+c1s=c38s,
+c1_sth=c38_sth,
+c38_sth=c1_sth,
+c1_skip=c38_skip,
+c1_sth_init = c38_sth_init,
+c1_flag=c38_flag,
+c0_flag=c37_flag] endmodule
+
+module Client39=Client1[p_1_1=p_39_1,p_1_2=p_39_2,p_1_3=p_39_3,p_1_4=p_39_4,p_1_5=p_39_5,
+g1=g39,
+c1=c39,
+c1s=c39s,
+c1_sth=c39_sth,
+c39_sth=c1_sth,
+c1_skip=c39_skip,
+c1_sth_init = c39_sth_init,
+c1_flag=c39_flag,
+c0_flag=c38_flag] endmodule
+
+module Client40=Client1[p_1_1=p_40_1,p_1_2=p_40_2,p_1_3=p_40_3,p_1_4=p_40_4,p_1_5=p_40_5,
+g1=g40,
+c1=c40,
+c1s=c40s,
+c1_sth=c40_sth,
+c40_sth=c1_sth,
+c1_skip=c40_skip,
+c1_sth_init = c40_sth_init,
+c1_flag=c40_flag,
+c0_flag=c39_flag] endmodule
+
+module Client41=Client1[p_1_1=p_41_1,p_1_2=p_41_2,p_1_3=p_41_3,p_1_4=p_41_4,p_1_5=p_41_5,
+g1=g41,
+c1=c41,
+c1s=c41s,
+c1_sth=c41_sth,
+c41_sth=c1_sth,
+c1_skip=c41_skip,
+c1_sth_init = c41_sth_init,
+c1_flag=c41_flag,
+c0_flag=c40_flag] endmodule
+
+module Client42=Client1[p_1_1=p_42_1,p_1_2=p_42_2,p_1_3=p_42_3,p_1_4=p_42_4,p_1_5=p_42_5,
+g1=g42,
+c1=c42,
+c1s=c42s,
+c1_sth=c42_sth,
+c42_sth=c1_sth,
+c1_skip=c42_skip,
+c1_sth_init = c42_sth_init,
+c1_flag=c42_flag,
+c0_flag=c41_flag] endmodule
+
+module Client43=Client1[p_1_1=p_43_1,p_1_2=p_43_2,p_1_3=p_43_3,p_1_4=p_43_4,p_1_5=p_43_5,
+g1=g43,
+c1=c43,
+c1s=c43s,
+c1_sth=c43_sth,
+c43_sth=c1_sth,
+c1_skip=c43_skip,
+c1_sth_init = c43_sth_init,
+c1_flag=c43_flag,
+c0_flag=c42_flag] endmodule
+
+module Client44=Client1[p_1_1=p_44_1,p_1_2=p_44_2,p_1_3=p_44_3,p_1_4=p_44_4,p_1_5=p_44_5,
+g1=g44,
+c1=c44,
+c1s=c44s,
+c1_sth=c44_sth,
+c44_sth=c1_sth,
+c1_skip=c44_skip,
+c1_sth_init = c44_sth_init,
+c1_flag=c44_flag,
+c0_flag=c43_flag] endmodule
+
+module Client45=Client1[p_1_1=p_45_1,p_1_2=p_45_2,p_1_3=p_45_3,p_1_4=p_45_4,p_1_5=p_45_5,
+g1=g45,
+c1=c45,
+c1s=c45s,
+c1_sth=c45_sth,
+c45_sth=c1_sth,
+c1_skip=c45_skip,
+c1_sth_init = c45_sth_init,
+c1_flag=c45_flag,
+c0_flag=c44_flag] endmodule
+
+module Client46=Client1[p_1_1=p_46_1,p_1_2=p_46_2,p_1_3=p_46_3,p_1_4=p_46_4,p_1_5=p_46_5,
+g1=g46,
+c1=c46,
+c1s=c46s,
+c1_sth=c46_sth,
+c46_sth=c1_sth,
+c1_skip=c46_skip,
+c1_sth_init = c46_sth_init,
+c1_flag=c46_flag,
+c0_flag=c45_flag] endmodule
+
+module Client47=Client1[p_1_1=p_47_1,p_1_2=p_47_2,p_1_3=p_47_3,p_1_4=p_47_4,p_1_5=p_47_5,
+g1=g47,
+c1=c47,
+c1s=c47s,
+c1_sth=c47_sth,
+c47_sth=c1_sth,
+c1_skip=c47_skip,
+c1_sth_init = c47_sth_init,
+c1_flag=c47_flag,
+c0_flag=c46_flag] endmodule
+
+module Client48=Client1[p_1_1=p_48_1,p_1_2=p_48_2,p_1_3=p_48_3,p_1_4=p_48_4,p_1_5=p_48_5,
+g1=g48,
+c1=c48,
+c1s=c48s,
+c1_sth=c48_sth,
+c48_sth=c1_sth,
+c1_skip=c48_skip,
+c1_sth_init = c48_sth_init,
+c1_flag=c48_flag,
+c0_flag=c47_flag] endmodule
+
+module Client49=Client1[p_1_1=p_49_1,p_1_2=p_49_2,p_1_3=p_49_3,p_1_4=p_49_4,p_1_5=p_49_5,
+g1=g49,
+c1=c49,
+c1s=c49s,
+c1_sth=c49_sth,
+c49_sth=c1_sth,
+c1_skip=c49_skip,
+c1_sth_init = c49_sth_init,
+c1_flag=c49_flag,
+c0_flag=c48_flag] endmodule
+
+module Client50=Client1[p_1_1=p_50_1,p_1_2=p_50_2,p_1_3=p_50_3,p_1_4=p_50_4,p_1_5=p_50_5,
+g1=g50,
+c1=c50,
+c1s=c50s,
+c1_sth=c50_sth,
+c50_sth=c1_sth,
+c1_skip=c50_skip,
+c1_sth_init = c50_sth_init,
+c1_flag=c50_flag,
+c0_flag=c49_flag] endmodule
+
+
+//--------------
+// SERVERS
+//--------------
+
+const bool sf_init = true;
+
+//needed for module relabelling
+const int SERVER1 = 1;
+const int SERVER2 = 2;
+const int SERVER3 = 3;
+const int SERVER4 = 4;
+const int SERVER5 = 5;
+
+//initial states for each server
+const bool s1_init = true;
+const bool s2_init = false;
+const bool s3_init = false;
+const bool s4_init = false;
+const bool s5_init = false;
+
+//server-to-server gossiping is done using a "spread-and-forget" approach: 
+//A server randomly gossips to a subset of servers uniformly by sending 
+//them a message but gets nothing in return. We assume that the channels used 
+//for this communication are secure. The probability of updating 
+//can be computed using the inclusion-exclusion principle.
+formula ch1 = (s1_sth?1/5:0)+(s2_sth?1/5:0)+(s3_sth?1/5:0)+(s4_sth?1/5:0)+(s5_sth?1/5:0);
+formula ch2 = (s1_sth?1/5:0)*(s2_sth?1/5:0)+(s1_sth?1/5:0)*(s3_sth?1/5:0)+(s1_sth?1/5:0)*(s4_sth?1/5:0)+
+	      (s1_sth?1/5:0)*(s5_sth?1/5:0)+(s2_sth?1/5:0)*(s3_sth?1/5:0)+(s2_sth?1/5:0)*(s4_sth?1/5:0)+
+	      (s2_sth?1/5:0)*(s5_sth?1/5:0)+(s3_sth?1/5:0)*(s4_sth?1/5:0)+(s3_sth?1/5:0)*(s5_sth?1/5:0)+
+	      (s4_sth?1/5:0)*(s5_sth?1/5:0);
+formula ch3 = (s2_sth?1/5:0)*(s4_sth?1/5:0)*(s5_sth?1/5:0)+(s1_sth?1/5:0)*(s2_sth?1/5:0)*(s3_sth?1/5:0)+
+	      (s1_sth?1/5:0)*(s2_sth?1/5:0)*(s4_sth?1/5:0)+(s1_sth?1/5:0)*(s2_sth?1/5:0)*(s5_sth?1/5:0)+
+	      (s2_sth?1/5:0)*(s3_sth?1/5:0)*(s4_sth?1/5:0)+(s2_sth?1/5:0)*(s3_sth?1/5:0)*(s5_sth?1/5:0)+
+	      (s3_sth?1/5:0)*(s1_sth?1/5:0)*(s4_sth?1/5:0)+(s3_sth?1/5:0)*(s1_sth?1/5:0)*(s5_sth?1/5:0)+
+	      (s3_sth?1/5:0)*(s4_sth?1/5:0)*(s5_sth?1/5:0)+(s1_sth?1/5:0)*(s4_sth?1/5:0)*(s5_sth?1/5:0);
+formula ch4 = (s1_sth?1/5:0)*(s2_sth?1/5:0)*(s3_sth?1/5:0)*(s4_sth?1/5:0)+
+	      (s1_sth?1/5:0)*(s2_sth?1/5:0)*(s3_sth?1/5:0)*(s5_sth?1/5:0)+
+	      (s1_sth?1/5:0)*(s2_sth?1/5:0)*(s4_sth?1/5:0)*(s5_sth?1/5:0)+
+	      (s1_sth?1/5:0)*(s3_sth?1/5:0)*(s4_sth?1/5:0)*(s5_sth?1/5:0)+
+	      (s2_sth?1/5:0)*(s3_sth?1/5:0)*(s4_sth?1/5:0)*(s5_sth?1/5:0);
+formula ch5 = (s1_sth?1/5:0)*(s2_sth?1/5:0)*(s3_sth?1/5:0)*(s4_sth?1/5:0)*(s5_sth?1/5:0);
+
+formula get_data = ch1 - ch2 + ch3 - ch4 + ch5;
+
+module Server1
+
+	//does the server have the latest STH?
+	s1_sth : bool init s1_init;
+	s1_flag : bool init sf_init;
+
+	//update if a connected client has the latest STH
+	[update] !s1_sth & connected_client_has_sth -> (s1_sth'=true);
+	[update] s1_sth | (!s1_sth & !connected_client_has_sth) -> true;
+	//server-to-server gossip - this is done during the 'connect' phase to make 
+	//data spreading more effective
+	//[spread] !s1_flag & !s1_sth -> get_data : (s1_sth'=true)&(s1_flag'=true) + 1-get_data : (s1_flag'=true);
+	//[spread] !s1_flag & s1_sth -> (s1_flag'=true);
+	//end when every client is updated
+	//[round_complete] true -> (s1_flag'=sf_init);
+	[END] clients_all_updated -> true;
+
+endmodule
+
+formula connected_client_has_sth = ((c1s=SERVER1 & c1_sth) | (c2s=SERVER1 & c2_sth) | (c3s=SERVER1 & c3_sth) | (c4s=SERVER1 & c4_sth) | (c5s=SERVER1 & c5_sth) | (c6s=SERVER1 & c6_sth) | (c7s=SERVER1 & c7_sth) | (c8s=SERVER1 & c8_sth) | (c9s=SERVER1 & c9_sth) | (c10s=SERVER1 & c10_sth) | (c11s=SERVER1 & c11_sth) | (c12s=SERVER1 & c12_sth) | (c13s=SERVER1 & c13_sth) | (c14s=SERVER1 & c14_sth) | (c15s=SERVER1 & c15_sth) | (c16s=SERVER1 & c16_sth) | (c17s=SERVER1 & c17_sth) | (c18s=SERVER1 & c18_sth) | (c19s=SERVER1 & c19_sth) | (c20s=SERVER1 & c20_sth) | (c21s=SERVER1 & c21_sth) | (c22s=SERVER1 & c22_sth) | (c23s=SERVER1 & c23_sth) | (c24s=SERVER1 & c24_sth) | (c25s=SERVER1 & c25_sth) | (c26s=SERVER1 & c26_sth) | (c27s=SERVER1 & c27_sth) | (c28s=SERVER1 & c28_sth) | (c29s=SERVER1 & c29_sth) | (c30s=SERVER1 & c30_sth) | (c31s=SERVER1 & c31_sth) | (c32s=SERVER1 & c32_sth) | (c33s=SERVER1 & c33_sth) | (c34s=SERVER1 & c34_sth) | (c35s=SERVER1 & c35_sth) | (c36s=SERVER1 & c36_sth) | (c37s=SERVER1 & c37_sth) | (c38s=SERVER1 & c38_sth) | (c39s=SERVER1 & c39_sth) | (c40s=SERVER1 & c40_sth) | (c41s=SERVER1 & c41_sth) | (c42s=SERVER1 & c42_sth) | (c43s=SERVER1 & c43_sth) | (c44s=SERVER1 & c44_sth) | (c45s=SERVER1 & c45_sth) | (c46s=SERVER1 & c46_sth) | (c47s=SERVER1 & c47_sth) | (c48s=SERVER1 & c48_sth) | (c49s=SERVER1 & c49_sth) | (c50s=SERVER1 & c50_sth));
+
+module Server2=Server1[s1_sth=s2_sth,SERVER1=SERVER2,s1_init=s2_init,s1_flag=s2_flag] endmodule
+module Server3=Server1[s1_sth=s3_sth,SERVER1=SERVER3,s1_init=s3_init,s1_flag=s3_flag] endmodule
+module Server4=Server1[s1_sth=s4_sth,SERVER1=SERVER4,s1_init=s4_init,s1_flag=s4_flag] endmodule
+module Server5=Server1[s1_sth=s5_sth,SERVER1=SERVER5,s1_init=s5_init,s1_flag=s5_flag] endmodule
+
+//--------------
+// FORMULAS
+//--------------
+
+const double f = 1/50;
+
+//Keeps track of the proportion of clients that have the latest STH - max sum should equal 1.
+formula no_clients_updated = (c1_sth?f:0)+(c2_sth?f:0)+(c3_sth?f:0)+(c4_sth?f:0)+(c5_sth?f:0)+(c6_sth?f:0)+(c7_sth?f:0)+(c8_sth?f:0)+(c9_sth?f:0)+(c10_sth?f:0)+(c11_sth?f:0)+(c12_sth?f:0)+(c13_sth?f:0)+(c14_sth?f:0)+(c15_sth?f:0)+(c16_sth?f:0)+(c17_sth?f:0)+(c18_sth?f:0)+(c19_sth?f:0)+(c20_sth?f:0)+(c21_sth?f:0)+(c22_sth?f:0)+(c23_sth?f:0)+(c24_sth?f:0)+(c25_sth?f:0)+(c26_sth?f:0)+(c27_sth?f:0)+(c28_sth?f:0)+(c29_sth?f:0)+(c30_sth?f:0)+(c31_sth?f:0)+(c32_sth?f:0)+(c33_sth?f:0)+(c34_sth?f:0)+(c35_sth?f:0)+(c36_sth?f:0)+(c37_sth?f:0)+(c38_sth?f:0)+(c39_sth?f:0)+(c40_sth?f:0)+(c41_sth?f:0)+(c42_sth?f:0)+(c43_sth?f:0)+(c44_sth?f:0)+(c45_sth?f:0)+(c46_sth?f:0)+(c47_sth?f:0)+(c48_sth?f:0)+(c49_sth?f:0)+(c50_sth?f:0);
+
+//Keeps track of the log connection currently being made using the STH-Only protocol
+formula client1_getConsistency_STHOnly = c1_skip=false & c1=2 & ((c1s=1 & c1_sth!=s1_sth) | (c1s=2 & c1_sth!=s2_sth) | (c1s=3 & c1_sth!=s3_sth) | (c1s=4 & c1_sth!=s4_sth) | (c1s=5 & c1_sth!=s5_sth));
+formula client2_getConsistency_STHOnly = c2_skip=false & c2=2 & ((c2s=1 & c2_sth!=s1_sth) | (c2s=2 & c2_sth!=s2_sth) | (c2s=3 & c2_sth!=s3_sth) | (c2s=4 & c2_sth!=s4_sth) | (c2s=5 & c2_sth!=s5_sth));
+formula client3_getConsistency_STHOnly = c3_skip=false & c3=2 & ((c3s=1 & c3_sth!=s1_sth) | (c3s=2 & c3_sth!=s2_sth) | (c3s=3 & c3_sth!=s3_sth) | (c3s=4 & c3_sth!=s4_sth) | (c3s=5 & c3_sth!=s5_sth));
+formula client4_getConsistency_STHOnly = c4_skip=false & c4=2 & ((c4s=1 & c4_sth!=s1_sth) | (c4s=2 & c4_sth!=s2_sth) | (c4s=3 & c4_sth!=s3_sth) | (c4s=4 & c4_sth!=s4_sth) | (c4s=5 & c4_sth!=s5_sth));
+formula client5_getConsistency_STHOnly = c5_skip=false & c5=2 & ((c5s=1 & c5_sth!=s1_sth) | (c5s=2 & c5_sth!=s2_sth) | (c5s=3 & c5_sth!=s3_sth) | (c5s=4 & c5_sth!=s4_sth) | (c5s=5 & c5_sth!=s5_sth));
+formula client6_getConsistency_STHOnly = c6_skip=false & c6=2 & ((c6s=1 & c6_sth!=s1_sth) | (c6s=2 & c6_sth!=s2_sth) | (c6s=3 & c6_sth!=s3_sth) | (c6s=4 & c6_sth!=s4_sth) | (c6s=5 & c6_sth!=s5_sth));
+formula client7_getConsistency_STHOnly = c7_skip=false & c7=2 & ((c7s=1 & c7_sth!=s1_sth) | (c7s=2 & c7_sth!=s2_sth) | (c7s=3 & c7_sth!=s3_sth) | (c7s=4 & c7_sth!=s4_sth) | (c7s=5 & c7_sth!=s5_sth));
+formula client8_getConsistency_STHOnly = c8_skip=false & c8=2 & ((c8s=1 & c8_sth!=s1_sth) | (c8s=2 & c8_sth!=s2_sth) | (c8s=3 & c8_sth!=s3_sth) | (c8s=4 & c8_sth!=s4_sth) | (c8s=5 & c8_sth!=s5_sth));
+formula client9_getConsistency_STHOnly = c9_skip=false & c9=2 & ((c9s=1 & c9_sth!=s1_sth) | (c9s=2 & c9_sth!=s2_sth) | (c9s=3 & c9_sth!=s3_sth) | (c9s=4 & c9_sth!=s4_sth) | (c9s=5 & c9_sth!=s5_sth));
+formula client10_getConsistency_STHOnly = c10_skip=false & c10=2 & ((c10s=1 & c10_sth!=s1_sth) | (c10s=2 & c10_sth!=s2_sth) | (c10s=3 & c10_sth!=s3_sth) | (c10s=4 & c10_sth!=s4_sth) | (c10s=5 & c10_sth!=s5_sth));
+formula client11_getConsistency_STHOnly = c11_skip=false & c11=2 & ((c11s=1 & c11_sth!=s1_sth) | (c11s=2 & c11_sth!=s2_sth) | (c11s=3 & c11_sth!=s3_sth) | (c11s=4 & c11_sth!=s4_sth) | (c11s=5 & c11_sth!=s5_sth));
+formula client12_getConsistency_STHOnly = c12_skip=false & c12=2 & ((c12s=1 & c12_sth!=s1_sth) | (c12s=2 & c12_sth!=s2_sth) | (c12s=3 & c12_sth!=s3_sth) | (c12s=4 & c12_sth!=s4_sth) | (c12s=5 & c12_sth!=s5_sth));
+formula client13_getConsistency_STHOnly = c13_skip=false & c13=2 & ((c13s=1 & c13_sth!=s1_sth) | (c13s=2 & c13_sth!=s2_sth) | (c13s=3 & c13_sth!=s3_sth) | (c13s=4 & c13_sth!=s4_sth) | (c13s=5 & c13_sth!=s5_sth));
+formula client14_getConsistency_STHOnly = c14_skip=false & c14=2 & ((c14s=1 & c14_sth!=s1_sth) | (c14s=2 & c14_sth!=s2_sth) | (c14s=3 & c14_sth!=s3_sth) | (c14s=4 & c14_sth!=s4_sth) | (c14s=5 & c14_sth!=s5_sth));
+formula client15_getConsistency_STHOnly = c15_skip=false & c15=2 & ((c15s=1 & c15_sth!=s1_sth) | (c15s=2 & c15_sth!=s2_sth) | (c15s=3 & c15_sth!=s3_sth) | (c15s=4 & c15_sth!=s4_sth) | (c15s=5 & c15_sth!=s5_sth));
+formula client16_getConsistency_STHOnly = c16_skip=false & c16=2 & ((c16s=1 & c16_sth!=s1_sth) | (c16s=2 & c16_sth!=s2_sth) | (c16s=3 & c16_sth!=s3_sth) | (c16s=4 & c16_sth!=s4_sth) | (c16s=5 & c16_sth!=s5_sth));
+formula client17_getConsistency_STHOnly = c17_skip=false & c17=2 & ((c17s=1 & c17_sth!=s1_sth) | (c17s=2 & c17_sth!=s2_sth) | (c17s=3 & c17_sth!=s3_sth) | (c17s=4 & c17_sth!=s4_sth) | (c17s=5 & c17_sth!=s5_sth));
+formula client18_getConsistency_STHOnly = c18_skip=false & c18=2 & ((c18s=1 & c18_sth!=s1_sth) | (c18s=2 & c18_sth!=s2_sth) | (c18s=3 & c18_sth!=s3_sth) | (c18s=4 & c18_sth!=s4_sth) | (c18s=5 & c18_sth!=s5_sth));
+formula client19_getConsistency_STHOnly = c19_skip=false & c19=2 & ((c19s=1 & c19_sth!=s1_sth) | (c19s=2 & c19_sth!=s2_sth) | (c19s=3 & c19_sth!=s3_sth) | (c19s=4 & c19_sth!=s4_sth) | (c19s=5 & c19_sth!=s5_sth));
+formula client20_getConsistency_STHOnly = c20_skip=false & c20=2 & ((c20s=1 & c20_sth!=s1_sth) | (c20s=2 & c20_sth!=s2_sth) | (c20s=3 & c20_sth!=s3_sth) | (c20s=4 & c20_sth!=s4_sth) | (c20s=5 & c20_sth!=s5_sth));
+formula client21_getConsistency_STHOnly = c21_skip=false & c21=2 & ((c21s=1 & c21_sth!=s1_sth) | (c21s=2 & c21_sth!=s2_sth) | (c21s=3 & c21_sth!=s3_sth) | (c21s=4 & c21_sth!=s4_sth) | (c21s=5 & c21_sth!=s5_sth));
+formula client22_getConsistency_STHOnly = c22_skip=false & c22=2 & ((c22s=1 & c22_sth!=s1_sth) | (c22s=2 & c22_sth!=s2_sth) | (c22s=3 & c22_sth!=s3_sth) | (c22s=4 & c22_sth!=s4_sth) | (c22s=5 & c22_sth!=s5_sth));
+formula client23_getConsistency_STHOnly = c23_skip=false & c23=2 & ((c23s=1 & c23_sth!=s1_sth) | (c23s=2 & c23_sth!=s2_sth) | (c23s=3 & c23_sth!=s3_sth) | (c23s=4 & c23_sth!=s4_sth) | (c23s=5 & c23_sth!=s5_sth));
+formula client24_getConsistency_STHOnly = c24_skip=false & c24=2 & ((c24s=1 & c24_sth!=s1_sth) | (c24s=2 & c24_sth!=s2_sth) | (c24s=3 & c24_sth!=s3_sth) | (c24s=4 & c24_sth!=s4_sth) | (c24s=5 & c24_sth!=s5_sth));
+formula client25_getConsistency_STHOnly = c25_skip=false & c25=2 & ((c25s=1 & c25_sth!=s1_sth) | (c25s=2 & c25_sth!=s2_sth) | (c25s=3 & c25_sth!=s3_sth) | (c25s=4 & c25_sth!=s4_sth) | (c25s=5 & c25_sth!=s5_sth));
+formula client26_getConsistency_STHOnly = c26_skip=false & c26=2 & ((c26s=1 & c26_sth!=s1_sth) | (c26s=2 & c26_sth!=s2_sth) | (c26s=3 & c26_sth!=s3_sth) | (c26s=4 & c26_sth!=s4_sth) | (c26s=5 & c26_sth!=s5_sth));
+formula client27_getConsistency_STHOnly = c27_skip=false & c27=2 & ((c27s=1 & c27_sth!=s1_sth) | (c27s=2 & c27_sth!=s2_sth) | (c27s=3 & c27_sth!=s3_sth) | (c27s=4 & c27_sth!=s4_sth) | (c27s=5 & c27_sth!=s5_sth));
+formula client28_getConsistency_STHOnly = c28_skip=false & c28=2 & ((c28s=1 & c28_sth!=s1_sth) | (c28s=2 & c28_sth!=s2_sth) | (c28s=3 & c28_sth!=s3_sth) | (c28s=4 & c28_sth!=s4_sth) | (c28s=5 & c28_sth!=s5_sth));
+formula client29_getConsistency_STHOnly = c29_skip=false & c29=2 & ((c29s=1 & c29_sth!=s1_sth) | (c29s=2 & c29_sth!=s2_sth) | (c29s=3 & c29_sth!=s3_sth) | (c29s=4 & c29_sth!=s4_sth) | (c29s=5 & c29_sth!=s5_sth));
+formula client30_getConsistency_STHOnly = c30_skip=false & c30=2 & ((c30s=1 & c30_sth!=s1_sth) | (c30s=2 & c30_sth!=s2_sth) | (c30s=3 & c30_sth!=s3_sth) | (c30s=4 & c30_sth!=s4_sth) | (c30s=5 & c30_sth!=s5_sth));
+formula client31_getConsistency_STHOnly = c31_skip=false & c31=2 & ((c31s=1 & c31_sth!=s1_sth) | (c31s=2 & c31_sth!=s2_sth) | (c31s=3 & c31_sth!=s3_sth) | (c31s=4 & c31_sth!=s4_sth) | (c31s=5 & c31_sth!=s5_sth));
+formula client32_getConsistency_STHOnly = c32_skip=false & c32=2 & ((c32s=1 & c32_sth!=s1_sth) | (c32s=2 & c32_sth!=s2_sth) | (c32s=3 & c32_sth!=s3_sth) | (c32s=4 & c32_sth!=s4_sth) | (c32s=5 & c32_sth!=s5_sth));
+formula client33_getConsistency_STHOnly = c33_skip=false & c33=2 & ((c33s=1 & c33_sth!=s1_sth) | (c33s=2 & c33_sth!=s2_sth) | (c33s=3 & c33_sth!=s3_sth) | (c33s=4 & c33_sth!=s4_sth) | (c33s=5 & c33_sth!=s5_sth));
+formula client34_getConsistency_STHOnly = c34_skip=false & c34=2 & ((c34s=1 & c34_sth!=s1_sth) | (c34s=2 & c34_sth!=s2_sth) | (c34s=3 & c34_sth!=s3_sth) | (c34s=4 & c34_sth!=s4_sth) | (c34s=5 & c34_sth!=s5_sth));
+formula client35_getConsistency_STHOnly = c35_skip=false & c35=2 & ((c35s=1 & c35_sth!=s1_sth) | (c35s=2 & c35_sth!=s2_sth) | (c35s=3 & c35_sth!=s3_sth) | (c35s=4 & c35_sth!=s4_sth) | (c35s=5 & c35_sth!=s5_sth));
+formula client36_getConsistency_STHOnly = c36_skip=false & c36=2 & ((c36s=1 & c36_sth!=s1_sth) | (c36s=2 & c36_sth!=s2_sth) | (c36s=3 & c36_sth!=s3_sth) | (c36s=4 & c36_sth!=s4_sth) | (c36s=5 & c36_sth!=s5_sth));
+formula client37_getConsistency_STHOnly = c37_skip=false & c37=2 & ((c37s=1 & c37_sth!=s1_sth) | (c37s=2 & c37_sth!=s2_sth) | (c37s=3 & c37_sth!=s3_sth) | (c37s=4 & c37_sth!=s4_sth) | (c37s=5 & c37_sth!=s5_sth));
+formula client38_getConsistency_STHOnly = c38_skip=false & c38=2 & ((c38s=1 & c38_sth!=s1_sth) | (c38s=2 & c38_sth!=s2_sth) | (c38s=3 & c38_sth!=s3_sth) | (c38s=4 & c38_sth!=s4_sth) | (c38s=5 & c38_sth!=s5_sth));
+formula client39_getConsistency_STHOnly = c39_skip=false & c39=2 & ((c39s=1 & c39_sth!=s1_sth) | (c39s=2 & c39_sth!=s2_sth) | (c39s=3 & c39_sth!=s3_sth) | (c39s=4 & c39_sth!=s4_sth) | (c39s=5 & c39_sth!=s5_sth));
+formula client40_getConsistency_STHOnly = c40_skip=false & c40=2 & ((c40s=1 & c40_sth!=s1_sth) | (c40s=2 & c40_sth!=s2_sth) | (c40s=3 & c40_sth!=s3_sth) | (c40s=4 & c40_sth!=s4_sth) | (c40s=5 & c40_sth!=s5_sth));
+formula client41_getConsistency_STHOnly = c41_skip=false & c41=2 & ((c41s=1 & c41_sth!=s1_sth) | (c41s=2 & c41_sth!=s2_sth) | (c41s=3 & c41_sth!=s3_sth) | (c41s=4 & c41_sth!=s4_sth) | (c41s=5 & c41_sth!=s5_sth));
+formula client42_getConsistency_STHOnly = c42_skip=false & c42=2 & ((c42s=1 & c42_sth!=s1_sth) | (c42s=2 & c42_sth!=s2_sth) | (c42s=3 & c42_sth!=s3_sth) | (c42s=4 & c42_sth!=s4_sth) | (c42s=5 & c42_sth!=s5_sth));
+formula client43_getConsistency_STHOnly = c43_skip=false & c43=2 & ((c43s=1 & c43_sth!=s1_sth) | (c43s=2 & c43_sth!=s2_sth) | (c43s=3 & c43_sth!=s3_sth) | (c43s=4 & c43_sth!=s4_sth) | (c43s=5 & c43_sth!=s5_sth));
+formula client44_getConsistency_STHOnly = c44_skip=false & c44=2 & ((c44s=1 & c44_sth!=s1_sth) | (c44s=2 & c44_sth!=s2_sth) | (c44s=3 & c44_sth!=s3_sth) | (c44s=4 & c44_sth!=s4_sth) | (c44s=5 & c44_sth!=s5_sth));
+formula client45_getConsistency_STHOnly = c45_skip=false & c45=2 & ((c45s=1 & c45_sth!=s1_sth) | (c45s=2 & c45_sth!=s2_sth) | (c45s=3 & c45_sth!=s3_sth) | (c45s=4 & c45_sth!=s4_sth) | (c45s=5 & c45_sth!=s5_sth));
+formula client46_getConsistency_STHOnly = c46_skip=false & c46=2 & ((c46s=1 & c46_sth!=s1_sth) | (c46s=2 & c46_sth!=s2_sth) | (c46s=3 & c46_sth!=s3_sth) | (c46s=4 & c46_sth!=s4_sth) | (c46s=5 & c46_sth!=s5_sth));
+formula client47_getConsistency_STHOnly = c47_skip=false & c47=2 & ((c47s=1 & c47_sth!=s1_sth) | (c47s=2 & c47_sth!=s2_sth) | (c47s=3 & c47_sth!=s3_sth) | (c47s=4 & c47_sth!=s4_sth) | (c47s=5 & c47_sth!=s5_sth));
+formula client48_getConsistency_STHOnly = c48_skip=false & c48=2 & ((c48s=1 & c48_sth!=s1_sth) | (c48s=2 & c48_sth!=s2_sth) | (c48s=3 & c48_sth!=s3_sth) | (c48s=4 & c48_sth!=s4_sth) | (c48s=5 & c48_sth!=s5_sth));
+formula client49_getConsistency_STHOnly = c49_skip=false & c49=2 & ((c49s=1 & c49_sth!=s1_sth) | (c49s=2 & c49_sth!=s2_sth) | (c49s=3 & c49_sth!=s3_sth) | (c49s=4 & c49_sth!=s4_sth) | (c49s=5 & c49_sth!=s5_sth));
+formula client50_getConsistency_STHOnly = c50_skip=false & c50=2 & ((c50s=1 & c50_sth!=s1_sth) | (c50s=2 & c50_sth!=s2_sth) | (c50s=3 & c50_sth!=s3_sth) | (c50s=4 & c50_sth!=s4_sth) | (c50s=5 & c50_sth!=s5_sth));
+formula log_connections_STHOnly = (client1_getConsistency_STHOnly?1:0)+(client2_getConsistency_STHOnly?1:0)+(client3_getConsistency_STHOnly?1:0)+(client4_getConsistency_STHOnly?1:0)+(client5_getConsistency_STHOnly?1:0)+(client6_getConsistency_STHOnly?1:0)+(client7_getConsistency_STHOnly?1:0)+(client8_getConsistency_STHOnly?1:0)+(client9_getConsistency_STHOnly?1:0)+(client10_getConsistency_STHOnly?1:0)+(client11_getConsistency_STHOnly?1:0)+(client12_getConsistency_STHOnly?1:0)+(client13_getConsistency_STHOnly?1:0)+(client14_getConsistency_STHOnly?1:0)+(client15_getConsistency_STHOnly?1:0)+(client16_getConsistency_STHOnly?1:0)+(client17_getConsistency_STHOnly?1:0)+(client18_getConsistency_STHOnly?1:0)+(client19_getConsistency_STHOnly?1:0)+(client20_getConsistency_STHOnly?1:0)+(client21_getConsistency_STHOnly?1:0)+(client22_getConsistency_STHOnly?1:0)+(client23_getConsistency_STHOnly?1:0)+(client24_getConsistency_STHOnly?1:0)+(client25_getConsistency_STHOnly?1:0)+(client26_getConsistency_STHOnly?1:0)+(client27_getConsistency_STHOnly?1:0)+(client28_getConsistency_STHOnly?1:0)+(client29_getConsistency_STHOnly?1:0)+(client30_getConsistency_STHOnly?1:0)+(client31_getConsistency_STHOnly?1:0)+(client32_getConsistency_STHOnly?1:0)+(client33_getConsistency_STHOnly?1:0)+(client34_getConsistency_STHOnly?1:0)+(client35_getConsistency_STHOnly?1:0)+(client36_getConsistency_STHOnly?1:0)+(client37_getConsistency_STHOnly?1:0)+(client38_getConsistency_STHOnly?1:0)+(client39_getConsistency_STHOnly?1:0)+(client40_getConsistency_STHOnly?1:0)+(client41_getConsistency_STHOnly?1:0)+(client42_getConsistency_STHOnly?1:0)+(client43_getConsistency_STHOnly?1:0)+(client44_getConsistency_STHOnly?1:0)+(client45_getConsistency_STHOnly?1:0)+(client46_getConsistency_STHOnly?1:0)+(client47_getConsistency_STHOnly?1:0)+(client48_getConsistency_STHOnly?1:0)+(client49_getConsistency_STHOnly?1:0)+(client50_getConsistency_STHOnly?1:0);
+
+//Keeps track of the log connection currently being made using the STH-and-Proof protocol
+formula client1_getConsistency_STHAndProof = c1_skip=false & c1=2 & ((c1s=1 & c1_sth & !s1_sth) | (c1s=2 & c1_sth & !s2_sth) | (c1s=3 & c1_sth & !s3_sth) | (c1s=4 & c1_sth & !s4_sth) | (c1s=5 & c1_sth & !s5_sth));
+formula client2_getConsistency_STHAndProof = c2_skip=false & c2=2 & ((c2s=1 & c2_sth & !s1_sth) | (c2s=2 & c2_sth & !s2_sth) | (c2s=3 & c2_sth & !s3_sth) | (c2s=4 & c2_sth & !s4_sth) | (c2s=5 & c2_sth & !s5_sth));
+formula client3_getConsistency_STHAndProof = c3_skip=false & c3=2 & ((c3s=1 & c3_sth & !s1_sth) | (c3s=2 & c3_sth & !s2_sth) | (c3s=3 & c3_sth & !s3_sth) | (c3s=4 & c3_sth & !s4_sth) | (c3s=5 & c3_sth & !s5_sth));
+formula client4_getConsistency_STHAndProof = c4_skip=false & c4=2 & ((c4s=1 & c4_sth & !s1_sth) | (c4s=2 & c4_sth & !s2_sth) | (c4s=3 & c4_sth & !s3_sth) | (c4s=4 & c4_sth & !s4_sth) | (c4s=5 & c4_sth & !s5_sth));
+formula client5_getConsistency_STHAndProof = c5_skip=false & c5=2 & ((c5s=1 & c5_sth & !s1_sth) | (c5s=2 & c5_sth & !s2_sth) | (c5s=3 & c5_sth & !s3_sth) | (c5s=4 & c5_sth & !s4_sth) | (c5s=5 & c5_sth & !s5_sth));
+formula client6_getConsistency_STHAndProof = c6_skip=false & c6=2 & ((c6s=1 & c6_sth & !s1_sth) | (c6s=2 & c6_sth & !s2_sth) | (c6s=3 & c6_sth & !s3_sth) | (c6s=4 & c6_sth & !s4_sth) | (c6s=5 & c6_sth & !s5_sth));
+formula client7_getConsistency_STHAndProof = c7_skip=false & c7=2 & ((c7s=1 & c7_sth & !s1_sth) | (c7s=2 & c7_sth & !s2_sth) | (c7s=3 & c7_sth & !s3_sth) | (c7s=4 & c7_sth & !s4_sth) | (c7s=5 & c7_sth & !s5_sth));
+formula client8_getConsistency_STHAndProof = c8_skip=false & c8=2 & ((c8s=1 & c8_sth & !s1_sth) | (c8s=2 & c8_sth & !s2_sth) | (c8s=3 & c8_sth & !s3_sth) | (c8s=4 & c8_sth & !s4_sth) | (c8s=5 & c8_sth & !s5_sth));
+formula client9_getConsistency_STHAndProof = c9_skip=false & c9=2 & ((c9s=1 & c9_sth & !s1_sth) | (c9s=2 & c9_sth & !s2_sth) | (c9s=3 & c9_sth & !s3_sth) | (c9s=4 & c9_sth & !s4_sth) | (c9s=5 & c9_sth & !s5_sth));
+formula client10_getConsistency_STHAndProof = c10_skip=false & c10=2 & ((c10s=1 & c10_sth & !s1_sth) | (c10s=2 & c10_sth & !s2_sth) | (c10s=3 & c10_sth & !s3_sth) | (c10s=4 & c10_sth & !s4_sth) | (c10s=5 & c10_sth & !s5_sth));
+formula client11_getConsistency_STHAndProof = c11_skip=false & c11=2 & ((c11s=1 & c11_sth & !s1_sth) | (c11s=2 & c11_sth & !s2_sth) | (c11s=3 & c11_sth & !s3_sth) | (c11s=4 & c11_sth & !s4_sth) | (c11s=5 & c11_sth & !s5_sth));
+formula client12_getConsistency_STHAndProof = c12_skip=false & c12=2 & ((c12s=1 & c12_sth & !s1_sth) | (c12s=2 & c12_sth & !s2_sth) | (c12s=3 & c12_sth & !s3_sth) | (c12s=4 & c12_sth & !s4_sth) | (c12s=5 & c12_sth & !s5_sth));
+formula client13_getConsistency_STHAndProof = c13_skip=false & c13=2 & ((c13s=1 & c13_sth & !s1_sth) | (c13s=2 & c13_sth & !s2_sth) | (c13s=3 & c13_sth & !s3_sth) | (c13s=4 & c13_sth & !s4_sth) | (c13s=5 & c13_sth & !s5_sth));
+formula client14_getConsistency_STHAndProof = c14_skip=false & c14=2 & ((c14s=1 & c14_sth & !s1_sth) | (c14s=2 & c14_sth & !s2_sth) | (c14s=3 & c14_sth & !s3_sth) | (c14s=4 & c14_sth & !s4_sth) | (c14s=5 & c14_sth & !s5_sth));
+formula client15_getConsistency_STHAndProof = c15_skip=false & c15=2 & ((c15s=1 & c15_sth & !s1_sth) | (c15s=2 & c15_sth & !s2_sth) | (c15s=3 & c15_sth & !s3_sth) | (c15s=4 & c15_sth & !s4_sth) | (c15s=5 & c15_sth & !s5_sth));
+formula client16_getConsistency_STHAndProof = c16_skip=false & c16=2 & ((c16s=1 & c16_sth & !s1_sth) | (c16s=2 & c16_sth & !s2_sth) | (c16s=3 & c16_sth & !s3_sth) | (c16s=4 & c16_sth & !s4_sth) | (c16s=5 & c16_sth & !s5_sth));
+formula client17_getConsistency_STHAndProof = c17_skip=false & c17=2 & ((c17s=1 & c17_sth & !s1_sth) | (c17s=2 & c17_sth & !s2_sth) | (c17s=3 & c17_sth & !s3_sth) | (c17s=4 & c17_sth & !s4_sth) | (c17s=5 & c17_sth & !s5_sth));
+formula client18_getConsistency_STHAndProof = c18_skip=false & c18=2 & ((c18s=1 & c18_sth & !s1_sth) | (c18s=2 & c18_sth & !s2_sth) | (c18s=3 & c18_sth & !s3_sth) | (c18s=4 & c18_sth & !s4_sth) | (c18s=5 & c18_sth & !s5_sth));
+formula client19_getConsistency_STHAndProof = c19_skip=false & c19=2 & ((c19s=1 & c19_sth & !s1_sth) | (c19s=2 & c19_sth & !s2_sth) | (c19s=3 & c19_sth & !s3_sth) | (c19s=4 & c19_sth & !s4_sth) | (c19s=5 & c19_sth & !s5_sth));
+formula client20_getConsistency_STHAndProof = c20_skip=false & c20=2 & ((c20s=1 & c20_sth & !s1_sth) | (c20s=2 & c20_sth & !s2_sth) | (c20s=3 & c20_sth & !s3_sth) | (c20s=4 & c20_sth & !s4_sth) | (c20s=5 & c20_sth & !s5_sth));
+formula client21_getConsistency_STHAndProof = c21_skip=false & c21=2 & ((c21s=1 & c21_sth & !s1_sth) | (c21s=2 & c21_sth & !s2_sth) | (c21s=3 & c21_sth & !s3_sth) | (c21s=4 & c21_sth & !s4_sth) | (c21s=5 & c21_sth & !s5_sth));
+formula client22_getConsistency_STHAndProof = c22_skip=false & c22=2 & ((c22s=1 & c22_sth & !s1_sth) | (c22s=2 & c22_sth & !s2_sth) | (c22s=3 & c22_sth & !s3_sth) | (c22s=4 & c22_sth & !s4_sth) | (c22s=5 & c22_sth & !s5_sth));
+formula client23_getConsistency_STHAndProof = c23_skip=false & c23=2 & ((c23s=1 & c23_sth & !s1_sth) | (c23s=2 & c23_sth & !s2_sth) | (c23s=3 & c23_sth & !s3_sth) | (c23s=4 & c23_sth & !s4_sth) | (c23s=5 & c23_sth & !s5_sth));
+formula client24_getConsistency_STHAndProof = c24_skip=false & c24=2 & ((c24s=1 & c24_sth & !s1_sth) | (c24s=2 & c24_sth & !s2_sth) | (c24s=3 & c24_sth & !s3_sth) | (c24s=4 & c24_sth & !s4_sth) | (c24s=5 & c24_sth & !s5_sth));
+formula client25_getConsistency_STHAndProof = c25_skip=false & c25=2 & ((c25s=1 & c25_sth & !s1_sth) | (c25s=2 & c25_sth & !s2_sth) | (c25s=3 & c25_sth & !s3_sth) | (c25s=4 & c25_sth & !s4_sth) | (c25s=5 & c25_sth & !s5_sth));
+formula client26_getConsistency_STHAndProof = c26_skip=false & c26=2 & ((c26s=1 & c26_sth & !s1_sth) | (c26s=2 & c26_sth & !s2_sth) | (c26s=3 & c26_sth & !s3_sth) | (c26s=4 & c26_sth & !s4_sth) | (c26s=5 & c26_sth & !s5_sth));
+formula client27_getConsistency_STHAndProof = c27_skip=false & c27=2 & ((c27s=1 & c27_sth & !s1_sth) | (c27s=2 & c27_sth & !s2_sth) | (c27s=3 & c27_sth & !s3_sth) | (c27s=4 & c27_sth & !s4_sth) | (c27s=5 & c27_sth & !s5_sth));
+formula client28_getConsistency_STHAndProof = c28_skip=false & c28=2 & ((c28s=1 & c28_sth & !s1_sth) | (c28s=2 & c28_sth & !s2_sth) | (c28s=3 & c28_sth & !s3_sth) | (c28s=4 & c28_sth & !s4_sth) | (c28s=5 & c28_sth & !s5_sth));
+formula client29_getConsistency_STHAndProof = c29_skip=false & c29=2 & ((c29s=1 & c29_sth & !s1_sth) | (c29s=2 & c29_sth & !s2_sth) | (c29s=3 & c29_sth & !s3_sth) | (c29s=4 & c29_sth & !s4_sth) | (c29s=5 & c29_sth & !s5_sth));
+formula client30_getConsistency_STHAndProof = c30_skip=false & c30=2 & ((c30s=1 & c30_sth & !s1_sth) | (c30s=2 & c30_sth & !s2_sth) | (c30s=3 & c30_sth & !s3_sth) | (c30s=4 & c30_sth & !s4_sth) | (c30s=5 & c30_sth & !s5_sth));
+formula client31_getConsistency_STHAndProof = c31_skip=false & c31=2 & ((c31s=1 & c31_sth & !s1_sth) | (c31s=2 & c31_sth & !s2_sth) | (c31s=3 & c31_sth & !s3_sth) | (c31s=4 & c31_sth & !s4_sth) | (c31s=5 & c31_sth & !s5_sth));
+formula client32_getConsistency_STHAndProof = c32_skip=false & c32=2 & ((c32s=1 & c32_sth & !s1_sth) | (c32s=2 & c32_sth & !s2_sth) | (c32s=3 & c32_sth & !s3_sth) | (c32s=4 & c32_sth & !s4_sth) | (c32s=5 & c32_sth & !s5_sth));
+formula client33_getConsistency_STHAndProof = c33_skip=false & c33=2 & ((c33s=1 & c33_sth & !s1_sth) | (c33s=2 & c33_sth & !s2_sth) | (c33s=3 & c33_sth & !s3_sth) | (c33s=4 & c33_sth & !s4_sth) | (c33s=5 & c33_sth & !s5_sth));
+formula client34_getConsistency_STHAndProof = c34_skip=false & c34=2 & ((c34s=1 & c34_sth & !s1_sth) | (c34s=2 & c34_sth & !s2_sth) | (c34s=3 & c34_sth & !s3_sth) | (c34s=4 & c34_sth & !s4_sth) | (c34s=5 & c34_sth & !s5_sth));
+formula client35_getConsistency_STHAndProof = c35_skip=false & c35=2 & ((c35s=1 & c35_sth & !s1_sth) | (c35s=2 & c35_sth & !s2_sth) | (c35s=3 & c35_sth & !s3_sth) | (c35s=4 & c35_sth & !s4_sth) | (c35s=5 & c35_sth & !s5_sth));
+formula client36_getConsistency_STHAndProof = c36_skip=false & c36=2 & ((c36s=1 & c36_sth & !s1_sth) | (c36s=2 & c36_sth & !s2_sth) | (c36s=3 & c36_sth & !s3_sth) | (c36s=4 & c36_sth & !s4_sth) | (c36s=5 & c36_sth & !s5_sth));
+formula client37_getConsistency_STHAndProof = c37_skip=false & c37=2 & ((c37s=1 & c37_sth & !s1_sth) | (c37s=2 & c37_sth & !s2_sth) | (c37s=3 & c37_sth & !s3_sth) | (c37s=4 & c37_sth & !s4_sth) | (c37s=5 & c37_sth & !s5_sth));
+formula client38_getConsistency_STHAndProof = c38_skip=false & c38=2 & ((c38s=1 & c38_sth & !s1_sth) | (c38s=2 & c38_sth & !s2_sth) | (c38s=3 & c38_sth & !s3_sth) | (c38s=4 & c38_sth & !s4_sth) | (c38s=5 & c38_sth & !s5_sth));
+formula client39_getConsistency_STHAndProof = c39_skip=false & c39=2 & ((c39s=1 & c39_sth & !s1_sth) | (c39s=2 & c39_sth & !s2_sth) | (c39s=3 & c39_sth & !s3_sth) | (c39s=4 & c39_sth & !s4_sth) | (c39s=5 & c39_sth & !s5_sth));
+formula client40_getConsistency_STHAndProof = c40_skip=false & c40=2 & ((c40s=1 & c40_sth & !s1_sth) | (c40s=2 & c40_sth & !s2_sth) | (c40s=3 & c40_sth & !s3_sth) | (c40s=4 & c40_sth & !s4_sth) | (c40s=5 & c40_sth & !s5_sth));
+formula client41_getConsistency_STHAndProof = c41_skip=false & c41=2 & ((c41s=1 & c41_sth & !s1_sth) | (c41s=2 & c41_sth & !s2_sth) | (c41s=3 & c41_sth & !s3_sth) | (c41s=4 & c41_sth & !s4_sth) | (c41s=5 & c41_sth & !s5_sth));
+formula client42_getConsistency_STHAndProof = c42_skip=false & c42=2 & ((c42s=1 & c42_sth & !s1_sth) | (c42s=2 & c42_sth & !s2_sth) | (c42s=3 & c42_sth & !s3_sth) | (c42s=4 & c42_sth & !s4_sth) | (c42s=5 & c42_sth & !s5_sth));
+formula client43_getConsistency_STHAndProof = c43_skip=false & c43=2 & ((c43s=1 & c43_sth & !s1_sth) | (c43s=2 & c43_sth & !s2_sth) | (c43s=3 & c43_sth & !s3_sth) | (c43s=4 & c43_sth & !s4_sth) | (c43s=5 & c43_sth & !s5_sth));
+formula client44_getConsistency_STHAndProof = c44_skip=false & c44=2 & ((c44s=1 & c44_sth & !s1_sth) | (c44s=2 & c44_sth & !s2_sth) | (c44s=3 & c44_sth & !s3_sth) | (c44s=4 & c44_sth & !s4_sth) | (c44s=5 & c44_sth & !s5_sth));
+formula client45_getConsistency_STHAndProof = c45_skip=false & c45=2 & ((c45s=1 & c45_sth & !s1_sth) | (c45s=2 & c45_sth & !s2_sth) | (c45s=3 & c45_sth & !s3_sth) | (c45s=4 & c45_sth & !s4_sth) | (c45s=5 & c45_sth & !s5_sth));
+formula client46_getConsistency_STHAndProof = c46_skip=false & c46=2 & ((c46s=1 & c46_sth & !s1_sth) | (c46s=2 & c46_sth & !s2_sth) | (c46s=3 & c46_sth & !s3_sth) | (c46s=4 & c46_sth & !s4_sth) | (c46s=5 & c46_sth & !s5_sth));
+formula client47_getConsistency_STHAndProof = c47_skip=false & c47=2 & ((c47s=1 & c47_sth & !s1_sth) | (c47s=2 & c47_sth & !s2_sth) | (c47s=3 & c47_sth & !s3_sth) | (c47s=4 & c47_sth & !s4_sth) | (c47s=5 & c47_sth & !s5_sth));
+formula client48_getConsistency_STHAndProof = c48_skip=false & c48=2 & ((c48s=1 & c48_sth & !s1_sth) | (c48s=2 & c48_sth & !s2_sth) | (c48s=3 & c48_sth & !s3_sth) | (c48s=4 & c48_sth & !s4_sth) | (c48s=5 & c48_sth & !s5_sth));
+formula client49_getConsistency_STHAndProof = c49_skip=false & c49=2 & ((c49s=1 & c49_sth & !s1_sth) | (c49s=2 & c49_sth & !s2_sth) | (c49s=3 & c49_sth & !s3_sth) | (c49s=4 & c49_sth & !s4_sth) | (c49s=5 & c49_sth & !s5_sth));
+formula client50_getConsistency_STHAndProof = c50_skip=false & c50=2 & ((c50s=1 & c50_sth & !s1_sth) | (c50s=2 & c50_sth & !s2_sth) | (c50s=3 & c50_sth & !s3_sth) | (c50s=4 & c50_sth & !s4_sth) | (c50s=5 & c50_sth & !s5_sth));
+formula log_connections_STHAndProof = (client1_getConsistency_STHAndProof?1:0)+(client2_getConsistency_STHAndProof?1:0)+(client3_getConsistency_STHAndProof?1:0)+(client4_getConsistency_STHAndProof?1:0)+(client5_getConsistency_STHAndProof?1:0)+(client6_getConsistency_STHAndProof?1:0)+(client7_getConsistency_STHAndProof?1:0)+(client8_getConsistency_STHAndProof?1:0)+(client9_getConsistency_STHAndProof?1:0)+(client10_getConsistency_STHAndProof?1:0)+(client11_getConsistency_STHAndProof?1:0)+(client12_getConsistency_STHAndProof?1:0)+(client13_getConsistency_STHAndProof?1:0)+(client14_getConsistency_STHAndProof?1:0)+(client15_getConsistency_STHAndProof?1:0)+(client16_getConsistency_STHAndProof?1:0)+(client17_getConsistency_STHAndProof?1:0)+(client18_getConsistency_STHAndProof?1:0)+(client19_getConsistency_STHAndProof?1:0)+(client20_getConsistency_STHAndProof?1:0)+(client21_getConsistency_STHAndProof?1:0)+(client22_getConsistency_STHAndProof?1:0)+(client23_getConsistency_STHAndProof?1:0)+(client24_getConsistency_STHAndProof?1:0)+(client25_getConsistency_STHAndProof?1:0)+(client26_getConsistency_STHAndProof?1:0)+(client27_getConsistency_STHAndProof?1:0)+(client28_getConsistency_STHAndProof?1:0)+(client29_getConsistency_STHAndProof?1:0)+(client30_getConsistency_STHAndProof?1:0)+(client31_getConsistency_STHAndProof?1:0)+(client32_getConsistency_STHAndProof?1:0)+(client33_getConsistency_STHAndProof?1:0)+(client34_getConsistency_STHAndProof?1:0)+(client35_getConsistency_STHAndProof?1:0)+(client36_getConsistency_STHAndProof?1:0)+(client37_getConsistency_STHAndProof?1:0)+(client38_getConsistency_STHAndProof?1:0)+(client39_getConsistency_STHAndProof?1:0)+(client40_getConsistency_STHAndProof?1:0)+(client41_getConsistency_STHAndProof?1:0)+(client42_getConsistency_STHAndProof?1:0)+(client43_getConsistency_STHAndProof?1:0)+(client44_getConsistency_STHAndProof?1:0)+(client45_getConsistency_STHAndProof?1:0)+(client46_getConsistency_STHAndProof?1:0)+(client47_getConsistency_STHAndProof?1:0)+(client48_getConsistency_STHAndProof?1:0)+(client49_getConsistency_STHAndProof?1:0)+(client50_getConsistency_STHAndProof?1:0);
+
+
+
+//--------------
+// REWARD STRUCTURES
+//--------------
+
+rewards "client_proportion"
+	true : no_clients_updated;
+endrewards
+
+rewards "client_proportion_sq"
+	true : no_clients_updated*no_clients_updated;
+endrewards
+
+rewards "log_connections_STHOnly"
+	[update] true: log_connections_STHOnly;
+endrewards
+
+rewards "log_connections_STHAndProof"
+	[update] true : log_connections_STHAndProof;
+endrewards

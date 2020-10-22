@@ -1,0 +1,679 @@
+PRISM
+=====
+
+Version: 4.6.dev
+Date: Sun Sep 06 17:14:12 BST 2020
+Hostname: [REDACTED]
+Memory limits: cudd=1g, java(heap)=12g
+Command line: prism min_6c_4s.pm prop1.props -const 'T=1:1:20' -exportresults min_6c_4s.res -javamaxmem 12g
+
+Parsing model file "min_6c_4s.pm"...
+
+Type:        IDTMC
+Modules:     Client1 Client2 Client3 Client4 Client5 Client6 Server1 Server2 Server3 Server4 
+Variables:   c1 c1s c1_sth c1_skip c2 c2s c2_sth c2_skip c3 c3s c3_sth c3_skip c4 c4s c4_sth c4_skip c5 c5s c5_sth c5_skip c6 c6s c6_sth c6_skip s1_sth s2_sth s3_sth s4_sth 
+
+Parsing properties file "prop1.props"...
+
+2 properties:
+(1) Pmin=? [ F<=4*T "clients_all_updated" ]
+(2) Pmax=? [ F<=4*T "clients_all_updated" ]
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=1
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Building model...
+
+Computing reachable states... 36116 155832 674176 1250909 1803250 2465148 2469676 2629429 3205518 3784163 4364592 4446768 states
+Reachable states exploration and model construction done in 33.412 secs.
+Sorting reachable states list...
+
+Time for model construction: 37.455 seconds.
+
+Type:        IDTMC
+States:      4446768 (1 initial)
+Transitions: 8321520
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 4 iterations and 4.682 seconds.
+
+Value in the initial state: 3.6512971368822203E-6
+
+Time for model checking: 5.589 seconds.
+
+Result: 3.6512971368822203E-6 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=2
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 8 iterations and 6.588 seconds.
+
+Value in the initial state: 1.498491784160664E-4
+
+Time for model checking: 7.341 seconds.
+
+Result: 1.498491784160664E-4 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=3
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 12 iterations and 9.617 seconds.
+
+Value in the initial state: 0.0016133178350069151
+
+Time for model checking: 9.934 seconds.
+
+Result: 0.0016133178350069151 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=4
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 16 iterations and 12.916 seconds.
+
+Value in the initial state: 0.00796338354243191
+
+Time for model checking: 13.229 seconds.
+
+Result: 0.00796338354243191 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=5
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 20 iterations and 16.376 seconds.
+
+Value in the initial state: 0.024594666007224732
+
+Time for model checking: 16.689 seconds.
+
+Result: 0.024594666007224732 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=6
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 24 iterations and 19.83 seconds.
+
+Value in the initial state: 0.05607977771536699
+
+Time for model checking: 20.143 seconds.
+
+Result: 0.05607977771536699 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=7
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 28 iterations and 23.312 seconds.
+
+Value in the initial state: 0.10398279162991214
+
+Time for model checking: 23.624 seconds.
+
+Result: 0.10398279162991214 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=8
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 32 iterations and 26.796 seconds.
+
+Value in the initial state: 0.16649755530209767
+
+Time for model checking: 27.107 seconds.
+
+Result: 0.16649755530209767 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=9
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 36 iterations and 30.543 seconds.
+
+Value in the initial state: 0.23951157486889146
+
+Time for model checking: 30.859 seconds.
+
+Result: 0.23951157486889146 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=10
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 40 iterations and 34.047 seconds.
+
+Value in the initial state: 0.3180673897462326
+
+Time for model checking: 34.373 seconds.
+
+Result: 0.3180673897462326 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=11
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 44 iterations and 37.529 seconds.
+
+Value in the initial state: 0.3975234299733875
+
+Time for model checking: 37.847 seconds.
+
+Result: 0.3975234299733875 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=12
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 48 iterations and 41.038 seconds.
+
+Value in the initial state: 0.47422968570546875
+
+Time for model checking: 41.364 seconds.
+
+Result: 0.47422968570546875 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=13
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 52 iterations and 44.548 seconds.
+
+Value in the initial state: 0.5456967951413356
+
+Time for model checking: 44.868 seconds.
+
+Result: 0.5456967951413356 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=14
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 56 iterations and 47.662 seconds.
+
+Value in the initial state: 0.6105012459283503
+
+Time for model checking: 47.979 seconds.
+
+Result: 0.6105012459283503 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=15
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 60 iterations and 50.919 seconds.
+
+Value in the initial state: 0.6680604945008833
+
+Time for model checking: 51.232 seconds.
+
+Result: 0.6680604945008833 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=16
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 64 iterations and 54.788 seconds.
+
+Value in the initial state: 0.7183895346128788
+
+Time for model checking: 55.103 seconds.
+
+Result: 0.7183895346128788 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=17
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 68 iterations and 58.152 seconds.
+
+Value in the initial state: 0.7618836607343477
+
+Time for model checking: 58.472 seconds.
+
+Result: 0.7618836607343477 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=18
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 72 iterations and 61.205 seconds.
+
+Value in the initial state: 0.7991458484775892
+
+Time for model checking: 61.517 seconds.
+
+Result: 0.7991458484775892 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=19
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 76 iterations and 65.081 seconds.
+
+Value in the initial state: 0.8308651826772095
+
+Time for model checking: 65.395 seconds.
+
+Result: 0.8308651826772095 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=20
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 80 iterations and 68.388 seconds.
+
+Value in the initial state: 0.8577406285753698
+
+Time for model checking: 68.706 seconds.
+
+Result: 0.8577406285753698 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=1
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 4 iterations and 2.665 seconds.
+
+Value in the initial state: 7.908841521631881E-6
+
+Time for model checking: 2.978 seconds.
+
+Result: 7.908841521631881E-6 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=2
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 8 iterations and 5.786 seconds.
+
+Value in the initial state: 4.715839067640108E-4
+
+Time for model checking: 6.115 seconds.
+
+Result: 4.715839067640108E-4 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=3
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 12 iterations and 9.129 seconds.
+
+Value in the initial state: 0.005810555079996145
+
+Time for model checking: 9.443 seconds.
+
+Result: 0.005810555079996145 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=4
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 16 iterations and 12.484 seconds.
+
+Value in the initial state: 0.027562856493008995
+
+Time for model checking: 12.816 seconds.
+
+Result: 0.027562856493008995 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=5
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 20 iterations and 15.866 seconds.
+
+Value in the initial state: 0.07689800810839406
+
+Time for model checking: 16.183 seconds.
+
+Result: 0.07689800810839406 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=6
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 24 iterations and 19.206 seconds.
+
+Value in the initial state: 0.1557186835523649
+
+Time for model checking: 19.519 seconds.
+
+Result: 0.1557186835523649 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=7
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 28 iterations and 22.606 seconds.
+
+Value in the initial state: 0.2562614898957076
+
+Time for model checking: 22.916 seconds.
+
+Result: 0.2562614898957076 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=8
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 32 iterations and 26.21 seconds.
+
+Value in the initial state: 0.3663917770377737
+
+Time for model checking: 26.526 seconds.
+
+Result: 0.3663917770377737 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=9
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 36 iterations and 29.618 seconds.
+
+Value in the initial state: 0.4748633730151374
+
+Time for model checking: 29.937 seconds.
+
+Result: 0.4748633730151374 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=10
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 40 iterations and 32.824 seconds.
+
+Value in the initial state: 0.5739526379040126
+
+Time for model checking: 33.145 seconds.
+
+Result: 0.5739526379040126 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=11
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 44 iterations and 35.979 seconds.
+
+Value in the initial state: 0.6597301047455759
+
+Time for model checking: 36.289 seconds.
+
+Result: 0.6597301047455759 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=12
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 48 iterations and 39.941 seconds.
+
+Value in the initial state: 0.7312061284317981
+
+Time for model checking: 40.258 seconds.
+
+Result: 0.7312061284317981 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=13
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 52 iterations and 45.473 seconds.
+
+Value in the initial state: 0.7892033435722288
+
+Time for model checking: 45.825 seconds.
+
+Result: 0.7892033435722288 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=14
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 56 iterations and 46.004 seconds.
+
+Value in the initial state: 0.8354228877642754
+
+Time for model checking: 46.329 seconds.
+
+Result: 0.8354228877642754 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=15
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 60 iterations and 49.483 seconds.
+
+Value in the initial state: 0.871830058264156
+
+Time for model checking: 49.804 seconds.
+
+Result: 0.871830058264156 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=16
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 64 iterations and 53.228 seconds.
+
+Value in the initial state: 0.900295445897891
+
+Time for model checking: 53.543 seconds.
+
+Result: 0.900295445897891 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=17
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 68 iterations and 56.673 seconds.
+
+Value in the initial state: 0.9224544774206201
+
+Time for model checking: 56.989 seconds.
+
+Result: 0.9224544774206201 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=18
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 72 iterations and 60.204 seconds.
+
+Value in the initial state: 0.9396662990509023
+
+Time for model checking: 60.522 seconds.
+
+Result: 0.9396662990509023 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=19
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 76 iterations and 63.162 seconds.
+
+Value in the initial state: 0.9530250420748934
+
+Time for model checking: 63.479 seconds.
+
+Result: 0.9530250420748934 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F<=4*T "clients_all_updated" ]
+Property constants: T=20
+
+Warning: Switching to explicit engine to allow IDTMC model checking.
+
+Starting bounded probabilistic reachability...
+Bounded probabilistic reachability took 80 iterations and 66.227 seconds.
+
+Value in the initial state: 0.9633944636744121
+
+Time for model checking: 66.537 seconds.
+
+Result: 0.9633944636744121 (value in the initial state)
+
+Exporting results to file "min_6c_4s.res"...
+
+---------------------------------------------------------------------
+
+Note: There were 40 warnings during computation.
+

@@ -1,0 +1,14 @@
+const T1;
+const T2=20;
+    
+P=? [ F<=T1*404 "detect" ]
+
+R{"client_proportion_old"}=? [ I=T2*404 ]
+
+R{"client_proportion_real"}=? [ I=T2*404 ]
+
+R{"client_proportion_fake"}=? [ I=T2*404 ]
+
+R{"log_connections_STHOnly"}=? [ C<=T2*404 ]
+
+R{"log_connections_STHAndProof"}=? [ C<=T2*404 ] 

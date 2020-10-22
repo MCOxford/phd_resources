@@ -1,0 +1,2979 @@
+PRISM
+=====
+
+Version: 4.3.1
+Date: Thu Sep 20 14:24:34 BST 2018
+Hostname: [REDACTED]
+Memory limits: cudd=20g, java(heap)=910.5m
+Command line: prism splitworld/splitworld.prism splitworld/splitworld.props -const 'T=1:1:20' -cuddmaxmem 20g -symm 1 6
+
+Parsing model file "splitworld/splitworld.prism"...
+
+Parsing properties file "splitworld/splitworld.props"...
+
+6 properties:
+(1) P=? [ F<=4*T "detect" ]
+(2) R{"client_proportion_old"}=? [ I=4*T ]
+(3) R{"client_proportion_real"}=? [ I=4*T ]
+(4) R{"client_proportion_fake"}=? [ I=4*T ]
+(5) R{"log_connections_STHOnly"}=? [ C<=4*T ]
+(6) R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+
+Type:        DTMC
+Modules:     Client1 Client2 Client3 Client4 Client5 Server1 Server2 Server3 Server4 Server5 
+Variables:   c1 c1s c1_sth c1d c1_skip c2 c2s c2_sth c2d c2_skip c3 c3s c3_sth c3d c3_skip c4 c4s c4_sth c4d c4_skip c5 c5s c5_sth c5d c5_skip s1_sth s1d s2_sth s2d s3_sth s3d s4_sth s4d s5_sth s5d 
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=1
+
+Building model...
+
+Warning: Update 4 of command 2 of module "Client1" doesn't do anything ("(c1'=2) & (c1s'=4)", line 227, column 45)
+
+Warning: Update 5 of command 2 of module "Client1" doesn't do anything ("(c1'=2) & (c1s'=5)", line 227, column 72)
+
+Warning: Update 3 of command 2 of module "Client2" doesn't do anything ("(c2'=2) & (c2s'=3)", line 226, column 99)
+
+Warning: Update 5 of command 2 of module "Client2" doesn't do anything ("(c2'=2) & (c2s'=5)", line 227, column 72)
+
+Warning: Update 3 of command 2 of module "Client3" doesn't do anything ("(c3'=2) & (c3s'=3)", line 226, column 99)
+
+Warning: Update 5 of command 2 of module "Client3" doesn't do anything ("(c3'=2) & (c3s'=5)", line 227, column 72)
+
+Warning: Update 3 of command 2 of module "Client4" doesn't do anything ("(c4'=2) & (c4s'=3)", line 226, column 99)
+
+Warning: Update 5 of command 2 of module "Client4" doesn't do anything ("(c4'=2) & (c4s'=5)", line 227, column 72)
+
+Warning: Update 3 of command 2 of module "Client5" doesn't do anything ("(c5'=2) & (c5s'=3)", line 226, column 99)
+
+Warning: Update 4 of command 2 of module "Client5" doesn't do anything ("(c5'=2) & (c5s'=4)", line 227, column 45)
+
+Computing reachable states...
+
+Reachability (BFS): 17 iterations in 50.97 seconds (average 2.998471, setup 0.00)
+
+Applying symmetry reduction...
+
+Number of states before before symmetry reduction: 1427618
+DD sizes before symmetry reduction:
+trans: 144537 nodes (69 terminal), 2487446 minterms
+transrew[0]: 1 nodes (1 terminal), 0 minterms
+transrew[1]: 1 nodes (1 terminal), 0 minterms
+transrew[2]: 1 nodes (1 terminal), 0 minterms
+transrew[3]: 1 nodes (1 terminal), 0 minterms
+transrew[4]: 1 nodes (1 terminal), 0 minterms
+Starting quicksort...
+Iteration 1.1
+Iteration 1.2
+Iteration 2.1
+Symmetry complete: -2 iterations, 3 swaps, 0.874 seconds
+
+Time for model construction: 223.717 seconds.
+
+Type:        DTMC
+States:      304515 (1 initial)
+Transitions: 525583
+
+Transition matrix: 203758 nodes (164 terminal), 525583 minterms, vars: 65r/65c
+
+Prob0: 7 iterations in 0.17 seconds (average 0.023571, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 4 iterations in 9.31 seconds (average 0.004000, setup 9.29)
+
+Value in the initial state: 0.003999999999999998
+
+Time for model checking: 9.535 seconds.
+
+Result: 0.003999999999999998 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=2
+
+Prob0: 7 iterations in 0.08 seconds (average 0.012000, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 8 iterations in 9.56 seconds (average 0.004000, setup 9.53)
+
+Value in the initial state: 0.008519348258524951
+
+Time for model checking: 9.676 seconds.
+
+Result: 0.008519348258524951 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=3
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010571, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 12 iterations in 9.32 seconds (average 0.004083, setup 9.27)
+
+Value in the initial state: 0.015703566320259748
+
+Time for model checking: 9.436 seconds.
+
+Result: 0.015703566320259748 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=4
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010143, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 16 iterations in 9.67 seconds (average 0.004125, setup 9.60)
+
+Value in the initial state: 0.027173415961057327
+
+Time for model checking: 9.784 seconds.
+
+Result: 0.027173415961057327 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=5
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010143, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 9.33 seconds (average 0.004050, setup 9.25)
+
+Value in the initial state: 0.04358876752998856
+
+Time for model checking: 9.445 seconds.
+
+Result: 0.04358876752998856 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=6
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010000, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 24 iterations in 9.51 seconds (average 0.004083, setup 9.41)
+
+Value in the initial state: 0.06460877899484338
+
+Time for model checking: 9.624 seconds.
+
+Result: 0.06460877899484338 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=7
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010143, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 28 iterations in 9.33 seconds (average 0.003964, setup 9.22)
+
+Value in the initial state: 0.08937781688912322
+
+Time for model checking: 9.454 seconds.
+
+Result: 0.08937781688912322 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=8
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010286, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 32 iterations in 9.61 seconds (average 0.004000, setup 9.48)
+
+Value in the initial state: 0.1169299433118144
+
+Time for model checking: 9.722 seconds.
+
+Result: 0.1169299433118144 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=9
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010143, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 36 iterations in 9.38 seconds (average 0.004028, setup 9.24)
+
+Value in the initial state: 0.1463928040902203
+
+Time for model checking: 9.492 seconds.
+
+Result: 0.1463928040902203 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=10
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010143, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 40 iterations in 9.42 seconds (average 0.004050, setup 9.26)
+
+Value in the initial state: 0.1770532368979767
+
+Time for model checking: 9.531 seconds.
+
+Result: 0.1770532368979767 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=11
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010143, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 44 iterations in 9.51 seconds (average 0.004023, setup 9.33)
+
+Value in the initial state: 0.20835582361492255
+
+Time for model checking: 9.621 seconds.
+
+Result: 0.20835582361492255 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=12
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010143, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 48 iterations in 9.44 seconds (average 0.004042, setup 9.25)
+
+Value in the initial state: 0.23987760885029977
+
+Time for model checking: 9.552 seconds.
+
+Result: 0.23987760885029977 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=13
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010286, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 9.52 seconds (average 0.004308, setup 9.30)
+
+Value in the initial state: 0.27129925986181774
+
+Time for model checking: 9.639 seconds.
+
+Result: 0.27129925986181774 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=14
+
+Prob0: 7 iterations in 0.08 seconds (average 0.010857, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 56 iterations in 9.63 seconds (average 0.004321, setup 9.39)
+
+Value in the initial state: 0.30238015574429616
+
+Time for model checking: 9.75 seconds.
+
+Result: 0.30238015574429616 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=15
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010143, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 60 iterations in 9.44 seconds (average 0.003967, setup 9.20)
+
+Value in the initial state: 0.3329390436798203
+
+Time for model checking: 9.552 seconds.
+
+Result: 0.3329390436798203 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=16
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010000, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 64 iterations in 9.68 seconds (average 0.004000, setup 9.42)
+
+Value in the initial state: 0.36283969831874596
+
+Time for model checking: 9.792 seconds.
+
+Result: 0.36283969831874596 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=17
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010143, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 68 iterations in 9.55 seconds (average 0.004029, setup 9.27)
+
+Value in the initial state: 0.39198045770557227
+
+Time for model checking: 9.661 seconds.
+
+Result: 0.39198045770557227 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=18
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010143, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 72 iterations in 9.62 seconds (average 0.004014, setup 9.33)
+
+Value in the initial state: 0.4202865704564824
+
+Time for model checking: 9.729 seconds.
+
+Result: 0.4202865704564824 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=19
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010143, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 76 iterations in 9.54 seconds (average 0.004013, setup 9.23)
+
+Value in the initial state: 0.44770452395621263
+
+Time for model checking: 9.654 seconds.
+
+Result: 0.44770452395621263 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=20
+
+Prob0: 7 iterations in 0.07 seconds (average 0.010000, setup 0.00)
+
+yes = 56161, no = 0, maybe = 248354
+
+Computing probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=232697] [10.7 MB]
+Adding explicit sparse matrices... [levels=28, num=3799, compact] [944.3 KB]
+Creating vector for yes... [dist=2, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [16.8 MB]
+
+Starting iterations...
+
+Iterative method: 80 iterations in 9.78 seconds (average 0.004363, setup 9.43)
+
+Value in the initial state: 0.47419775941208103
+
+Time for model checking: 9.894 seconds.
+
+Result: 0.47419775941208103 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=1
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 4 iterations in 15.93 seconds (average 0.005250, setup 15.91)
+
+Value in the initial state: 0.7896
+
+Time for model checking: 15.983 seconds.
+
+Result: 0.7896 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=2
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 8 iterations in 15.75 seconds (average 0.005000, setup 15.71)
+
+Value in the initial state: 0.771332928
+
+Time for model checking: 15.813 seconds.
+
+Result: 0.771332928 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=3
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 12 iterations in 15.73 seconds (average 0.005000, setup 15.67)
+
+Value in the initial state: 0.7442875460895692
+
+Time for model checking: 15.795 seconds.
+
+Result: 0.7442875460895692 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=4
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 16 iterations in 15.67 seconds (average 0.004875, setup 15.60)
+
+Value in the initial state: 0.7090360775147966
+
+Time for model checking: 15.74 seconds.
+
+Result: 0.7090360775147966 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=5
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 15.76 seconds (average 0.005000, setup 15.66)
+
+Value in the initial state: 0.668006008481197
+
+Time for model checking: 15.822 seconds.
+
+Result: 0.668006008481197 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=6
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 24 iterations in 15.67 seconds (average 0.004958, setup 15.55)
+
+Value in the initial state: 0.6240597416665865
+
+Time for model checking: 15.727 seconds.
+
+Result: 0.6240597416665865 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=7
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 28 iterations in 15.82 seconds (average 0.004964, setup 15.68)
+
+Value in the initial state: 0.5795972231698588
+
+Time for model checking: 15.867 seconds.
+
+Result: 0.5795972231698588 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=8
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 32 iterations in 15.82 seconds (average 0.004938, setup 15.66)
+
+Value in the initial state: 0.5363040002776739
+
+Time for model checking: 15.865 seconds.
+
+Result: 0.5363040002776739 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=9
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 36 iterations in 15.85 seconds (average 0.004944, setup 15.67)
+
+Value in the initial state: 0.4952221689851173
+
+Time for model checking: 15.902 seconds.
+
+Result: 0.4952221689851173 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=10
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 40 iterations in 15.96 seconds (average 0.005050, setup 15.76)
+
+Value in the initial state: 0.4569144588394587
+
+Time for model checking: 16.014 seconds.
+
+Result: 0.4569144588394587 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=11
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 44 iterations in 16.02 seconds (average 0.004977, setup 15.80)
+
+Value in the initial state: 0.4216201592342364
+
+Time for model checking: 16.067 seconds.
+
+Result: 0.4216201592342364 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=12
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 48 iterations in 15.90 seconds (average 0.005083, setup 15.65)
+
+Value in the initial state: 0.38937387616525926
+
+Time for model checking: 15.957 seconds.
+
+Result: 0.38937387616525926 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=13
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 16.11 seconds (average 0.005038, setup 15.85)
+
+Value in the initial state: 0.3600874427667391
+
+Time for model checking: 16.161 seconds.
+
+Result: 0.3600874427667391 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=14
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 56 iterations in 16.05 seconds (average 0.005018, setup 15.77)
+
+Value in the initial state: 0.3336035319698357
+
+Time for model checking: 16.123 seconds.
+
+Result: 0.3336035319698357 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=15
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 60 iterations in 16.11 seconds (average 0.004950, setup 15.82)
+
+Value in the initial state: 0.30972968945946194
+
+Time for model checking: 16.173 seconds.
+
+Result: 0.30972968945946194 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=16
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 64 iterations in 15.98 seconds (average 0.005031, setup 15.66)
+
+Value in the initial state: 0.28825948298099413
+
+Time for model checking: 16.04 seconds.
+
+Result: 0.28825948298099413 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=17
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 68 iterations in 15.96 seconds (average 0.005044, setup 15.62)
+
+Value in the initial state: 0.268985378042226
+
+Time for model checking: 16.016 seconds.
+
+Result: 0.268985378042226 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=18
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 72 iterations in 15.98 seconds (average 0.005000, setup 15.62)
+
+Value in the initial state: 0.25170635796052543
+
+Time for model checking: 16.038 seconds.
+
+Result: 0.25170635796052543 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=19
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 76 iterations in 15.96 seconds (average 0.005039, setup 15.57)
+
+Value in the initial state: 0.2362322203270995
+
+Time for model checking: 16.012 seconds.
+
+Result: 0.2362322203270995 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=20
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 80 iterations in 16.01 seconds (average 0.005050, setup 15.61)
+
+Value in the initial state: 0.22238577799237125
+
+Time for model checking: 16.067 seconds.
+
+Result: 0.22238577799237125 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=1
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 4 iterations in 15.71 seconds (average 0.005000, setup 15.69)
+
+Value in the initial state: 0.010399999999999998
+
+Time for model checking: 15.762 seconds.
+
+Result: 0.010399999999999998 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=2
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 8 iterations in 15.66 seconds (average 0.004750, setup 15.62)
+
+Value in the initial state: 0.0206213504
+
+Time for model checking: 15.706 seconds.
+
+Result: 0.0206213504 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=3
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 12 iterations in 15.62 seconds (average 0.005000, setup 15.56)
+
+Value in the initial state: 0.0338792357772728
+
+Time for model checking: 15.672 seconds.
+
+Result: 0.0338792357772728 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=4
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 16 iterations in 15.70 seconds (average 0.004938, setup 15.62)
+
+Value in the initial state: 0.050352704702583836
+
+Time for model checking: 15.749 seconds.
+
+Result: 0.050352704702583836 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=5
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 15.79 seconds (average 0.004950, setup 15.70)
+
+Value in the initial state: 0.06905321639197655
+
+Time for model checking: 15.848 seconds.
+
+Result: 0.06905321639197655 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=6
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 24 iterations in 15.83 seconds (average 0.005000, setup 15.71)
+
+Value in the initial state: 0.08883624305780327
+
+Time for model checking: 15.881 seconds.
+
+Result: 0.08883624305780327 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=7
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 28 iterations in 15.65 seconds (average 0.004964, setup 15.51)
+
+Value in the initial state: 0.10877754831463769
+
+Time for model checking: 15.697 seconds.
+
+Result: 0.10877754831463769 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=8
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 32 iterations in 15.75 seconds (average 0.005031, setup 15.59)
+
+Value in the initial state: 0.1282340612135939
+
+Time for model checking: 15.808 seconds.
+
+Result: 0.1282340612135939 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=9
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 36 iterations in 15.83 seconds (average 0.004972, setup 15.65)
+
+Value in the initial state: 0.14679738728920683
+
+Time for model checking: 15.88 seconds.
+
+Result: 0.14679738728920683 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=10
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 40 iterations in 15.79 seconds (average 0.005025, setup 15.59)
+
+Value in the initial state: 0.1642301523631455
+
+Time for model checking: 15.841 seconds.
+
+Result: 0.1642301523631455 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=11
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 44 iterations in 15.90 seconds (average 0.005045, setup 15.68)
+
+Value in the initial state: 0.1804129409378465
+
+Time for model checking: 15.95 seconds.
+
+Result: 0.1804129409378465 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=12
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 48 iterations in 15.90 seconds (average 0.005021, setup 15.66)
+
+Value in the initial state: 0.1953056372353597
+
+Time for model checking: 15.948 seconds.
+
+Result: 0.1953056372353597 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=13
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 15.92 seconds (average 0.005000, setup 15.66)
+
+Value in the initial state: 0.2089204036763295
+
+Time for model checking: 15.97 seconds.
+
+Result: 0.2089204036763295 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=14
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 56 iterations in 15.98 seconds (average 0.005036, setup 15.70)
+
+Value in the initial state: 0.2213029263251484
+
+Time for model checking: 16.033 seconds.
+
+Result: 0.2213029263251484 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=15
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 60 iterations in 16.05 seconds (average 0.004950, setup 15.75)
+
+Value in the initial state: 0.2325193665060165
+
+Time for model checking: 16.101 seconds.
+
+Result: 0.2325193665060165 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=16
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 64 iterations in 16.05 seconds (average 0.005063, setup 15.73)
+
+Value in the initial state: 0.24264728333259922
+
+Time for model checking: 16.102 seconds.
+
+Result: 0.24264728333259922 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=17
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 68 iterations in 16.08 seconds (average 0.005029, setup 15.74)
+
+Value in the initial state: 0.251769366428607
+
+Time for model checking: 16.144 seconds.
+
+Result: 0.251769366428607 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=18
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 72 iterations in 16.01 seconds (average 0.004972, setup 15.65)
+
+Value in the initial state: 0.2599691815999975
+
+Time for model checking: 16.068 seconds.
+
+Result: 0.2599691815999975 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=19
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 76 iterations in 16.15 seconds (average 0.004974, setup 15.77)
+
+Value in the initial state: 0.2673283633317
+
+Time for model checking: 16.203 seconds.
+
+Result: 0.2673283633317 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=20
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 80 iterations in 16.14 seconds (average 0.005025, setup 15.73)
+
+Value in the initial state: 0.27392484244903914
+
+Time for model checking: 16.192 seconds.
+
+Result: 0.27392484244903914 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=1
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 4 iterations in 15.86 seconds (average 0.005000, setup 15.84)
+
+Value in the initial state: 0.19999999999999998
+
+Time for model checking: 15.914 seconds.
+
+Result: 0.19999999999999998 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=2
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 8 iterations in 15.81 seconds (average 0.004875, setup 15.78)
+
+Value in the initial state: 0.2080457216
+
+Time for model checking: 15.873 seconds.
+
+Result: 0.2080457216 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=3
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 12 iterations in 15.92 seconds (average 0.005000, setup 15.86)
+
+Value in the initial state: 0.2218332181331579
+
+Time for model checking: 15.963 seconds.
+
+Result: 0.2218332181331579 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=4
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 16 iterations in 15.89 seconds (average 0.004875, setup 15.82)
+
+Value in the initial state: 0.2406112177826194
+
+Time for model checking: 15.95 seconds.
+
+Result: 0.2406112177826194 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=5
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 15.93 seconds (average 0.004950, setup 15.83)
+
+Value in the initial state: 0.2629407751268265
+
+Time for model checking: 16.003 seconds.
+
+Result: 0.2629407751268265 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=6
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 24 iterations in 15.88 seconds (average 0.005000, setup 15.76)
+
+Value in the initial state: 0.2871040152756102
+
+Time for model checking: 15.929 seconds.
+
+Result: 0.2871040152756102 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=7
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 28 iterations in 15.95 seconds (average 0.004964, setup 15.81)
+
+Value in the initial state: 0.3116252285155034
+
+Time for model checking: 16.007 seconds.
+
+Result: 0.3116252285155034 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=8
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 32 iterations in 15.91 seconds (average 0.004938, setup 15.75)
+
+Value in the initial state: 0.335461938508732
+
+Time for model checking: 15.966 seconds.
+
+Result: 0.335461938508732 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=9
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 36 iterations in 16.06 seconds (average 0.005083, setup 15.88)
+
+Value in the initial state: 0.35798044372567567
+
+Time for model checking: 16.117 seconds.
+
+Result: 0.35798044372567567 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=10
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 40 iterations in 15.95 seconds (average 0.004975, setup 15.75)
+
+Value in the initial state: 0.37885538879739566
+
+Time for model checking: 16.005 seconds.
+
+Result: 0.37885538879739566 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=11
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 44 iterations in 16.06 seconds (average 0.005000, setup 15.84)
+
+Value in the initial state: 0.39796689982791694
+
+Time for model checking: 16.114 seconds.
+
+Result: 0.39796689982791694 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=12
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 48 iterations in 16.02 seconds (average 0.005063, setup 15.78)
+
+Value in the initial state: 0.41532048659938087
+
+Time for model checking: 16.067 seconds.
+
+Result: 0.41532048659938087 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=13
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 16.00 seconds (average 0.005058, setup 15.74)
+
+Value in the initial state: 0.43099215355693127
+
+Time for model checking: 16.061 seconds.
+
+Result: 0.43099215355693127 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=14
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 56 iterations in 16.02 seconds (average 0.004964, setup 15.74)
+
+Value in the initial state: 0.4450935417050156
+
+Time for model checking: 16.07 seconds.
+
+Result: 0.4450935417050156 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=15
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 60 iterations in 15.94 seconds (average 0.005000, setup 15.64)
+
+Value in the initial state: 0.4577509440345211
+
+Time for model checking: 16.001 seconds.
+
+Result: 0.4577509440345211 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=16
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 64 iterations in 15.93 seconds (average 0.004984, setup 15.61)
+
+Value in the initial state: 0.4690932336864061
+
+Time for model checking: 15.985 seconds.
+
+Result: 0.4690932336864061 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=17
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 68 iterations in 15.90 seconds (average 0.005044, setup 15.56)
+
+Value in the initial state: 0.47924525552916636
+
+Time for model checking: 15.948 seconds.
+
+Result: 0.47924525552916636 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=18
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 72 iterations in 16.07 seconds (average 0.005014, setup 15.71)
+
+Value in the initial state: 0.48832446043947647
+
+Time for model checking: 16.119 seconds.
+
+Result: 0.48832446043947647 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=19
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 76 iterations in 16.04 seconds (average 0.004974, setup 15.66)
+
+Value in the initial state: 0.4964394163412
+
+Time for model checking: 16.091 seconds.
+
+Result: 0.4964394163412 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=20
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [18.6 MB]
+
+Starting iterations...
+
+Iterative method: 80 iterations in 16.11 seconds (average 0.004988, setup 15.71)
+
+Value in the initial state: 0.5036893795585891
+
+Time for model checking: 16.162 seconds.
+
+Result: 0.5036893795585891 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=1
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 4 iterations in 15.66 seconds (average 0.005000, setup 15.64)
+
+Value in the initial state: 0.25199999999999995
+
+Time for model checking: 15.731 seconds.
+
+Result: 0.25199999999999995 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=2
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 8 iterations in 15.73 seconds (average 0.005000, setup 15.69)
+
+Value in the initial state: 0.5533765119999998
+
+Time for model checking: 15.778 seconds.
+
+Result: 0.5533765119999998 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=3
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 12 iterations in 15.66 seconds (average 0.004917, setup 15.61)
+
+Value in the initial state: 0.9163767620517695
+
+Time for model checking: 15.723 seconds.
+
+Result: 0.9163767620517695 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=4
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 16 iterations in 15.72 seconds (average 0.005063, setup 15.64)
+
+Value in the initial state: 1.3367904504781425
+
+Time for model checking: 15.775 seconds.
+
+Result: 1.3367904504781425 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=5
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 15.83 seconds (average 0.004950, setup 15.73)
+
+Value in the initial state: 1.7949753428425956
+
+Time for model checking: 15.887 seconds.
+
+Result: 1.7949753428425956 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=6
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 24 iterations in 15.80 seconds (average 0.005125, setup 15.68)
+
+Value in the initial state: 2.2680362949050727
+
+Time for model checking: 15.851 seconds.
+
+Result: 2.2680362949050727 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=7
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 28 iterations in 15.83 seconds (average 0.005000, setup 15.69)
+
+Value in the initial state: 2.7370346798757885
+
+Time for model checking: 15.886 seconds.
+
+Result: 2.7370346798757885 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=8
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 32 iterations in 15.82 seconds (average 0.005063, setup 15.66)
+
+Value in the initial state: 3.1888765309077667
+
+Time for model checking: 15.877 seconds.
+
+Result: 3.1888765309077667 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=9
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 36 iterations in 15.94 seconds (average 0.005028, setup 15.76)
+
+Value in the initial state: 3.6156508177004176
+
+Time for model checking: 15.998 seconds.
+
+Result: 3.6156508177004176 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=10
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 40 iterations in 15.90 seconds (average 0.005100, setup 15.70)
+
+Value in the initial state: 4.013279724470753
+
+Time for model checking: 15.947 seconds.
+
+Result: 4.013279724470753 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=11
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 44 iterations in 16.01 seconds (average 0.005023, setup 15.79)
+
+Value in the initial state: 4.380265772465364
+
+Time for model checking: 16.067 seconds.
+
+Result: 4.380265772465364 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=12
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 48 iterations in 15.89 seconds (average 0.005042, setup 15.65)
+
+Value in the initial state: 4.716744882451933
+
+Time for model checking: 15.944 seconds.
+
+Result: 4.716744882451933 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=13
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 16.16 seconds (average 0.005077, setup 15.90)
+
+Value in the initial state: 5.023832420340997
+
+Time for model checking: 16.229 seconds.
+
+Result: 5.023832420340997 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=14
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 56 iterations in 15.92 seconds (average 0.005071, setup 15.63)
+
+Value in the initial state: 5.303191902754924
+
+Time for model checking: 15.969 seconds.
+
+Result: 5.303191902754924 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=15
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 60 iterations in 15.97 seconds (average 0.005100, setup 15.67)
+
+Value in the initial state: 5.556757996486556
+
+Time for model checking: 16.023 seconds.
+
+Result: 5.556757996486556 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=16
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 64 iterations in 15.89 seconds (average 0.005063, setup 15.56)
+
+Value in the initial state: 5.786562075980335
+
+Time for model checking: 15.939 seconds.
+
+Result: 5.786562075980335 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=17
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 68 iterations in 16.02 seconds (average 0.005074, setup 15.68)
+
+Value in the initial state: 5.994624719005079
+
+Time for model checking: 16.074 seconds.
+
+Result: 5.994624719005079 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=18
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 72 iterations in 15.92 seconds (average 0.005028, setup 15.56)
+
+Value in the initial state: 6.18289157364189
+
+Time for model checking: 15.974 seconds.
+
+Result: 6.18289157364189 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=19
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 76 iterations in 16.36 seconds (average 0.005461, setup 15.95)
+
+Value in the initial state: 6.35319722745379
+
+Time for model checking: 16.416 seconds.
+
+Result: 6.35319722745379 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=20
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 80 iterations in 16.02 seconds (average 0.005100, setup 15.62)
+
+Value in the initial state: 6.507247075381053
+
+Time for model checking: 16.072 seconds.
+
+Result: 6.507247075381053 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=1
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 4 iterations in 15.64 seconds (average 0.005000, setup 15.62)
+
+Value in the initial state: 0.19999999999999993
+
+Time for model checking: 15.699 seconds.
+
+Result: 0.19999999999999993 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=2
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 8 iterations in 15.65 seconds (average 0.004750, setup 15.61)
+
+Value in the initial state: 0.41004115199999985
+
+Time for model checking: 15.712 seconds.
+
+Result: 0.41004115199999985 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=3
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 12 iterations in 15.78 seconds (average 0.005000, setup 15.72)
+
+Value in the initial state: 0.6378144924996159
+
+Time for model checking: 15.831 seconds.
+
+Result: 0.6378144924996159 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=4
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 16 iterations in 15.73 seconds (average 0.005125, setup 15.65)
+
+Value in the initial state: 0.8819708380521264
+
+Time for model checking: 15.786 seconds.
+
+Result: 0.8819708380521264 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=5
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 15.81 seconds (average 0.005000, setup 15.71)
+
+Value in the initial state: 1.135005385248581
+
+Time for model checking: 15.873 seconds.
+
+Result: 1.135005385248581 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=6
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 24 iterations in 15.72 seconds (average 0.005083, setup 15.59)
+
+Value in the initial state: 1.3883350032380064
+
+Time for model checking: 15.768 seconds.
+
+Result: 1.3883350032380064 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=7
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 28 iterations in 15.96 seconds (average 0.005107, setup 15.82)
+
+Value in the initial state: 1.6350207957250835
+
+Time for model checking: 16.017 seconds.
+
+Result: 1.6350207957250835 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=8
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 32 iterations in 15.80 seconds (average 0.005094, setup 15.64)
+
+Value in the initial state: 1.8703965322961371
+
+Time for model checking: 15.85 seconds.
+
+Result: 1.8703965322961371 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=9
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 36 iterations in 15.91 seconds (average 0.005111, setup 15.73)
+
+Value in the initial state: 2.091761662626005
+
+Time for model checking: 15.96 seconds.
+
+Result: 2.091761662626005 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=10
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 40 iterations in 15.85 seconds (average 0.005025, setup 15.65)
+
+Value in the initial state: 2.297852018668048
+
+Time for model checking: 15.896 seconds.
+
+Result: 2.297852018668048 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=11
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 44 iterations in 15.88 seconds (average 0.005091, setup 15.65)
+
+Value in the initial state: 2.488366568636548
+
+Time for model checking: 15.919 seconds.
+
+Result: 2.488366568636548 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=12
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 48 iterations in 15.94 seconds (average 0.005083, setup 15.70)
+
+Value in the initial state: 2.6636142632782307
+
+Time for model checking: 15.987 seconds.
+
+Result: 2.6636142632782307 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=13
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 15.88 seconds (average 0.005058, setup 15.61)
+
+Value in the initial state: 2.8242696341746933
+
+Time for model checking: 15.925 seconds.
+
+Result: 2.8242696341746933 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=14
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 56 iterations in 16.00 seconds (average 0.005000, setup 15.72)
+
+Value in the initial state: 2.971209562604103
+
+Time for model checking: 16.06 seconds.
+
+Result: 2.971209562604103 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=15
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 60 iterations in 15.97 seconds (average 0.005083, setup 15.66)
+
+Value in the initial state: 3.1054064437838655
+
+Time for model checking: 16.017 seconds.
+
+Result: 3.1054064437838655 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=16
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 64 iterations in 16.05 seconds (average 0.005047, setup 15.72)
+
+Value in the initial state: 3.2278594908853053
+
+Time for model checking: 16.098 seconds.
+
+Result: 3.2278594908853053 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=17
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 68 iterations in 16.10 seconds (average 0.005044, setup 15.76)
+
+Value in the initial state: 3.3395516092162105
+
+Time for model checking: 16.151 seconds.
+
+Result: 3.3395516092162105 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=18
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 72 iterations in 15.96 seconds (average 0.005014, setup 15.60)
+
+Value in the initial state: 3.4414233634445166
+
+Time for model checking: 16.005 seconds.
+
+Result: 3.4414233634445166 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=19
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 76 iterations in 16.07 seconds (average 0.005092, setup 15.68)
+
+Value in the initial state: 3.534358329089288
+
+Time for model checking: 16.126 seconds.
+
+Result: 3.534358329089288 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=20
+
+Computing rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=65, nodes=282139] [12.9 MB]
+Adding explicit sparse matrices... [levels=28, num=4611, compact] [1019.5 KB]
+Creating vector for rewards... [dist=6, compact] [594.8 KB]
+Allocating iteration vectors... [2 x 2.3 MB]
+TOTAL: [19.1 MB]
+
+Starting iterations...
+
+Iterative method: 80 iterations in 16.16 seconds (average 0.005112, setup 15.75)
+
+Value in the initial state: 3.6191759653429094
+
+Time for model checking: 16.211 seconds.
+
+Result: 3.6191759653429094 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Note: There were 10 warnings during computation.
+

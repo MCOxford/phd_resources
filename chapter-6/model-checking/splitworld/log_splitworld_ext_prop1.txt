@@ -1,0 +1,1125 @@
+PRISM
+=====
+
+Version: 4.6.dev
+Date: Mon Sep 21 21:37:03 BST 2020
+Hostname: [REDACTED]
+Memory limits: cudd=30g, java(heap)=1g
+Command line: prism model-checking/splitworld/splitworld_ext.prism model-checking/splitworld/splitworld_ext.props -m -prop 1 -const 'T=1:1:20' -cuddmaxmem 30g -symm 1 6 -exportresults model-checking/splitworld/splitworld_ext_prop1.res
+
+Parsing model file "model-checking/splitworld/splitworld_ext.prism"...
+
+Type:        DTMC
+Modules:     Client1 Client2 Client3 Client4 Client5 Server1 Server2 Server3 Server4 Server5 
+Variables:   c1 c1s c1_sth c1d c1_skip c2 c2s c2_sth c2d c2_skip c3 c3s c3_sth c3d c3_skip c4 c4s c4_sth c4d c4_skip c5 c5s c5_sth c5d c5_skip s1_sth s1d s2_sth s2d s3_sth s3d s4_sth s4d s5_sth s5d 
+
+Parsing properties file "model-checking/splitworld/splitworld_ext.props"...
+
+6 properties:
+(1) P=? [ F<=4*T "detect" ]
+(2) R{"client_proportion_old"}=? [ I=4*T ]
+(3) R{"client_proportion_real"}=? [ I=4*T ]
+(4) R{"client_proportion_fake"}=? [ I=4*T ]
+(5) R{"log_connections_STHOnly"}=? [ C<=4*T ]
+(6) R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=1
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 13 iterations in 48.45 seconds (average 3.727077, setup 0.00)
+
+Applying symmetry reduction...
+
+Number of states before before symmetry reduction: 371179009
+DD sizes before symmetry reduction:
+trans: 4672857 nodes (52443 terminal), 2105079932 minterms
+transrew[0]: 1 nodes (1 terminal), 0 minterms
+transrew[1]: 1 nodes (1 terminal), 0 minterms
+transrew[2]: 1 nodes (1 terminal), 0 minterms
+transrew[3]: 1 nodes (1 terminal), 0 minterms
+transrew[4]: 1 nodes (1 terminal), 0 minterms
+transrew[5]: 1 nodes (1 terminal), 0 minterms
+Starting quicksort...
+Iteration 1.1
+Iteration 1.2
+Iteration 2.1
+Symmetry complete: -3 iterations, 3 swaps, 85.476 seconds
+
+Time for model construction: 370.522 seconds.
+
+Type:        DTMC
+States:      73145358 (1 initial)
+Transitions: 416113760
+
+Transition matrix: 6901906 nodes (118009 terminal), 416113760 minterms, vars: 65r/65c
+
+Prob0: 7 iterations in 4.41 seconds (average 0.629857, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 4): 11.62 sec so far
+
+Iterative method: 4 iterations in 14.65 seconds (average 3.602500, setup 0.24)
+
+Value in the initial state: 0.11390235136135929
+
+Time for model checking: 20.005 seconds.
+
+Result: 0.11390235136135929 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=2
+
+Prob0: 7 iterations in 1.74 seconds (average 0.248429, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 5 (of 8): 88.14 sec so far
+Iteration 6 (of 8): 100.10 sec so far
+
+Iterative method: 8 iterations in 101.50 seconds (average 12.660500, setup 0.22)
+
+Value in the initial state: 0.3653587943504582
+
+Time for model checking: 105.207 seconds.
+
+Result: 0.3653587943504582 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=3
+
+Prob0: 7 iterations in 4.15 seconds (average 0.593429, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 12): 7.94 sec so far
+Iteration 5 (of 12): 90.61 sec so far
+Iteration 6 (of 12): 102.89 sec so far
+Iteration 9 (of 12): 180.41 sec so far
+Iteration 10 (of 12): 185.80 sec so far
+
+Iterative method: 12 iterations in 189.06 seconds (average 15.587167, setup 2.01)
+
+Value in the initial state: 0.6582920341476364
+
+Time for model checking: 196.648 seconds.
+
+Result: 0.6582920341476364 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=4
+
+Prob0: 7 iterations in 4.26 seconds (average 0.608714, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 16): 8.83 sec so far
+Iteration 2 (of 16): 16.04 sec so far
+Iteration 5 (of 16): 90.08 sec so far
+Iteration 7 (of 16): 95.17 sec so far
+Iteration 9 (of 16): 180.76 sec so far
+Iteration 10 (of 16): 186.70 sec so far
+Iteration 13 (of 16): 270.14 sec so far
+Iteration 14 (of 16): 275.37 sec so far
+
+Iterative method: 16 iterations in 278.90 seconds (average 17.290250, setup 2.25)
+
+Value in the initial state: 0.8493884800368874
+
+Time for model checking: 287.427 seconds.
+
+Result: 0.8493884800368874 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=5
+
+Prob0: 7 iterations in 4.14 seconds (average 0.591143, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 20): 8.64 sec so far
+Iteration 5 (of 20): 91.45 sec so far
+Iteration 7 (of 20): 96.72 sec so far
+Iteration 9 (of 20): 174.29 sec so far
+Iteration 10 (of 20): 182.65 sec so far
+Iteration 13 (of 20): 259.91 sec so far
+Iteration 14 (of 20): 267.84 sec so far
+Iteration 17 (of 20): 349.51 sec so far
+Iteration 18 (of 20): 365.37 sec so far
+
+Iterative method: 20 iterations in 368.90 seconds (average 18.337100, setup 2.15)
+
+Value in the initial state: 0.9389812553490298
+
+Time for model checking: 378.194 seconds.
+
+Result: 0.9389812553490298 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=6
+
+Prob0: 7 iterations in 4.40 seconds (average 0.628286, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 24): 9.20 sec so far
+Iteration 5 (of 24): 92.75 sec so far
+Iteration 7 (of 24): 98.01 sec so far
+Iteration 9 (of 24): 182.68 sec so far
+Iteration 11 (of 24): 188.21 sec so far
+Iteration 13 (of 24): 267.84 sec so far
+Iteration 14 (of 24): 277.54 sec so far
+Iteration 17 (of 24): 357.54 sec so far
+Iteration 18 (of 24): 379.41 sec so far
+Iteration 21 (of 24): 468.01 sec so far
+Iteration 22 (of 24): 590.02 sec so far
+
+Iterative method: 24 iterations in 594.01 seconds (average 24.652167, setup 2.35)
+
+Value in the initial state: 0.9752099626803248
+
+Time for model checking: 605.909 seconds.
+
+Result: 0.9752099626803248 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=7
+
+Prob0: 7 iterations in 4.42 seconds (average 0.630857, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 28): 8.93 sec so far
+Iteration 4 (of 28): 14.61 sec so far
+Iteration 5 (of 28): 93.43 sec so far
+Iteration 6 (of 28): 98.49 sec so far
+Iteration 9 (of 28): 183.56 sec so far
+Iteration 12 (of 28): 191.60 sec so far
+Iteration 13 (of 28): 275.36 sec so far
+Iteration 14 (of 28): 281.52 sec so far
+Iteration 16 (of 28): 349.46 sec so far
+Iteration 17 (of 28): 427.81 sec so far
+Iteration 18 (of 28): 451.88 sec so far
+Iteration 19 (of 28): 538.76 sec so far
+Iteration 20 (of 28): 563.34 sec so far
+Iteration 21 (of 28): 650.50 sec so far
+Iteration 22 (of 28): 769.35 sec so far
+Iteration 25 (of 28): 893.84 sec so far
+Iteration 26 (of 28): 1240.08 sec so far
+
+Iterative method: 28 iterations in 1246.67 seconds (average 44.444179, setup 2.24)
+
+Value in the initial state: 0.98945574467749
+
+Time for model checking: 1266.154 seconds.
+
+Result: 0.98945574467749 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=8
+
+Prob0: 7 iterations in 4.36 seconds (average 0.623286, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 32): 8.90 sec so far
+Iteration 4 (of 32): 16.30 sec so far
+Iteration 5 (of 32): 90.22 sec so far
+Iteration 6 (of 32): 95.45 sec so far
+Iteration 9 (of 32): 181.11 sec so far
+Iteration 11 (of 32): 186.46 sec so far
+Iteration 13 (of 32): 260.21 sec so far
+Iteration 14 (of 32): 266.20 sec so far
+Iteration 17 (of 32): 344.56 sec so far
+Iteration 18 (of 32): 368.64 sec so far
+Iteration 21 (of 32): 446.25 sec so far
+Iteration 22 (of 32): 560.18 sec so far
+Iteration 25 (of 32): 675.09 sec so far
+Iteration 26 (of 32): 999.62 sec so far
+Iteration 28 (of 32): 1007.08 sec so far
+Iteration 29 (of 32): 1270.64 sec so far
+Iteration 30 (of 32): 1579.81 sec so far
+Iteration 31 (of 32): 1596.34 sec so far
+
+Iterative method: 32 iterations in 1598.57 seconds (average 49.885875, setup 2.22)
+
+Value in the initial state: 0.9952748260050814
+
+Time for model checking: 1617.713 seconds.
+
+Result: 0.9952748260050814 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=9
+
+Prob0: 7 iterations in 3.95 seconds (average 0.564429, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 36): 10.57 sec so far
+Iteration 2 (of 36): 20.04 sec so far
+Iteration 5 (of 36): 85.13 sec so far
+Iteration 8 (of 36): 92.75 sec so far
+Iteration 9 (of 36): 156.37 sec so far
+Iteration 11 (of 36): 161.55 sec so far
+Iteration 13 (of 36): 229.74 sec so far
+Iteration 14 (of 36): 235.28 sec so far
+Iteration 17 (of 36): 307.16 sec so far
+Iteration 18 (of 36): 324.57 sec so far
+Iteration 21 (of 36): 394.34 sec so far
+Iteration 22 (of 36): 490.36 sec so far
+Iteration 25 (of 36): 588.50 sec so far
+Iteration 26 (of 36): 899.78 sec so far
+Iteration 28 (of 36): 906.75 sec so far
+Iteration 29 (of 36): 1158.13 sec so far
+Iteration 30 (of 36): 1469.60 sec so far
+Iteration 31 (of 36): 1482.50 sec so far
+Iteration 32 (of 36): 1561.22 sec so far
+Iteration 33 (of 36): 2242.62 sec so far
+Iteration 34 (of 36): 2859.76 sec so far
+Iteration 35 (of 36): 3032.45 sec so far
+
+Iterative method: 36 iterations in 3034.62 seconds (average 84.235333, setup 2.15)
+
+Value in the initial state: 0.9977947962974383
+
+Time for model checking: 3048.202 seconds.
+
+Result: 0.9977947962974383 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=10
+
+Prob0: 7 iterations in 3.80 seconds (average 0.542286, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 40): 10.92 sec so far
+Iteration 4 (of 40): 17.67 sec so far
+Iteration 5 (of 40): 80.70 sec so far
+Iteration 8 (of 40): 87.39 sec so far
+Iteration 9 (of 40): 146.80 sec so far
+Iteration 11 (of 40): 152.20 sec so far
+Iteration 13 (of 40): 212.69 sec so far
+Iteration 14 (of 40): 222.83 sec so far
+Iteration 17 (of 40): 287.02 sec so far
+Iteration 18 (of 40): 311.10 sec so far
+Iteration 20 (of 40): 371.47 sec so far
+Iteration 21 (of 40): 454.03 sec so far
+Iteration 22 (of 40): 550.02 sec so far
+Iteration 24 (of 40): 709.22 sec so far
+Iteration 25 (of 40): 898.32 sec so far
+Iteration 26 (of 40): 1264.41 sec so far
+Iteration 27 (of 40): 1633.36 sec so far
+Iteration 28 (of 40): 2031.54 sec so far
+Iteration 29 (of 40): 2574.44 sec so far
+Iteration 30 (of 40): 2976.67 sec so far
+Iteration 31 (of 40): 3552.96 sec so far
+Iteration 32 (of 40): 4148.67 sec so far
+Iteration 33 (of 40): 4813.50 sec so far
+Iteration 34 (of 40): 5743.65 sec so far
+Iteration 35 (of 40): 6357.92 sec so far
+Iteration 36 (of 40): 6998.77 sec so far
+Iteration 37 (of 40): 7372.70 sec so far
+Iteration 38 (of 40): 7860.57 sec so far
+Iteration 39 (of 40): 8225.41 sec so far
+
+Iterative method: 40 iterations in 8227.41 seconds (average 205.636175, setup 1.96)
+
+Value in the initial state: 0.9989432062503205
+
+Time for model checking: 8252.892 seconds.
+
+Result: 0.9989432062503205 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=11
+
+Prob0: 7 iterations in 4.14 seconds (average 0.591714, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 44): 10.47 sec so far
+Iteration 4 (of 44): 16.58 sec so far
+Iteration 5 (of 44): 88.38 sec so far
+Iteration 7 (of 44): 93.62 sec so far
+Iteration 9 (of 44): 161.29 sec so far
+Iteration 12 (of 44): 168.68 sec so far
+Iteration 13 (of 44): 227.78 sec so far
+Iteration 14 (of 44): 232.86 sec so far
+Iteration 17 (of 44): 305.97 sec so far
+Iteration 18 (of 44): 334.04 sec so far
+Iteration 21 (of 44): 416.14 sec so far
+Iteration 22 (of 44): 580.42 sec so far
+Iteration 24 (of 44): 648.76 sec so far
+Iteration 25 (of 44): 865.59 sec so far
+Iteration 26 (of 44): 1498.74 sec so far
+Iteration 28 (of 44): 1600.19 sec so far
+Iteration 29 (of 44): 2129.48 sec so far
+Iteration 30 (of 44): 2975.18 sec so far
+Iteration 31 (of 44): 2992.15 sec so far
+Iteration 32 (of 44): 3232.12 sec so far
+Iteration 33 (of 44): 3827.78 sec so far
+Iteration 34 (of 44): 4470.21 sec so far
+Iteration 35 (of 44): 4500.92 sec so far
+Iteration 36 (of 44): 4871.68 sec so far
+Iteration 37 (of 44): 5215.04 sec so far
+Iteration 38 (of 44): 5474.01 sec so far
+Iteration 39 (of 44): 5619.50 sec so far
+Iteration 40 (of 44): 6068.12 sec so far
+Iteration 41 (of 44): 6519.41 sec so far
+Iteration 42 (of 44): 6712.06 sec so far
+Iteration 43 (of 44): 6902.06 sec so far
+
+Iterative method: 44 iterations in 6904.10 seconds (average 156.865545, setup 2.02)
+
+Value in the initial state: 0.9994853762739803
+
+Time for model checking: 6938.001 seconds.
+
+Result: 0.9994853762739803 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=12
+
+Prob0: 7 iterations in 4.16 seconds (average 0.594143, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 48): 13.14 sec so far
+Iteration 2 (of 48): 24.04 sec so far
+Iteration 5 (of 48): 86.43 sec so far
+Iteration 8 (of 48): 93.52 sec so far
+Iteration 9 (of 48): 155.43 sec so far
+Iteration 11 (of 48): 161.21 sec so far
+Iteration 13 (of 48): 227.39 sec so far
+Iteration 14 (of 48): 233.07 sec so far
+Iteration 17 (of 48): 308.31 sec so far
+Iteration 18 (of 48): 337.05 sec so far
+Iteration 21 (of 48): 407.14 sec so far
+Iteration 22 (of 48): 509.51 sec so far
+Iteration 25 (of 48): 702.08 sec so far
+Iteration 26 (of 48): 1318.78 sec so far
+Iteration 27 (of 48): 1324.78 sec so far
+Iteration 28 (of 48): 1420.97 sec so far
+Iteration 29 (of 48): 1974.13 sec so far
+Iteration 30 (of 48): 2785.92 sec so far
+Iteration 31 (of 48): 3030.38 sec so far
+Iteration 32 (of 48): 3602.45 sec so far
+Iteration 33 (of 48): 4231.20 sec so far
+Iteration 34 (of 48): 4898.11 sec so far
+Iteration 35 (of 48): 5285.22 sec so far
+Iteration 36 (of 48): 6151.33 sec so far
+Iteration 37 (of 48): 6544.60 sec so far
+Iteration 38 (of 48): 6829.18 sec so far
+Iteration 39 (of 48): 7097.49 sec so far
+Iteration 40 (of 48): 7641.51 sec so far
+Iteration 41 (of 48): 8115.20 sec so far
+Iteration 42 (of 48): 8358.50 sec so far
+Iteration 43 (of 48): 8580.17 sec so far
+Iteration 44 (of 48): 8867.92 sec so far
+Iteration 45 (of 48): 8980.91 sec so far
+Iteration 46 (of 48): 9022.25 sec so far
+Iteration 47 (of 48): 9078.53 sec so far
+
+Iterative method: 48 iterations in 9080.80 seconds (average 189.136708, setup 2.24)
+
+Value in the initial state: 0.9997469967579982
+
+Time for model checking: 9142.32 seconds.
+
+Result: 0.9997469967579982 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=13
+
+Prob0: 7 iterations in 4.14 seconds (average 0.592000, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 52): 6.42 sec so far
+Iteration 5 (of 52): 76.21 sec so far
+Iteration 7 (of 52): 81.34 sec so far
+Iteration 9 (of 52): 148.06 sec so far
+Iteration 10 (of 52): 153.22 sec so far
+Iteration 13 (of 52): 226.19 sec so far
+Iteration 15 (of 52): 231.76 sec so far
+Iteration 17 (of 52): 297.43 sec so far
+Iteration 18 (of 52): 317.29 sec so far
+Iteration 21 (of 52): 387.70 sec so far
+Iteration 22 (of 52): 488.12 sec so far
+Iteration 25 (of 52): 596.57 sec so far
+Iteration 26 (of 52): 925.86 sec so far
+Iteration 28 (of 52): 955.49 sec so far
+Iteration 29 (of 52): 1502.88 sec so far
+Iteration 30 (of 52): 2365.84 sec so far
+Iteration 31 (of 52): 2382.05 sec so far
+Iteration 32 (of 52): 2629.32 sec so far
+Iteration 33 (of 52): 3309.57 sec so far
+Iteration 34 (of 52): 3933.17 sec so far
+Iteration 35 (of 52): 3973.50 sec so far
+Iteration 36 (of 52): 4374.51 sec so far
+Iteration 37 (of 52): 4830.46 sec so far
+Iteration 38 (of 52): 5130.85 sec so far
+Iteration 39 (of 52): 5406.91 sec so far
+Iteration 40 (of 52): 5966.83 sec so far
+Iteration 41 (of 52): 6460.32 sec so far
+Iteration 42 (of 52): 6733.93 sec so far
+Iteration 43 (of 52): 6960.62 sec so far
+Iteration 44 (of 52): 7272.99 sec so far
+Iteration 45 (of 52): 7388.45 sec so far
+Iteration 46 (of 52): 7428.46 sec so far
+Iteration 47 (of 52): 7486.91 sec so far
+Iteration 48 (of 52): 7593.62 sec so far
+Iteration 49 (of 52): 7692.30 sec so far
+Iteration 50 (of 52): 7730.65 sec so far
+Iteration 51 (of 52): 7787.21 sec so far
+
+Iterative method: 52 iterations in 7789.16 seconds (average 149.754423, setup 1.93)
+
+Value in the initial state: 0.9998748966487028
+
+Time for model checking: 7846.288 seconds.
+
+Result: 0.9998748966487028 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=14
+
+Prob0: 7 iterations in 4.18 seconds (average 0.597000, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 56): 8.00 sec so far
+Iteration 5 (of 56): 85.38 sec so far
+Iteration 7 (of 56): 90.48 sec so far
+Iteration 9 (of 56): 157.47 sec so far
+Iteration 10 (of 56): 168.21 sec so far
+Iteration 13 (of 56): 233.28 sec so far
+Iteration 15 (of 56): 239.24 sec so far
+Iteration 17 (of 56): 305.77 sec so far
+Iteration 18 (of 56): 324.77 sec so far
+Iteration 21 (of 56): 396.20 sec so far
+Iteration 22 (of 56): 469.40 sec so far
+Iteration 25 (of 56): 574.52 sec so far
+Iteration 26 (of 56): 916.44 sec so far
+Iteration 28 (of 56): 923.46 sec so far
+Iteration 29 (of 56): 1204.08 sec so far
+Iteration 30 (of 56): 1541.92 sec so far
+Iteration 31 (of 56): 1555.88 sec so far
+Iteration 32 (of 56): 1562.58 sec so far
+Iteration 33 (of 56): 1881.16 sec so far
+Iteration 34 (of 56): 2052.11 sec so far
+Iteration 35 (of 56): 2069.78 sec so far
+Iteration 36 (of 56): 2078.61 sec so far
+Iteration 37 (of 56): 2399.94 sec so far
+Iteration 38 (of 56): 2695.62 sec so far
+Iteration 39 (of 56): 2716.33 sec so far
+Iteration 40 (of 56): 2724.29 sec so far
+Iteration 41 (of 56): 2846.14 sec so far
+Iteration 42 (of 56): 2866.09 sec so far
+Iteration 43 (of 56): 2872.52 sec so far
+Iteration 45 (of 56): 2972.07 sec so far
+Iteration 46 (of 56): 3006.77 sec so far
+Iteration 47 (of 56): 3012.65 sec so far
+Iteration 49 (of 56): 3098.59 sec so far
+Iteration 50 (of 56): 3129.76 sec so far
+Iteration 52 (of 56): 3136.67 sec so far
+Iteration 53 (of 56): 3194.64 sec so far
+Iteration 54 (of 56): 3216.87 sec so far
+
+Iterative method: 56 iterations in 3221.84 seconds (average 57.494357, setup 2.15)
+
+Value in the initial state: 0.9999379153447826
+
+Time for model checking: 3249.336 seconds.
+
+Result: 0.9999379153447826 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=15
+
+Prob0: 7 iterations in 3.97 seconds (average 0.567429, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 60): 8.83 sec so far
+Iteration 5 (of 60): 82.36 sec so far
+Iteration 6 (of 60): 94.21 sec so far
+Iteration 9 (of 60): 158.02 sec so far
+Iteration 12 (of 60): 165.40 sec so far
+Iteration 13 (of 60): 229.63 sec so far
+Iteration 14 (of 60): 235.38 sec so far
+Iteration 17 (of 60): 309.15 sec so far
+Iteration 18 (of 60): 327.95 sec so far
+Iteration 21 (of 60): 396.82 sec so far
+Iteration 22 (of 60): 512.10 sec so far
+Iteration 25 (of 60): 617.53 sec so far
+Iteration 26 (of 60): 909.72 sec so far
+Iteration 28 (of 60): 984.03 sec so far
+Iteration 29 (of 60): 1523.52 sec so far
+Iteration 30 (of 60): 2331.10 sec so far
+Iteration 31 (of 60): 2913.88 sec so far
+Iteration 32 (of 60): 3518.96 sec so far
+Iteration 33 (of 60): 4212.41 sec so far
+Iteration 34 (of 60): 5261.25 sec so far
+Iteration 35 (of 60): 6015.38 sec so far
+Iteration 36 (of 60): 6721.68 sec so far
+Iteration 37 (of 60): 7115.41 sec so far
+Iteration 38 (of 60): 7643.40 sec so far
+Iteration 39 (of 60): 8041.72 sec so far
+Iteration 40 (of 60): 8526.63 sec so far
+Iteration 41 (of 60): 9055.06 sec so far
+Iteration 42 (of 60): 9487.63 sec so far
+Iteration 43 (of 60): 9740.94 sec so far
+Iteration 44 (of 60): 9996.27 sec so far
+Iteration 45 (of 60): 10106.52 sec so far
+Iteration 46 (of 60): 10195.11 sec so far
+Iteration 47 (of 60): 10253.42 sec so far
+Iteration 48 (of 60): 10347.74 sec so far
+Iteration 49 (of 60): 10453.08 sec so far
+Iteration 50 (of 60): 10533.11 sec so far
+Iteration 51 (of 60): 10584.91 sec so far
+Iteration 52 (of 60): 10652.41 sec so far
+Iteration 53 (of 60): 10728.71 sec so far
+Iteration 54 (of 60): 10780.74 sec so far
+Iteration 55 (of 60): 10808.82 sec so far
+Iteration 56 (of 60): 10842.15 sec so far
+Iteration 57 (of 60): 10898.07 sec so far
+Iteration 58 (of 60): 10929.25 sec so far
+Iteration 59 (of 60): 10942.03 sec so far
+
+Iterative method: 60 iterations in 10944.13 seconds (average 182.367450, setup 2.08)
+
+Value in the initial state: 0.9999691168174905
+
+Time for model checking: 11022.152 seconds.
+
+Result: 0.9999691168174905 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=16
+
+Prob0: 7 iterations in 4.55 seconds (average 0.649571, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 64): 10.04 sec so far
+Iteration 4 (of 64): 15.45 sec so far
+Iteration 5 (of 64): 91.19 sec so far
+Iteration 6 (of 64): 97.24 sec so far
+Iteration 9 (of 64): 171.15 sec so far
+Iteration 12 (of 64): 178.27 sec so far
+Iteration 13 (of 64): 241.35 sec so far
+Iteration 14 (of 64): 247.22 sec so far
+Iteration 17 (of 64): 317.57 sec so far
+Iteration 18 (of 64): 337.18 sec so far
+Iteration 21 (of 64): 416.12 sec so far
+Iteration 22 (of 64): 533.30 sec so far
+Iteration 25 (of 64): 645.81 sec so far
+Iteration 26 (of 64): 996.60 sec so far
+Iteration 27 (of 64): 1002.23 sec so far
+Iteration 28 (of 64): 1101.88 sec so far
+Iteration 29 (of 64): 1661.18 sec so far
+Iteration 30 (of 64): 2032.44 sec so far
+Iteration 31 (of 64): 2188.44 sec so far
+Iteration 32 (of 64): 2685.03 sec so far
+Iteration 33 (of 64): 3423.42 sec so far
+Iteration 34 (of 64): 4202.72 sec so far
+Iteration 35 (of 64): 4568.37 sec so far
+Iteration 36 (of 64): 5589.90 sec so far
+Iteration 37 (of 64): 6004.41 sec so far
+Iteration 38 (of 64): 6318.59 sec so far
+Iteration 39 (of 64): 6619.33 sec so far
+Iteration 40 (of 64): 7222.41 sec so far
+Iteration 41 (of 64): 7753.38 sec so far
+Iteration 42 (of 64): 8019.11 sec so far
+Iteration 43 (of 64): 8248.51 sec so far
+Iteration 44 (of 64): 8578.26 sec so far
+Iteration 45 (of 64): 8697.54 sec so far
+Iteration 46 (of 64): 8740.91 sec so far
+Iteration 47 (of 64): 8801.68 sec so far
+Iteration 48 (of 64): 8913.93 sec so far
+Iteration 49 (of 64): 9021.07 sec so far
+Iteration 50 (of 64): 9062.63 sec so far
+Iteration 51 (of 64): 9124.77 sec so far
+Iteration 52 (of 64): 9205.85 sec so far
+Iteration 53 (of 64): 9289.72 sec so far
+Iteration 54 (of 64): 9323.16 sec so far
+Iteration 55 (of 64): 9363.65 sec so far
+Iteration 56 (of 64): 9408.19 sec so far
+Iteration 57 (of 64): 9470.43 sec so far
+Iteration 58 (of 64): 9494.76 sec so far
+Iteration 59 (of 64): 9519.60 sec so far
+Iteration 60 (of 64): 9542.39 sec so far
+Iteration 61 (of 64): 9587.35 sec so far
+Iteration 62 (of 64): 9602.53 sec so far
+Iteration 63 (of 64): 9614.61 sec so far
+
+Iterative method: 64 iterations in 9617.00 seconds (average 150.228391, setup 2.38)
+
+Value in the initial state: 0.9999846133439039
+
+Time for model checking: 9697.261 seconds.
+
+Result: 0.9999846133439039 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=17
+
+Prob0: 7 iterations in 4.64 seconds (average 0.663286, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 68): 9.95 sec so far
+Iteration 4 (of 68): 15.66 sec so far
+Iteration 5 (of 68): 93.87 sec so far
+Iteration 6 (of 68): 99.88 sec so far
+Iteration 9 (of 68): 176.19 sec so far
+Iteration 12 (of 68): 183.54 sec so far
+Iteration 13 (of 68): 248.88 sec so far
+Iteration 14 (of 68): 255.06 sec so far
+Iteration 17 (of 68): 326.07 sec so far
+Iteration 18 (of 68): 347.64 sec so far
+Iteration 21 (of 68): 427.71 sec so far
+Iteration 22 (of 68): 547.24 sec so far
+Iteration 25 (of 68): 659.30 sec so far
+Iteration 26 (of 68): 1012.19 sec so far
+Iteration 28 (of 68): 1019.47 sec so far
+Iteration 29 (of 68): 1293.18 sec so far
+Iteration 30 (of 68): 1660.56 sec so far
+Iteration 31 (of 68): 1676.12 sec so far
+Iteration 32 (of 68): 1719.31 sec so far
+Iteration 33 (of 68): 2344.79 sec so far
+Iteration 34 (of 68): 3010.43 sec so far
+Iteration 35 (of 68): 3040.28 sec so far
+Iteration 36 (of 68): 3388.21 sec so far
+Iteration 37 (of 68): 3796.81 sec so far
+Iteration 38 (of 68): 4113.69 sec so far
+Iteration 39 (of 68): 4140.56 sec so far
+Iteration 40 (of 68): 4432.26 sec so far
+Iteration 41 (of 68): 5026.05 sec so far
+Iteration 42 (of 68): 5289.61 sec so far
+Iteration 43 (of 68): 5313.90 sec so far
+Iteration 44 (of 68): 5520.57 sec so far
+Iteration 45 (of 68): 5643.10 sec so far
+Iteration 46 (of 68): 5678.24 sec so far
+Iteration 47 (of 68): 5685.06 sec so far
+Iteration 48 (of 68): 5753.82 sec so far
+Iteration 49 (of 68): 5861.04 sec so far
+Iteration 50 (of 68): 5898.24 sec so far
+Iteration 51 (of 68): 5904.43 sec so far
+Iteration 52 (of 68): 5961.69 sec so far
+Iteration 53 (of 68): 6040.14 sec so far
+Iteration 54 (of 68): 6068.41 sec so far
+Iteration 56 (of 68): 6111.16 sec so far
+Iteration 57 (of 68): 6171.37 sec so far
+Iteration 58 (of 68): 6189.05 sec so far
+Iteration 60 (of 68): 6216.23 sec so far
+Iteration 61 (of 68): 6255.54 sec so far
+Iteration 62 (of 68): 6267.90 sec so far
+Iteration 64 (of 68): 6283.66 sec so far
+Iteration 65 (of 68): 6311.46 sec so far
+Iteration 66 (of 68): 6319.37 sec so far
+
+Iterative method: 68 iterations in 6324.44 seconds (average 92.969632, setup 2.51)
+
+Value in the initial state: 0.9999923257839577
+
+Time for model checking: 6386.207 seconds.
+
+Result: 0.9999923257839577 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=18
+
+Prob0: 7 iterations in 4.46 seconds (average 0.637714, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 72): 9.00 sec so far
+Iteration 4 (of 72): 14.23 sec so far
+Iteration 5 (of 72): 88.47 sec so far
+Iteration 6 (of 72): 94.26 sec so far
+Iteration 9 (of 72): 172.91 sec so far
+Iteration 12 (of 72): 180.52 sec so far
+Iteration 13 (of 72): 249.09 sec so far
+Iteration 14 (of 72): 255.73 sec so far
+Iteration 17 (of 72): 334.65 sec so far
+Iteration 18 (of 72): 353.68 sec so far
+Iteration 21 (of 72): 426.31 sec so far
+Iteration 22 (of 72): 547.89 sec so far
+Iteration 25 (of 72): 778.17 sec so far
+Iteration 26 (of 72): 1466.11 sec so far
+Iteration 27 (of 72): 1472.26 sec so far
+Iteration 28 (of 72): 1582.78 sec so far
+Iteration 29 (of 72): 2211.55 sec so far
+Iteration 30 (of 72): 3226.76 sec so far
+Iteration 31 (of 72): 3245.05 sec so far
+Iteration 32 (of 72): 3523.68 sec so far
+Iteration 33 (of 72): 4268.87 sec so far
+Iteration 34 (of 72): 5021.44 sec so far
+Iteration 35 (of 72): 5052.90 sec so far
+Iteration 36 (of 72): 5392.10 sec so far
+Iteration 37 (of 72): 5788.13 sec so far
+Iteration 38 (of 72): 6107.89 sec so far
+Iteration 39 (of 72): 6137.38 sec so far
+Iteration 40 (of 72): 6438.02 sec so far
+Iteration 41 (of 72): 7012.77 sec so far
+Iteration 42 (of 72): 7260.73 sec so far
+Iteration 43 (of 72): 7283.54 sec so far
+Iteration 44 (of 72): 7485.22 sec so far
+Iteration 45 (of 72): 7607.23 sec so far
+Iteration 46 (of 72): 7640.72 sec so far
+Iteration 47 (of 72): 7647.42 sec so far
+Iteration 48 (of 72): 7714.52 sec so far
+Iteration 49 (of 72): 7811.05 sec so far
+Iteration 50 (of 72): 7848.04 sec so far
+Iteration 51 (of 72): 7853.89 sec so far
+Iteration 52 (of 72): 7910.49 sec so far
+Iteration 53 (of 72): 7987.52 sec so far
+Iteration 54 (of 72): 8015.73 sec so far
+Iteration 56 (of 72): 8055.19 sec so far
+Iteration 57 (of 72): 8109.81 sec so far
+Iteration 58 (of 72): 8128.40 sec so far
+Iteration 60 (of 72): 8151.31 sec so far
+Iteration 61 (of 72): 8186.95 sec so far
+Iteration 62 (of 72): 8198.16 sec so far
+Iteration 64 (of 72): 8209.22 sec so far
+Iteration 65 (of 72): 8233.86 sec so far
+Iteration 66 (of 72): 8240.27 sec so far
+Iteration 68 (of 72): 8247.08 sec so far
+Iteration 69 (of 72): 8265.05 sec so far
+Iteration 71 (of 72): 8270.81 sec so far
+
+Iterative method: 72 iterations in 8273.20 seconds (average 114.872375, setup 2.39)
+
+Value in the initial state: 0.9999961695715087
+
+Time for model checking: 8344.534 seconds.
+
+Result: 0.9999961695715087 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=19
+
+Prob0: 7 iterations in 4.31 seconds (average 0.615143, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 76): 9.04 sec so far
+Iteration 4 (of 76): 14.28 sec so far
+Iteration 5 (of 76): 88.54 sec so far
+Iteration 6 (of 76): 93.99 sec so far
+Iteration 9 (of 76): 169.54 sec so far
+Iteration 12 (of 76): 176.74 sec so far
+Iteration 13 (of 76): 244.97 sec so far
+Iteration 14 (of 76): 251.31 sec so far
+Iteration 17 (of 76): 322.23 sec so far
+Iteration 18 (of 76): 341.25 sec so far
+Iteration 21 (of 76): 431.39 sec so far
+Iteration 22 (of 76): 632.77 sec so far
+Iteration 24 (of 76): 706.09 sec so far
+Iteration 25 (of 76): 868.68 sec so far
+Iteration 26 (of 76): 1367.66 sec so far
+Iteration 27 (of 76): 1373.08 sec so far
+Iteration 28 (of 76): 1805.77 sec so far
+Iteration 29 (of 76): 2406.23 sec so far
+Iteration 30 (of 76): 3404.87 sec so far
+Iteration 31 (of 76): 3672.70 sec so far
+Iteration 32 (of 76): 4245.37 sec so far
+Iteration 33 (of 76): 4875.90 sec so far
+Iteration 34 (of 76): 5507.44 sec so far
+Iteration 35 (of 76): 5869.16 sec so far
+Iteration 36 (of 76): 6700.84 sec so far
+Iteration 37 (of 76): 7118.01 sec so far
+Iteration 38 (of 76): 7426.22 sec so far
+Iteration 39 (of 76): 7697.28 sec so far
+Iteration 40 (of 76): 8269.23 sec so far
+Iteration 41 (of 76): 8768.49 sec so far
+Iteration 42 (of 76): 9041.41 sec so far
+Iteration 43 (of 76): 9271.10 sec so far
+Iteration 44 (of 76): 9594.09 sec so far
+Iteration 45 (of 76): 9712.47 sec so far
+Iteration 46 (of 76): 9753.29 sec so far
+Iteration 47 (of 76): 9813.36 sec so far
+Iteration 48 (of 76): 9924.99 sec so far
+Iteration 49 (of 76): 10030.32 sec so far
+Iteration 50 (of 76): 10068.70 sec so far
+Iteration 51 (of 76): 10128.42 sec so far
+Iteration 52 (of 76): 10207.87 sec so far
+Iteration 53 (of 76): 10283.59 sec so far
+Iteration 54 (of 76): 10314.75 sec so far
+Iteration 55 (of 76): 10353.27 sec so far
+Iteration 56 (of 76): 10394.52 sec so far
+Iteration 57 (of 76): 10450.65 sec so far
+Iteration 58 (of 76): 10470.96 sec so far
+Iteration 59 (of 76): 10491.51 sec so far
+Iteration 60 (of 76): 10509.10 sec so far
+Iteration 61 (of 76): 10546.51 sec so far
+Iteration 62 (of 76): 10559.22 sec so far
+Iteration 63 (of 76): 10568.40 sec so far
+Iteration 64 (of 76): 10576.49 sec so far
+Iteration 65 (of 76): 10603.54 sec so far
+Iteration 66 (of 76): 10611.59 sec so far
+Iteration 68 (of 76): 10621.05 sec so far
+Iteration 69 (of 76): 10640.84 sec so far
+Iteration 71 (of 76): 10649.42 sec so far
+Iteration 73 (of 76): 10668.38 sec so far
+Iteration 75 (of 76): 10674.99 sec so far
+
+Iterative method: 76 iterations in 10677.37 seconds (average 140.460500, setup 2.37)
+
+Value in the initial state: 0.9999980871262587
+
+Time for model checking: 10771.838 seconds.
+
+Result: 0.9999980871262587 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=20
+
+Prob0: 7 iterations in 4.73 seconds (average 0.675429, setup 0.00)
+
+yes = 11982574, no = 0, maybe = 61162784
+
+Computing probabilities...
+Engine: MTBDD
+
+Building iteration matrix MTBDD... [nodes=6426465] [125516.9 Kb]
+
+Starting iterations...
+Iteration 1 (of 80): 10.04 sec so far
+Iteration 4 (of 80): 15.70 sec so far
+Iteration 5 (of 80): 93.41 sec so far
+Iteration 7 (of 80): 99.49 sec so far
+Iteration 9 (of 80): 176.91 sec so far
+Iteration 11 (of 80): 182.85 sec so far
+Iteration 13 (of 80): 254.43 sec so far
+Iteration 14 (of 80): 260.89 sec so far
+Iteration 17 (of 80): 338.81 sec so far
+Iteration 18 (of 80): 358.63 sec so far
+Iteration 21 (of 80): 430.88 sec so far
+Iteration 22 (of 80): 548.09 sec so far
+Iteration 25 (of 80): 658.87 sec so far
+Iteration 26 (of 80): 992.62 sec so far
+Iteration 28 (of 80): 1055.88 sec so far
+Iteration 29 (of 80): 1718.46 sec so far
+Iteration 30 (of 80): 2698.82 sec so far
+Iteration 31 (of 80): 2716.20 sec so far
+Iteration 32 (of 80): 3358.57 sec so far
+Iteration 33 (of 80): 4055.02 sec so far
+Iteration 34 (of 80): 4748.83 sec so far
+Iteration 35 (of 80): 5143.21 sec so far
+Iteration 36 (of 80): 6023.95 sec so far
+Iteration 37 (of 80): 6470.75 sec so far
+Iteration 38 (of 80): 6800.41 sec so far
+Iteration 39 (of 80): 7101.35 sec so far
+Iteration 40 (of 80): 7727.31 sec so far
+Iteration 41 (of 80): 8292.37 sec so far
+Iteration 42 (of 80): 8571.24 sec so far
+Iteration 43 (of 80): 8817.63 sec so far
+Iteration 44 (of 80): 9151.38 sec so far
+Iteration 45 (of 80): 9273.67 sec so far
+Iteration 46 (of 80): 9316.03 sec so far
+Iteration 47 (of 80): 9380.09 sec so far
+Iteration 48 (of 80): 9492.58 sec so far
+Iteration 49 (of 80): 9600.77 sec so far
+Iteration 50 (of 80): 9641.24 sec so far
+Iteration 51 (of 80): 9707.61 sec so far
+Iteration 52 (of 80): 9795.92 sec so far
+Iteration 53 (of 80): 9879.90 sec so far
+Iteration 54 (of 80): 9912.58 sec so far
+Iteration 55 (of 80): 9960.50 sec so far
+Iteration 56 (of 80): 10014.84 sec so far
+Iteration 57 (of 80): 10082.71 sec so far
+Iteration 58 (of 80): 10106.14 sec so far
+Iteration 59 (of 80): 10137.08 sec so far
+Iteration 60 (of 80): 10169.79 sec so far
+Iteration 61 (of 80): 10219.48 sec so far
+Iteration 62 (of 80): 10233.10 sec so far
+Iteration 63 (of 80): 10252.00 sec so far
+Iteration 64 (of 80): 10272.02 sec so far
+Iteration 65 (of 80): 10311.17 sec so far
+Iteration 66 (of 80): 10322.78 sec so far
+Iteration 67 (of 80): 10336.21 sec so far
+Iteration 68 (of 80): 10349.98 sec so far
+Iteration 69 (of 80): 10380.71 sec so far
+Iteration 70 (of 80): 10388.57 sec so far
+Iteration 71 (of 80): 10399.17 sec so far
+Iteration 72 (of 80): 10410.40 sec so far
+Iteration 73 (of 80): 10434.64 sec so far
+Iteration 74 (of 80): 10440.88 sec so far
+Iteration 75 (of 80): 10449.01 sec so far
+Iteration 76 (of 80): 10458.45 sec so far
+Iteration 77 (of 80): 10478.61 sec so far
+Iteration 79 (of 80): 10489.54 sec so far
+
+Iterative method: 80 iterations in 10492.02 seconds (average 131.119375, setup 2.47)
+
+Value in the initial state: 0.9999990443844033
+
+Time for model checking: 10600.026 seconds.
+
+Result: 0.9999990443844033 (value in the initial state)
+
+Exporting results to file "model-checking/splitworld/splitworld_ext_prop1.res"...
+

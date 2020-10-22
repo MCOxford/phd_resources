@@ -1,0 +1,430 @@
+//author: mco. Timestamp: 2018-04-12
+
+//***INVESTIGATING SPLIT WORLD DETECTION VIA THE PERRIG GOSSIP PROTOCOLS USED FOR CT***
+
+//***INTRODUCTION***************
+//
+// In this model we investigate how effective the Perrig protocols are in detecting a simple split-world scenario occuring. 
+// We shall also measure the STH data spread and protocol efficiency i.e. how many times on average will clients need to 
+// contact the log when executing the protocol?.
+//
+// Hypothetically, the data spread for both versions of the Perrig protocol should be the same because it should only depend 
+// on the behaviour of the clients when they connect and gossip with servers. We assume clients connect to only ONE server 
+// if participating in a round. 
+//
+// // NB: This file is adapted from the original honest.prism file so it can used with the simulator. Model checking results will still be preserved. 
+//
+//******************************  
+
+//***THREAT MODEL***************
+//
+// Before the rounds of gossiping begin, the log decides to initiate a split world attack and by maintaining two separate ledgers forked from
+// the original log at tree size l (which is the current size everybody in the network knows):
+//
+// i) the genuine log presented to the entire world, and
+// ii) the 'rogue' log the maintainer wants to keep hidden. It has appended to it a fake certificates which are used by servers pretending 
+//     to host ligitimate domains, including one present in the network. 
+//
+// The new STHs corresponding to these logs are s_m and s_n respectively, where m and n are tree sizes, m < n and timestamp(s_m) < timestamp(s_n).
+// That way, the built-in checkSTH() function can be bypassed. Suppose that the log maintainer is in collusion with a 'spoof server' using 
+// a fake certificate, their goal being to steal information from a particular user when they connect to the server. If somehow a targeted 
+// client can have its network controlled so that any proof/STH requests it makes is redirected to the fake log, then after gossiping with the 
+// 'spoof server' the client updates itself using the STH s_n; suppose that this does happen, meaning that at the beginning we have one updated 
+// server with data s_m and one client with s_n. Everyone else has the old STH s_l (such that l < m < n). The spoof server is never contacted again 
+// afterwards (or the probability of being contacted is is so small it is negligible).
+//
+//******************************
+
+//***MODEL DESIGN ASSUMPTIONS***
+//
+// i) Clients and server already have valid and non-empty data (tree size of stored STHs are non-zero) to begin with.
+// ii) Everyone in the network, apart from the designated server and targeted client, possesses the same knowledge of 
+//     the log before the new root hash is generated.
+// iii) Assume all clients and servers are able to gossip.
+// iv) Audit sets for all clients contain an SCT for each server in the network. This mean clients do not need to audit SCTs 
+//     as part of the protocol execution.
+// v) Two entities are already updated from the start - assume this is a server and a 'seller' type client.
+//
+//****************************** 
+
+//***DETECTION******************
+//
+// For each module representing a client or server, they have an 'sth' integer variable which records the data type currently stored:
+//
+// 0 - the entity has old data (tree size l) and needs to update. 
+// 1 - the entity has the real data (tree size n) sourced from the genuine log.
+// 2 - the entity has the fake data (tree size m) sourced from the rogue log.
+//
+// The following table details what the values represent in each protocol variation in regards to the structure of the gossip messages
+//
+// ci_sth/si_sth | STH-Only (client msg. m_1/server msg. m_2) | STH-And-Proof (client msg. m_1/server default msg. m_0)
+// --------------------------------------------------------------------------------------------------------------------
+//       0       |                   s_l                      |                     (s_a,s_l,p_al)       
+// --------------------------------------------------------------------------------------------------------------------
+//       1       |                   s_m                      |                     (s_l,s_m,p_lm)
+// --------------------------------------------------------------------------------------------------------------------
+//       2       |                   s_n                      |                     (s_l,s_n,p_ln)
+//
+// The integer a can represent any tree size (we should be careful when saying this if we want to measure protocol efficiency server-side, however
+// this is not one of our aims here so we can overlook this). p_ij denotes an extension proof between tree sizes i and j. 
+//
+// The 'detection' event occurs when either a server or client not currently targeted retrieves data of types 1 and 2 through gossiping and requests an 
+// extension proof or a client gets a warning message from a server that has already found an issue; the log will not be able to provide a valid proof 
+// between the real and fake data if the receiver of the proof checks it themself. Notice that when checking for this in the model, between a 
+// connected client and server the sum of the sth variables must equal 3. Additionally, if a server has two sets of clients that are gossiping inconsistent
+// data, this will also trigger a detection as the server performs the necessary checks for each data.
+//
+// Note that since both log were forked from the old log of size l, anyone which still has old knowledge of the log will update itself with 
+// either s_n or s_m without any problems (the logs can rely on each other to produce proofs if they are not able to do it themselves).
+//
+//******************************
+
+//***REQUESTING AN EXTENSION PROOF***
+//
+// Basically, a client or server calls getConsistencyProof() when the gossip data they receive is different from what they already have
+// stored. Using ci_sth and sj_sth, based on the conditions presented in Perrig et al., we will list here the possibilities for the
+// function to be called between a connected client and server and determine whether it triggers detection (O) or not (X).
+//
+// STH-ONLY (client-side and server-side):
+//
+// client | server | detection? 
+// -----------------------------
+//   0    |   1    |     X          
+//   0    |   2    |     X          
+//   1    |   0    |     X          
+//   1    |   2    |     O          
+//   2    |   0    |     X           
+//   2    |   1    |     O          
+//
+// STH-AND-PROOF (client-side):
+//
+// client | server | detection?
+// -----------------------------
+//   1    |   0    |     X    
+//   2    |   0    |     X
+//   2    |   1    |     O
+//   1    |   2    |     O
+//
+// STH-AND-PROOF (server-side):
+//
+// client | server | detection?
+// -----------------------------
+//   1    |   0    |     X    
+//   2    |   0    |     X
+//   1    |   2    |     O
+//   2    |   1    |     O
+//
+//***********************************
+
+//***NETWORK MODEL**************
+//
+// Our network comprises of a certain number of clienr each connecting to 5 possible servers.
+//
+// The types of server are:
+//
+// a) bank (B)
+// b) search engine (Se)
+// c) retail (R)
+// d) social media (So)
+// e) news/current affairs (N)
+//
+// There is only one server of each type in our network. Assume that they only permit secure (HTTPS) connections.
+//
+// We define three 'types' of client.
+//    
+// 1) 'Seller'
+//
+// connect rate - 0.8
+// Pr(connect to server of type R) = 0.7
+// Pr(connect to server of type So) = 0
+// Pr(connect to server of type N) = 0
+//
+// 2) 'Regular user'
+//
+// connect rate - 0.6
+// Pr(connect to server of type R) = 0
+// Pr(connect to server of type So) = 0.7
+// Pr(connect to server of type N) = 0
+//
+// 3) 'Researcher'
+//
+// connect rate - 0.2
+// Pr(connect to server of type R) = 0
+// Pr(connect to server of type So) = 0
+// Pr(connect to server of type N) = 0.7
+//
+// We assume that each client, regardless of its type, connects to exactly ONE bank server and ONE search engine server, 
+// with probabilities 0.02 and 0.28 respectively.
+//
+//******************************
+
+dtmc
+
+//--------------
+// CLIENTS
+//--------------
+
+// These flags are used to make clients connect and gossip in sequence instead of doing it all at once. This helps 
+// to save memory when using the simulator.
+const bool c0_flag = true;
+
+//initial states for each client
+const int c1_sth_init = 0;
+const int c2_sth_init = 0;
+const int c3_sth_init = 0;
+const int c4_sth_init = 0;
+const int c5_sth_init = 2;
+
+//client connect rates
+prob g1= 0.8;
+prob g2= 0.6;
+prob g3= 0.6;
+prob g4= 0.6;
+prob g5= 0.2;
+
+//client profiles
+prob p_1_1 = 1/50;
+prob p_1_2 = 7/25;
+prob p_1_3 = 7/10;
+prob p_1_4 = 0;
+prob p_1_5 = 0;
+
+prob p_2_1 = 1/50;
+prob p_2_2 = 7/25;
+prob p_2_3 = 0;
+prob p_2_4 = 7/10;
+prob p_2_5 = 0;
+
+prob p_3_1 = 1/50;
+prob p_3_2 = 7/25;
+prob p_3_3 = 0;
+prob p_3_4 = 7/10;
+prob p_3_5 = 0;
+
+prob p_4_1 = 1/50;
+prob p_4_2 = 7/25;
+prob p_4_3 = 0;
+prob p_4_4 = 7/10;
+prob p_4_5 = 0;
+
+prob p_5_1 = 1/50;
+prob p_5_2 = 7/25;
+prob p_5_3 = 0;
+prob p_5_4 = 0;
+prob p_5_5 = 7/10;
+
+module Client1 
+
+	//global state
+	c1 : [0..4] init 0;
+	//connectivity state
+	c1s : [0..5] init 0;
+	//Record which root hash this node currently has.
+	c1_sth : [0..2] init c1_sth_init;
+	//detection state
+	c1d : bool init false;
+	//skip the round?
+	c1_skip : bool init false;
+	c1_flag : bool init false;
+
+	//client decides randomly to participate in the round
+	[] c0_flag & c1=0 -> g1 : (c1'=1) + 1-g1 : (c1'=1) & (c1_skip'=true);
+	//client randomly chooses a server if participating in the round.
+	[] c0_flag & c1_skip=false & c1=1 -> p_1_1 : (c1_flag'=true)&(c1'=2)&(c1s'=1) + p_1_2 : (c1_flag'=true)&(c1'=2)&(c1s'=2) + p_1_3 : (c1_flag'=true)&(c1'=2)&(c1s'=3) + 
+					 p_1_4 : (c1_flag'=true)&(c1'=2)&(c1s'=4) + p_1_5 : (c1_flag'=true)&(c1'=2)&(c1s'=5);
+	[] c0_flag & c1_skip=true & c1=1 -> (c1_flag'=true)&(c1'=2);
+	//client updates itself using data retrieved from server, checking that no issues are present (so long as c1_skip=false).
+	[update] serverg & !c1_skip & c1=2 & s_data_ok -> (c1_sth'=c_update) & (c1'=3);
+	[update] serverg & !c1_skip & c1=2 & !s_data_ok -> (c1d'=true) & (c1'=3);
+ 	[update] serverg & c1_skip & c1=2 -> (c1'=3);
+	//round complete - start the next round if there no client has found an issue with the log. Otherwise, go to self-looping state and stop.
+	[round_complete] c1=3 & !detect -> (c1'=0) & (c1s'=0) & (c1_skip'=false) & (c1_flag'=false);
+	[round_complete] c1=3 & detect -> (c1'=4) & (c1s'=0) & (c1_skip'=false);
+	//self-looping state
+	[END] c1=4 -> true;
+
+endmodule
+
+//pr_req_successful is true if either a) log returns a valid proof or 
+//b) client does not need to contact log in the first place 
+
+formula pr_req_successful = (c1s=1 & s1_sth+c1_sth!=3) | (c1s=2 & s2_sth+c1_sth!=3) |
+        	            (c1s=3 & s3_sth+c1_sth!=3) | (c1s=4 & s4_sth+c1_sth!=3) |
+          		    (c1s=5 & s5_sth+c1_sth!=3);
+
+// Warning messages are used when someone has already found an inconsistency and starts to report this to other nodes through gossiping.
+formula warn_msg = (c1s=1 & s1d) | (c1s=2 & s2d) | (c1s=3 & s3d) | (c1s=4 & s4d) | (c1s=5 & s5d);
+
+// Clients update when given brand new data via a server
+formula c_update = c1_sth + ((c1s=1 & s1_sth>c1_sth)?s1_sth-c1_sth:0) + ((c1s=2 & s2_sth>c1_sth)?s2_sth-c1_sth:0) + 
+		   ((c1s=3 & s3_sth>c1_sth)?s3_sth-c1_sth:0) + ((c1s=4 & s4_sth>c1_sth)?s4_sth-c1_sth:0) + 
+		   ((c1s=5 & s5_sth>c1_sth)?s5_sth-c1_sth:0);
+
+// An issue will be found in the data if either a) log cannot provide a valid proof or b) client gets a warning message.
+formula s_data_ok = pr_req_successful & !warn_msg;
+
+formula detect = c1d | c2d | c3d | c4d | c5d;
+formula serverg = s1_flag=2&s2_flag=2&s3_flag=2&s4_flag=2&s5_flag=2;
+label "detect" = c1d | c2d | c3d | c4d | c5d;
+
+module Client2=Client1[p_1_1=p_2_1, p_1_2=p_2_2, p_1_3=p_2_3, p_1_4=p_2_4, p_1_5=p_2_5, 
+g1=g2,
+c1=c2, c1s=c2s, c1_sth=c2_sth, c1_skip=c2_skip, c1d=c2d, c2d=c1d,
+c1_sth_init = c2_sth_init, c1_flag=c2_flag, c0_flag=c1_flag] endmodule
+
+module Client3=Client1[p_1_1=p_3_1, p_1_2=p_3_2, p_1_3=p_3_3, p_1_4=p_3_4, p_1_5=p_3_5, 
+g1=g3,
+c1=c3, c1s=c3s, c1_sth=c3_sth, c1_skip=c3_skip, c1d=c3d, c3d=c1d,
+c1_sth_init = c3_sth_init, c1_flag=c3_flag, c0_flag=c2_flag] endmodule
+
+module Client4=Client1[p_1_1=p_4_1, p_1_2=p_4_2, p_1_3=p_4_3, p_1_4=p_4_4, p_1_5=p_4_5, 
+g1=g4,
+c1=c4, c1s=c4s, c1_sth=c4_sth, c1_skip=c4_skip, c1d=c4d, c4d=c1d,
+c1_sth_init = c4_sth_init, c1_flag=c4_flag, c0_flag=c3_flag] endmodule
+
+module Client5=Client1[p_1_1=p_5_1, p_1_2=p_5_2, p_1_3=p_5_3, p_1_4=p_5_4, p_1_5=p_5_5, 
+g1=g5,
+c1=c5, c1s=c5s, c1_sth=c5_sth, c1_skip=c5_skip, c1d=c5d, c5d=c1d,
+c1_sth_init = c5_sth_init, c1_flag=c5_flag, c0_flag=c4_flag] endmodule
+
+//--------------
+// SERVERS
+//--------------
+
+const int s1f_init = 2;
+const int s2f_init = 2;
+const int s3f_init = 2;
+const int s4f_init = 2;
+const int s5f_init = 2;
+
+//needed for module relabelling
+const int S1 = 1;
+const int S2 = 2;
+const int S3 = 3;
+const int S4 = 4;
+const int S5 = 5;
+
+//initial states of each server before gossiping begins. The bank server is chosen to be the designated server that gossips the genuine data.
+const int s1_init = 1;
+const int s2_init = 0;
+const int s3_init = 0;
+const int s4_init = 0;
+const int s5_init = 0;
+
+module Server1
+
+	//does the server have the latest STH?
+	s1_sth : [0..2] init s1_init;
+	//detection state
+	s1d : bool init false;
+	s1_flag : [0..2] init s1f_init;
+
+	//ORIGINAL DESIGN - PERRIG ET AL RPOTOCOLS
+	//If any clients sends inconsistent data, cease protocol execution and go into detection state.
+	[update] !s1d & c_data_ok -> (s1_sth'=s_update);
+	[update] !s1d & !c_data_ok -> (s1d'=true);
+	[update] s1d -> true;
+	//self-looping state
+	[END] true -> true;
+
+endmodule
+
+//The following formulae is used for the 'update' stage in server 1.
+// Server-side, an issue will be found in the data if either a) log cannot provide a valid proof or b) a pair of clients connect with inconsistent data.
+formula server_pr_req_fail = (c1s=S1 & s1_sth+c1_sth=3) | (c2s=S1 & s1_sth+c2_sth=3) | (c3s=S1 & s1_sth+c3_sth=3) | 
+			     (c4s=S1 & s1_sth+c4_sth=3) | (c5s=S1 & s1_sth+c5_sth=3);
+formula pairwise_inconsistency = ((c1s=S1 & c1_sth=1) | (c2s=S1 & c2_sth=1) | (c3s=S1 & c3_sth=1) | 
+				  (c4s=S1 & c4_sth=1) | (c5s=S1 & c5_sth=1)) & 
+				 ((c1s=S1 & c1_sth=2) | (c2s=S1 & c2_sth=2) | (c3s=S1 & c3_sth=2) | 
+				  (c4s=S1 & c4_sth=2) | (c5s=S1 & c5_sth=2));
+formula c_data_ok = !server_pr_req_fail & !pairwise_inconsistency;
+
+// Servers update when given brand new data via a connected client. 
+formula s_update = s1_sth + max((c1s=S1&c1_sth>s1_sth?c1_sth-s1_sth:0),(c2s=S1&c2_sth>s1_sth?c2_sth-s1_sth:0),(c3s=S1&c3_sth>s1_sth?c3_sth-s1_sth:0),
+				(c4s=S1&c4_sth>s1_sth?c4_sth-s1_sth:0),(c5s=S1&c5_sth>s1_sth?c5_sth-s1_sth:0));
+
+module Server2=Server1[s1_sth=s2_sth, s2_sth=s1_sth, s1d=s2d, s2d=s1d, S1=S2, s1_init=s2_init, s1_flag=s2_flag, s1f_init=s2f_init] endmodule
+module Server3=Server1[s1_sth=s3_sth, s3_sth=s1_sth, s1d=s3d, s3d=s1d, S1=S3, s1_init=s3_init, s1_flag=s3_flag, s1f_init=s3f_init] endmodule
+module Server4=Server1[s1_sth=s4_sth, s4_sth=s1_sth, s1d=s4d, s4d=s1d, S1=S4, s1_init=s4_init, s1_flag=s4_flag, s1f_init=s4f_init] endmodule
+module Server5=Server1[s1_sth=s5_sth, s5_sth=s1_sth, s1d=s5d, s5d=s1d, S1=S5, s1_init=s5_init, s1_flag=s5_flag, s1f_init=s5f_init] endmodule
+
+//--------------
+// FORMULAS
+//--------------
+
+const double p = 1/5;
+
+//Keeps track of the proportion of clients that have the latest STH - max sum should equal 1.
+formula no_clients_old = (c1_sth=0?p:0)+(c2_sth=0?p:0)+(c3_sth=0?p:0)+(c4_sth=0?p:0)+(c5_sth=0?p:0);
+formula no_clients_real = (c1_sth=1?p:0)+(c2_sth=1?p:0)+(c3_sth=1?p:0)+(c4_sth=1?p:0)+(c5_sth=1?p:0);
+formula no_clients_fake = (c1_sth=2?p:0)+(c2_sth=2?p:0)+(c3_sth=2?p:0)+(c4_sth=2?p:0)+(c5_sth=2?p:0);
+
+formula client1_getConsistency_STHOnly = c1_skip=false & c1=2 & ((c1s=1 & c1_sth!=s1_sth) | (c1s=2 & c1_sth!=s2_sth) | (c1s=3 & c1_sth!=s3_sth) | 
+								 (c1s=4 & c1_sth!=s4_sth) | (c1s=5 & c1_sth!=s5_sth));
+formula client2_getConsistency_STHOnly = c2_skip=false & c2=2 & ((c2s=1 & c2_sth!=s1_sth) | (c2s=2 & c2_sth!=s2_sth) | (c2s=3 & c2_sth!=s3_sth) | 
+								 (c2s=4 & c2_sth!=s4_sth) | (c2s=5 & c2_sth!=s5_sth));
+formula client3_getConsistency_STHOnly = c3_skip=false & c3=2 & ((c3s=1 & c3_sth!=s1_sth) | (c3s=2 & c3_sth!=s2_sth) | (c3s=3 & c3_sth!=s3_sth) | 
+								 (c3s=4 & c3_sth!=s4_sth) | (c3s=5 & c3_sth!=s5_sth));
+formula client4_getConsistency_STHOnly = c4_skip=false & c4=2 & ((c4s=1 & c4_sth!=s1_sth) | (c4s=2 & c4_sth!=s2_sth) | (c4s=3 & c4_sth!=s3_sth) | 
+								 (c4s=4 & c4_sth!=s4_sth) | (c4s=5 & c4_sth!=s5_sth));
+formula client5_getConsistency_STHOnly = c5_skip=false & c5=2 & ((c5s=1 & c5_sth!=s1_sth) | (c5s=2 & c5_sth!=s2_sth) | (c5s=3 & c5_sth!=s3_sth) | 
+								 (c5s=4 & c5_sth!=s4_sth) | (c5s=5 & c5_sth!=s5_sth));
+
+//Keeps track of the log connection currently being made using the STH-Only protocol
+formula log_connections_STHOnly = (client1_getConsistency_STHOnly?1:0)+(client2_getConsistency_STHOnly?1:0)+(client3_getConsistency_STHOnly?1:0)+
+				  (client4_getConsistency_STHOnly?1:0)+(client5_getConsistency_STHOnly?1:0);
+
+formula client1_getConsistency_STHAndProof = c1_skip=false & c1=2 & ((c1s=1 & (c1_sth>s1_sth | (c1_sth=1 & s1_sth=2))) | 
+								     (c1s=2 & (c1_sth>s2_sth | (c1_sth=1 & s2_sth=2))) | 
+							             (c1s=3 & (c1_sth>s3_sth | (c1_sth=1 & s3_sth=2))) | 
+								     (c1s=4 & (c1_sth>s4_sth | (c1_sth=1 & s42_sth=2))) | 
+								     (c1s=5 & (c1_sth>s5_sth | (c1_sth=1 & s5_sth=2))));
+formula client2_getConsistency_STHAndProof = c2_skip=false & c2=2 & ((c2s=1 & (c2_sth>s1_sth | (c2_sth=1 & s1_sth=2))) | 
+								     (c2s=2 & (c2_sth>s2_sth | (c2_sth=1 & s2_sth=2))) | 
+							             (c2s=3 & (c2_sth>s3_sth | (c2_sth=1 & s3_sth=2))) | 
+								     (c2s=4 & (c2_sth>s4_sth | (c2_sth=1 & s4_sth=2))) | 
+								     (c2s=5 & (c2_sth>s5_sth | (c2_sth=1 & s5_sth=2))));
+formula client3_getConsistency_STHAndProof = c3_skip=false & c3=2 & ((c3s=1 & (c3_sth>s1_sth | (c3_sth=1 & s1_sth=2))) | 
+								     (c3s=2 & (c3_sth>s2_sth | (c3_sth=1 & s2_sth=2))) | 
+							             (c3s=3 & (c3_sth>s3_sth | (c3_sth=1 & s3_sth=2))) | 
+								     (c3s=4 & (c3_sth>s4_sth | (c3_sth=1 & s4_sth=2))) | 
+								     (c3s=5 & (c3_sth>s5_sth | (c3_sth=1 & s5_sth=2))));
+formula client4_getConsistency_STHAndProof = c4_skip=false & c4=2 & ((c4s=1 & (c4_sth>s1_sth | (c4_sth=1 & s1_sth=2))) | 
+								     (c4s=2 & (c4_sth>s2_sth | (c4_sth=1 & s2_sth=2))) | 
+							             (c4s=3 & (c4_sth>s3_sth | (c4_sth=1 & s3_sth=2))) | 
+								     (c4s=4 & (c4_sth>s4_sth | (c4_sth=1 & s4_sth=2))) | 
+								     (c4s=5 & (c4_sth>s5_sth | (c4_sth=1 & s5_sth=2))));
+formula client5_getConsistency_STHAndProof = c5_skip=false & c5=2 & ((c5s=1 & (c5_sth>s1_sth | (c5_sth=1 & s1_sth=2))) | 
+								     (c5s=2 & (c5_sth>s2_sth | (c5_sth=1 & s2_sth=2))) | 
+							             (c5s=3 & (c5_sth>s3_sth | (c5_sth=1 & s3_sth=2))) | 
+								     (c5s=4 & (c5_sth>s4_sth | (c5_sth=1 & s4_sth=2))) | 
+								     (c5s=5 & (c5_sth>s5_sth | (c5_sth=1 & s5_sth=2))));
+
+//Keeps track of the log connection currently being made using the STH-and-Proof protocol
+formula log_connections_STHAndProof = (client1_getConsistency_STHAndProof?1:0)+(client2_getConsistency_STHAndProof?1:0)+
+				      (client3_getConsistency_STHAndProof?1:0)+(client4_getConsistency_STHAndProof?1:0)+
+				      (client5_getConsistency_STHAndProof?1:0);
+
+//--------------
+// REWARD STRUCTURES
+//--------------
+
+rewards "client_proportion_old"
+	true : no_clients_old;
+endrewards
+
+rewards "client_proportion_real"
+	true : no_clients_real;
+endrewards
+
+rewards "client_proportion_fake"
+	true : no_clients_fake;
+endrewards
+
+rewards "log_connections_STHOnly"
+	[update] true: log_connections_STHOnly;
+endrewards
+
+rewards "log_connections_STHAndProof"
+	[update] true : log_connections_STHAndProof;
+endrewards

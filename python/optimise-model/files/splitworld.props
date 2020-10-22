@@ -1,0 +1,3 @@
+R{"rounds"}=? [ F "detect" ]
+R{"log_connections_STHOnly"}=? [ F "detect" ]
+R{"log_connections_STHAndProof"}=? [ F "detect" ]

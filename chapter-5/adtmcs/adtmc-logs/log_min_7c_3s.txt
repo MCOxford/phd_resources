@@ -1,0 +1,70 @@
+
+Abstract variable names and expressions:
+(int) c1_sth = ((c1=2&((!c1_sth&(((c1s=1&s1_sth)|(c1s=2&s2_sth)|(c1s=3&s3_sth))))|c1_sth))|(c1!=2&c1_sth) ? 1 : 0)
+(int) c2_sth = ((c2=2&((!c2_sth&(((c2s=1&s1_sth)|(c2s=2&s2_sth)|(c2s=3&s3_sth))))|c2_sth))|(c2!=2&c2_sth) ? 1 : 0)
+(int) c3_sth = ((c3=2&((!c3_sth&(((c3s=1&s1_sth)|(c3s=2&s2_sth)|(c3s=3&s3_sth))))|c3_sth))|(c3!=2&c3_sth) ? 1 : 0)
+(int) c4_sth = ((c4=2&((!c4_sth&(((c4s=1&s1_sth)|(c4s=2&s2_sth)|(c4s=3&s3_sth))))|c4_sth))|(c4!=2&c4_sth) ? 1 : 0)
+(int) c5_sth = ((c5=2&((!c5_sth&(((c5s=1&s1_sth)|(c5s=2&s2_sth)|(c5s=3&s3_sth))))|c5_sth))|(c5!=2&c5_sth) ? 1 : 0)
+(int) c6_sth = ((c6=2&((!c6_sth&(((c6s=1&s1_sth)|(c6s=2&s2_sth)|(c6s=3&s3_sth))))|c6_sth))|(c6!=2&c6_sth) ? 1 : 0)
+(int) c7_sth = ((c7=2&((!c7_sth&(((c7s=1&s1_sth)|(c7s=2&s2_sth)|(c7s=3&s3_sth))))|c7_sth))|(c7!=2&c7_sth) ? 1 : 0)
+(int) s1_sth = 0+((c1!=2&s1_sth)|(c1=2&(!s1_sth&(((c1s=1&c1_sth)|(c2s=1&c2_sth)|(c3s=1&c3_sth)|(c4s=1&c4_sth)|(c5s=1&c5_sth)|(c6s=1&c6_sth)|(c7s=1&c7_sth))))|s1_sth) ? 1 : 0)
+(int) s2_sth = 0+((c1!=2&s2_sth)|(c1=2&(!s2_sth&(((c1s=2&c1_sth)|(c2s=2&c2_sth)|(c3s=2&c3_sth)|(c4s=2&c4_sth)|(c5s=2&c5_sth)|(c6s=2&c6_sth)|(c7s=2&c7_sth))))|s2_sth) ? 1 : 0)
+(int) s3_sth = 0+((c1!=2&s3_sth)|(c1=2&(!s3_sth&(((c1s=3&c1_sth)|(c2s=3&c2_sth)|(c3s=3&c3_sth)|(c4s=3&c4_sth)|(c5s=3&c5_sth)|(c6s=3&c6_sth)|(c7s=3&c7_sth))))|s3_sth) ? 1 : 0)
+(int) stage = 0+(c1=1&(((c1_sth&!c1_skip)|(c2_sth&!c2_skip)|(c3_sth&!c3_skip)|(c4_sth&!c4_skip)|(c5_sth&!c5_skip)|(c6_sth&!c6_skip)|(c7_sth&!c7_skip)))&!(((!c1_sth&!c1_skip)|(!c2_sth&!c2_skip)|(!c3_sth&!c3_skip)|(!c4_sth&!c4_skip)|(!c5_sth&!c5_skip)|(!c6_sth&!c6_skip)|(!c7_sth&!c7_skip))) ? 1 : 0)+(c1=1&!(((c1_sth&!c1_skip)|(c2_sth&!c2_skip)|(c3_sth&!c3_skip)|(c4_sth&!c4_skip)|(c5_sth&!c5_skip)|(c6_sth&!c6_skip)|(c7_sth&!c7_skip)))&(((!c1_sth&!c1_skip)|(!c2_sth&!c2_skip)|(!c3_sth&!c3_skip)|(!c4_sth&!c4_skip)|(!c5_sth&!c5_skip)|(!c6_sth&!c6_skip)|(!c7_sth&!c7_skip))) ? 2 : 0)+(c1=1&(((c1_sth&!c1_skip)|(c2_sth&!c2_skip)|(c3_sth&!c3_skip)|(c4_sth&!c4_skip)|(c5_sth&!c5_skip)|(c6_sth&!c6_skip)|(c7_sth&!c7_skip)))&(((!c1_sth&!c1_skip)|(!c2_sth&!c2_skip)|(!c3_sth&!c3_skip)|(!c4_sth&!c4_skip)|(!c5_sth&!c5_skip)|(!c6_sth&!c6_skip)|(!c7_sth&!c7_skip))) ? 3 : 0)+(c1=1&!(((c1_sth&!c1_skip)|(c2_sth&!c2_skip)|(c3_sth&!c3_skip)|(c4_sth&!c4_skip)|(c5_sth&!c5_skip)|(c6_sth&!c6_skip)|(c7_sth&!c7_skip)))&!(((!c1_sth&!c1_skip)|(!c2_sth&!c2_skip)|(!c3_sth&!c3_skip)|(!c4_sth&!c4_skip)|(!c5_sth&!c5_skip)|(!c6_sth&!c6_skip)|(!c7_sth&!c7_skip))) ? 4 : 0)+(c1=2 ? 5 : 0)+(c1=3 ? 6 : 0)+(c1=4 ? 7 : 0)
+
+Target set conditions:
+((((c1=2&((!c1_sth&(((c1s=1&s1_sth)|(c1s=2&s2_sth)|(c1s=3&s3_sth))))|c1_sth))|(c1!=2&c1_sth) ? 1 : 0)))+((((c2=2&((!c2_sth&(((c2s=1&s1_sth)|(c2s=2&s2_sth)|(c2s=3&s3_sth))))|c2_sth))|(c2!=2&c2_sth) ? 1 : 0)))+((((c3=2&((!c3_sth&(((c3s=1&s1_sth)|(c3s=2&s2_sth)|(c3s=3&s3_sth))))|c3_sth))|(c3!=2&c3_sth) ? 1 : 0)))+((((c4=2&((!c4_sth&(((c4s=1&s1_sth)|(c4s=2&s2_sth)|(c4s=3&s3_sth))))|c4_sth))|(c4!=2&c4_sth) ? 1 : 0)))+((((c5=2&((!c5_sth&(((c5s=1&s1_sth)|(c5s=2&s2_sth)|(c5s=3&s3_sth))))|c5_sth))|(c5!=2&c5_sth) ? 1 : 0)))+((((c6=2&((!c6_sth&(((c6s=1&s1_sth)|(c6s=2&s2_sth)|(c6s=3&s3_sth))))|c6_sth))|(c6!=2&c6_sth) ? 1 : 0)))+((((c7=2&((!c7_sth&(((c7s=1&s1_sth)|(c7s=2&s2_sth)|(c7s=3&s3_sth))))|c7_sth))|(c7!=2&c7_sth) ? 1 : 0)))=7&((0+(c1=1&(((c1_sth&!c1_skip)|(c2_sth&!c2_skip)|(c3_sth&!c3_skip)|(c4_sth&!c4_skip)|(c5_sth&!c5_skip)|(c6_sth&!c6_skip)|(c7_sth&!c7_skip)))&!(((!c1_sth&!c1_skip)|(!c2_sth&!c2_skip)|(!c3_sth&!c3_skip)|(!c4_sth&!c4_skip)|(!c5_sth&!c5_skip)|(!c6_sth&!c6_skip)|(!c7_sth&!c7_skip))) ? 1 : 0)+(c1=1&!(((c1_sth&!c1_skip)|(c2_sth&!c2_skip)|(c3_sth&!c3_skip)|(c4_sth&!c4_skip)|(c5_sth&!c5_skip)|(c6_sth&!c6_skip)|(c7_sth&!c7_skip)))&(((!c1_sth&!c1_skip)|(!c2_sth&!c2_skip)|(!c3_sth&!c3_skip)|(!c4_sth&!c4_skip)|(!c5_sth&!c5_skip)|(!c6_sth&!c6_skip)|(!c7_sth&!c7_skip))) ? 2 : 0)+(c1=1&(((c1_sth&!c1_skip)|(c2_sth&!c2_skip)|(c3_sth&!c3_skip)|(c4_sth&!c4_skip)|(c5_sth&!c5_skip)|(c6_sth&!c6_skip)|(c7_sth&!c7_skip)))&(((!c1_sth&!c1_skip)|(!c2_sth&!c2_skip)|(!c3_sth&!c3_skip)|(!c4_sth&!c4_skip)|(!c5_sth&!c5_skip)|(!c6_sth&!c6_skip)|(!c7_sth&!c7_skip))) ? 3 : 0)+(c1=1&!(((c1_sth&!c1_skip)|(c2_sth&!c2_skip)|(c3_sth&!c3_skip)|(c4_sth&!c4_skip)|(c5_sth&!c5_skip)|(c6_sth&!c6_skip)|(c7_sth&!c7_skip)))&!(((!c1_sth&!c1_skip)|(!c2_sth&!c2_skip)|(!c3_sth&!c3_skip)|(!c4_sth&!c4_skip)|(!c5_sth&!c5_skip)|(!c6_sth&!c6_skip)|(!c7_sth&!c7_skip))) ? 4 : 0)+(c1=2 ? 5 : 0)+(c1=3 ? 6 : 0)+(c1=4 ? 7 : 0)))>=6
+
+Constructing ADTMC model...
+
+Type:		IDTMC
+States:		1776
+Transitions:	11616
+
+Time for model construction: 163.35 seconds.
+
+Computing minimal bounded reachability...
+Round 1 (4 steps): 4.9E-324	(0.014s)
+Round 2 (8 steps): 4.9E-324	(0.015s)
+Round 3 (12 steps): 1.0E-323	(0.023s)
+Round 4 (16 steps): 3.5E-323	(0.027s)
+Round 5 (20 steps): 8.4E-323	(0.042s)
+Round 6 (24 steps): 2.7203361950706134E-12	(0.039s)
+Round 7 (28 steps): 1.0838957503086335E-4	(0.032s)
+Round 8 (32 steps): 0.002633423347234352	(0.032s)
+Round 9 (36 steps): 0.011471901668443304	(0.036s)
+Round 10 (40 steps): 0.030533982927811145	(0.039s)
+Round 11 (44 steps): 0.06229715310596063	(0.051s)
+Round 12 (48 steps): 0.10718548989488709	(0.049s)
+Round 13 (52 steps): 0.16373755680023244	(0.051s)
+Round 14 (56 steps): 0.22921334722744902	(0.055s)
+Round 15 (60 steps): 0.3002951798845144	(0.059s)
+Round 16 (64 steps): 0.3736745542386323	(0.063s)
+Round 17 (68 steps): 0.44644508020672646	(0.067s)
+Round 18 (72 steps): 0.5163036516313205	(0.069s)
+Round 19 (76 steps): 0.5816030989291433	(0.073s)
+Round 20 (80 steps): 0.641308363235708	(0.079s)
+Total MC time: 0
+
+Computing maximal bounded reachability...
+Round 1 (4 steps): 0.0010877342886045336	(0.012s)
+Round 2 (8 steps): 0.13140161548965287	(0.016s)
+Round 3 (12 steps): 0.78011612123537	(0.021s)
+Round 4 (16 steps): 0.9623431448476311	(0.022s)
+Round 5 (20 steps): 0.99461688976996	(0.021s)
+Round 6 (24 steps): 0.9993020533110154	(0.023s)
+Round 7 (28 steps): 0.9999148626701215	(0.029s)
+Round 8 (32 steps): 0.9999900500133574	(0.031s)
+Round 9 (36 steps): 0.9999988629716152	(0.036s)
+Round 10 (40 steps): 0.9999998707791559	(0.04s)
+Round 11 (44 steps): 0.9999999852116864	(0.044s)
+Round 12 (48 steps): 0.9999999982847465	(0.047s)
+Round 13 (52 steps): 0.9999999997961678	(0.051s)
+Round 14 (56 steps): 0.9999999999750778	(0.057s)
+Round 15 (60 steps): 0.9999999999968207	(0.061s)
+Round 16 (64 steps): 0.9999999999995721	(0.064s)
+Round 17 (68 steps): 0.9999999999999392	(0.068s)
+Round 18 (72 steps): 0.9999999999999909	(0.073s)
+Round 19 (76 steps): 0.9999999999999987	(0.078s)
+Round 20 (80 steps): 0.9999999999999999	(0.081s)
+Total MC time: 0

@@ -1,0 +1,8 @@
+const int T1;
+const int T2=20;
+
+R{"client_proportion"}=? [ I=T1*103 ]
+
+R{"log_connections_STHOnly"}=? [ C<=T2*103 ]
+
+R{"log_connections_STHAndProof"}=? [ C<=T2*103 ]

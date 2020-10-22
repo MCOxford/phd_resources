@@ -1,0 +1,13 @@
+const int T;
+
+P=? [ F<=12*T "detect" ]
+
+R{"client_proportion_old"}=? [ I=12*T ]
+
+R{"client_proportion_real"}=? [ I=12*T ]
+
+R{"client_proportion_fake"}=? [ I=12*T ]
+
+R{"log_connections_STHOnly"}=? [ C<=12*T ]
+
+R{"log_connections_STHAndProof"}=? [ C<=12*T ]

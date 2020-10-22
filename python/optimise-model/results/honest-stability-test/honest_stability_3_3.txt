@@ -1,0 +1,8 @@
+--- Execution time: 18.833980798721313 seconds ---
+suggested parameters that optimise performance:
+{'client_count': '[3,1,1]', 'client_init': '[0,0,1]', 'connect_rates': '[0.5,0.5,0.5]', 'server_init': '[0,0,1,0,0]', 'type_one': {'p_1_1': '0', 'p_1_2': '0', 'p_1_3': '0', 'p_1_4': '0'}, 'type_three': {'p_3_1': '0', 'p_3_2': '0', 'p_3_3': 0.8038042805125453, 'p_3_4': '0'}, 'type_two': {'p_2_1': '0', 'p_2_2': '0', 'p_2_3': '0', 'p_2_4': '0'}}
+Model type used: honest
+
+Suggested distribution for client type 1: [0.3668879123565087, 0.2566248732131312, 0.027175713713532678, 0.2690779071661857, 0.08023359355064175]
+Suggested distribution for client type 2: [0.21393874414500336, 0.2279971450578929, 0.06076849802908572, 0.1741089991148236, 0.32318661365319445]
+Suggested distribution for client type 3: [0.03965211147346438, 0.09915021940963915, 0.28199579657254864, 0.2529642146586943, 0.3262376578856536]

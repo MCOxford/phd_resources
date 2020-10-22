@@ -1,0 +1,505 @@
+PRISM
+=====
+
+Version: 4.3.1
+Date: Thu Sep 20 14:58:10 BST 2018
+Hostname: [REDACTED]
+Memory limits: cudd=1g, java(heap)=910.5m
+Command line: prism splitworld/splitworld_sim.prism splitworld/splitworld_sim.props -const 'T=1:1:20' -sim -simpathlen 20000 -simsamples 2000
+
+Parsing model file "splitworld/splitworld_sim.prism"...
+
+Parsing properties file "splitworld/splitworld_sim.props"...
+
+6 properties:
+(1) P=? [ F<=12*T "detect" ]
+(2) R{"client_proportion_old"}=? [ I=12*T ]
+(3) R{"client_proportion_real"}=? [ I=12*T ]
+(4) R{"client_proportion_fake"}=? [ I=12*T ]
+(5) R{"log_connections_STHOnly"}=? [ C<=12*T ]
+(6) R{"log_connections_STHAndProof"}=? [ C<=12*T ]
+
+Type:        DTMC
+Modules:     Client1 Client2 Client3 Client4 Client5 Server1 Server2 Server3 Server4 Server5 
+Variables:   c1 c1s c1_sth c1d c1_skip c1_flag c2 c2s c2_sth c2d c2_skip c2_flag c3 c3s c3_sth c3d c3_skip c3_flag c4 c4s c4_sth c4d c4_skip c4_flag c5 c5s c5_sth c5d c5_skip c5_flag s1_sth s1d s1_flag s2_sth s2d s2_flag s3_sth s3d s3_flag s4_sth s4d s4_flag s5_sth s5d s5_flag 
+
+---------------------------------------------------------------------
+
+Simulating: P=? [ F<=12*T "detect" ]
+Property constants: T=1:1:20
+
+Simulation method: CI (Confidence Interval)
+Simulation method parameters: width=unknown, confidence=0.01, number of samples=2000
+Simulation parameters: max path length=20000
+
+Sampling progress: [ 100% ]
+
+Sampling complete: 2000 iterations in 4.531 seconds (average 0.0023)
+Path length statistics: average 2e+02, min 11, max 241
+
+Simulation method parameters:
+T=1 : width=0.004260832100284087, confidence=0.01, number of samples=2000
+T=2 : width=0.006273064858760418, confidence=0.01, number of samples=2000
+T=3 : width=0.00796621066755629, confidence=0.01, number of samples=2000
+T=4 : width=0.010440918463964553, confidence=0.01, number of samples=2000
+T=5 : width=0.013190405753905647, confidence=0.01, number of samples=2000
+T=6 : width=0.015127843758663176, confidence=0.01, number of samples=2000
+T=7 : width=0.017128801998414423, confidence=0.01, number of samples=2000
+T=8 : width=0.018755218490765634, confidence=0.01, number of samples=2000
+T=9 : width=0.02065584291902197, confidence=0.01, number of samples=2000
+T=10 : width=0.022323622683084233, confidence=0.01, number of samples=2000
+T=11 : width=0.023278958516589614, confidence=0.01, number of samples=2000
+T=12 : width=0.024427292410980798, confidence=0.01, number of samples=2000
+T=13 : width=0.025410596455521683, confidence=0.01, number of samples=2000
+T=14 : width=0.026234380814182657, confidence=0.01, number of samples=2000
+T=15 : width=0.026929617928418043, confidence=0.01, number of samples=2000
+T=16 : width=0.027515000003013816, confidence=0.01, number of samples=2000
+T=17 : width=0.027963937678831135, confidence=0.01, number of samples=2000
+T=18 : width=0.028303180029396406, confidence=0.01, number of samples=2000
+T=19 : width=0.0285688973857529, confidence=0.01, number of samples=2000
+T=20 : width=0.02875220623757185, confidence=0.01, number of samples=2000
+
+Simulation result details:
+T=1 : confidence interval is 0.0055 +/- 0.004260832100284087, based on 99.0% confidence level
+T=2 : confidence interval is 0.012 +/- 0.006273064858760418, based on 99.0% confidence level
+T=3 : confidence interval is 0.0195 +/- 0.00796621066755629, based on 99.0% confidence level
+T=4 : confidence interval is 0.034 +/- 0.010440918463964553, based on 99.0% confidence level
+T=5 : confidence interval is 0.0555 +/- 0.013190405753905647, based on 99.0% confidence level
+T=6 : confidence interval is 0.0745 +/- 0.015127843758663176, based on 99.0% confidence level
+T=7 : confidence interval is 0.098 +/- 0.017128801998414423, based on 99.0% confidence level
+T=8 : confidence interval is 0.1205 +/- 0.018755218490765634, based on 99.0% confidence level
+T=9 : confidence interval is 0.1515 +/- 0.02065584291902197, based on 99.0% confidence level
+T=10 : confidence interval is 0.184 +/- 0.022323622683084233, based on 99.0% confidence level
+T=11 : confidence interval is 0.2055 +/- 0.023278958516589614, based on 99.0% confidence level
+T=12 : confidence interval is 0.235 +/- 0.024427292410980798, based on 99.0% confidence level
+T=13 : confidence interval is 0.2645 +/- 0.025410596455521683, based on 99.0% confidence level
+T=14 : confidence interval is 0.2935 +/- 0.026234380814182657, based on 99.0% confidence level
+T=15 : confidence interval is 0.3225 +/- 0.026929617928418043, based on 99.0% confidence level
+T=16 : confidence interval is 0.352 +/- 0.027515000003013816, based on 99.0% confidence level
+T=17 : confidence interval is 0.38 +/- 0.027963937678831135, based on 99.0% confidence level
+T=18 : confidence interval is 0.407 +/- 0.028303180029396406, based on 99.0% confidence level
+T=19 : confidence interval is 0.436 +/- 0.0285688973857529, based on 99.0% confidence level
+T=20 : confidence interval is 0.4695 +/- 0.02875220623757185, based on 99.0% confidence level
+
+Results:
+T=1 : 0.0055
+T=2 : 0.012
+T=3 : 0.0195
+T=4 : 0.034
+T=5 : 0.0555
+T=6 : 0.0745
+T=7 : 0.098
+T=8 : 0.1205
+T=9 : 0.1515
+T=10 : 0.184
+T=11 : 0.2055
+T=12 : 0.235
+T=13 : 0.2645
+T=14 : 0.2935
+T=15 : 0.3225
+T=16 : 0.352
+T=17 : 0.38
+T=18 : 0.407
+T=19 : 0.436
+T=20 : 0.4695
+
+---------------------------------------------------------------------
+
+Simulating: R{"client_proportion_old"}=? [ I=12*T ]
+Property constants: T=1:1:20
+
+Simulation method: CI (Confidence Interval)
+Simulation method parameters: width=unknown, confidence=0.01, number of samples=2000
+Simulation parameters: max path length=20000
+
+Sampling progress: [ 100% ]
+
+Sampling complete: 2000 iterations in 4.688 seconds (average 0.0023)
+Path length statistics: average 2.4e+02, min 240, max 240
+
+Simulation method parameters:
+T=1 : width=0.0025982237502551945, confidence=0.01, number of samples=2000
+T=2 : width=0.004574524894426433, confidence=0.01, number of samples=2000
+T=3 : width=0.006961703395786621, confidence=0.01, number of samples=2000
+T=4 : width=0.009556209338497284, confidence=0.01, number of samples=2000
+T=5 : width=0.012313062292829996, confidence=0.01, number of samples=2000
+T=6 : width=0.01433000653385578, confidence=0.01, number of samples=2000
+T=7 : width=0.01605375705574354, confidence=0.01, number of samples=2000
+T=8 : width=0.01751791209672693, confidence=0.01, number of samples=2000
+T=9 : width=0.018295033815432547, confidence=0.01, number of samples=2000
+T=10 : width=0.01880358304084664, confidence=0.01, number of samples=2000
+T=11 : width=0.019110222590195895, confidence=0.01, number of samples=2000
+T=12 : width=0.019203091528654237, confidence=0.01, number of samples=2000
+T=13 : width=0.019123043860375784, confidence=0.01, number of samples=2000
+T=14 : width=0.019004679653370996, confidence=0.01, number of samples=2000
+T=15 : width=0.01878159411014567, confidence=0.01, number of samples=2000
+T=16 : width=0.01851790838536022, confidence=0.01, number of samples=2000
+T=17 : width=0.018132947961440805, confidence=0.01, number of samples=2000
+T=18 : width=0.01779042453496677, confidence=0.01, number of samples=2000
+T=19 : width=0.017397859343269727, confidence=0.01, number of samples=2000
+T=20 : width=0.017123738917522915, confidence=0.01, number of samples=2000
+
+Simulation result details:
+T=1 : confidence interval is 0.7896999999999722 +/- 0.0025982237502551945, based on 99.0% confidence level
+T=2 : confidence interval is 0.7710999999999739 +/- 0.004574524894426433, based on 99.0% confidence level
+T=3 : confidence interval is 0.744699999999977 +/- 0.006961703395786621, based on 99.0% confidence level
+T=4 : confidence interval is 0.7067999999999819 +/- 0.009556209338497284, based on 99.0% confidence level
+T=5 : confidence interval is 0.6630999999999859 +/- 0.012313062292829996, based on 99.0% confidence level
+T=6 : confidence interval is 0.6181999999999899 +/- 0.01433000653385578, based on 99.0% confidence level
+T=7 : confidence interval is 0.5736999999999921 +/- 0.01605375705574354, based on 99.0% confidence level
+T=8 : confidence interval is 0.5264999999999949 +/- 0.01751791209672693, based on 99.0% confidence level
+T=9 : confidence interval is 0.4845999999999962 +/- 0.018295033815432547, based on 99.0% confidence level
+T=10 : confidence interval is 0.44639999999999724 +/- 0.01880358304084664, based on 99.0% confidence level
+T=11 : confidence interval is 0.4104999999999982 +/- 0.019110222590195895, based on 99.0% confidence level
+T=12 : confidence interval is 0.3767999999999982 +/- 0.019203091528654237, based on 99.0% confidence level
+T=13 : confidence interval is 0.3483999999999989 +/- 0.019123043860375784, based on 99.0% confidence level
+T=14 : confidence interval is 0.3214999999999996 +/- 0.019004679653370996, based on 99.0% confidence level
+T=15 : confidence interval is 0.2985999999999996 +/- 0.01878159411014567, based on 99.0% confidence level
+T=16 : confidence interval is 0.2789 +/- 0.01851790838536022, based on 99.0% confidence level
+T=17 : confidence interval is 0.2603000000000002 +/- 0.018132947961440805, based on 99.0% confidence level
+T=18 : confidence interval is 0.24270000000000008 +/- 0.01779042453496677, based on 99.0% confidence level
+T=19 : confidence interval is 0.22539999999999993 +/- 0.017397859343269727, based on 99.0% confidence level
+T=20 : confidence interval is 0.21249999999999983 +/- 0.017123738917522915, based on 99.0% confidence level
+
+Results:
+T=1 : 0.7896999999999722
+T=2 : 0.7710999999999739
+T=3 : 0.744699999999977
+T=4 : 0.7067999999999819
+T=5 : 0.6630999999999859
+T=6 : 0.6181999999999899
+T=7 : 0.5736999999999921
+T=8 : 0.5264999999999949
+T=9 : 0.4845999999999962
+T=10 : 0.44639999999999724
+T=11 : 0.4104999999999982
+T=12 : 0.3767999999999982
+T=13 : 0.3483999999999989
+T=14 : 0.3214999999999996
+T=15 : 0.2985999999999996
+T=16 : 0.2789
+T=17 : 0.2603000000000002
+T=18 : 0.24270000000000008
+T=19 : 0.22539999999999993
+T=20 : 0.21249999999999983
+
+---------------------------------------------------------------------
+
+Simulating: R{"client_proportion_real"}=? [ I=12*T ]
+Property constants: T=1:1:20
+
+Simulation method: CI (Confidence Interval)
+Simulation method parameters: width=unknown, confidence=0.01, number of samples=2000
+Simulation parameters: max path length=20000
+
+Sampling progress: [ 100% ]
+
+Sampling complete: 2000 iterations in 4.658 seconds (average 0.0023)
+Path length statistics: average 2.4e+02, min 240, max 240
+
+Simulation method parameters:
+T=1 : width=0.00264622141853251, confidence=0.01, number of samples=2000
+T=2 : width=0.003819790325149881, confidence=0.01, number of samples=2000
+T=3 : width=0.005136738037491971, confidence=0.01, number of samples=2000
+T=4 : width=0.006596453990741738, confidence=0.01, number of samples=2000
+T=5 : width=0.008318776227956112, confidence=0.01, number of samples=2000
+T=6 : width=0.010283964211795605, confidence=0.01, number of samples=2000
+T=7 : width=0.011835488925757622, confidence=0.01, number of samples=2000
+T=8 : width=0.013247903809659877, confidence=0.01, number of samples=2000
+T=9 : width=0.014259164339033018, confidence=0.01, number of samples=2000
+T=10 : width=0.01513763149117235, confidence=0.01, number of samples=2000
+T=11 : width=0.01584620330731591, confidence=0.01, number of samples=2000
+T=12 : width=0.01648736810153783, confidence=0.01, number of samples=2000
+T=13 : width=0.01698499877247408, confidence=0.01, number of samples=2000
+T=14 : width=0.01735789817479378, confidence=0.01, number of samples=2000
+T=15 : width=0.01774840477700685, confidence=0.01, number of samples=2000
+T=16 : width=0.01807208012687986, confidence=0.01, number of samples=2000
+T=17 : width=0.018399678567184087, confidence=0.01, number of samples=2000
+T=18 : width=0.018594514760634884, confidence=0.01, number of samples=2000
+T=19 : width=0.01877349410960561, confidence=0.01, number of samples=2000
+T=20 : width=0.018978093775551225, confidence=0.01, number of samples=2000
+
+Simulation result details:
+T=1 : confidence interval is 0.010499999999999978 +/- 0.00264622141853251, based on 99.0% confidence level
+T=2 : confidence interval is 0.02200000000000004 +/- 0.003819790325149881, based on 99.0% confidence level
+T=3 : confidence interval is 0.034500000000000156 +/- 0.005136738037491971, based on 99.0% confidence level
+T=4 : confidence interval is 0.04970000000000029 +/- 0.006596453990741738, based on 99.0% confidence level
+T=5 : confidence interval is 0.06790000000000018 +/- 0.008318776227956112, based on 99.0% confidence level
+T=6 : confidence interval is 0.09019999999999972 +/- 0.010283964211795605, based on 99.0% confidence level
+T=7 : confidence interval is 0.11249999999999946 +/- 0.011835488925757622, based on 99.0% confidence level
+T=8 : confidence interval is 0.1334999999999994 +/- 0.013247903809659877, based on 99.0% confidence level
+T=9 : confidence interval is 0.15119999999999967 +/- 0.014259164339033018, based on 99.0% confidence level
+T=10 : confidence interval is 0.16899999999999965 +/- 0.01513763149117235, based on 99.0% confidence level
+T=11 : confidence interval is 0.1842999999999998 +/- 0.01584620330731591, based on 99.0% confidence level
+T=12 : confidence interval is 0.20069999999999977 +/- 0.01648736810153783, based on 99.0% confidence level
+T=13 : confidence interval is 0.21489999999999992 +/- 0.01698499877247408, based on 99.0% confidence level
+T=14 : confidence interval is 0.2269000000000003 +/- 0.01735789817479378, based on 99.0% confidence level
+T=15 : confidence interval is 0.2389000000000004 +/- 0.01774840477700685, based on 99.0% confidence level
+T=16 : confidence interval is 0.2502000000000005 +/- 0.01807208012687986, based on 99.0% confidence level
+T=17 : confidence interval is 0.26050000000000056 +/- 0.018399678567184087, based on 99.0% confidence level
+T=18 : confidence interval is 0.26920000000000077 +/- 0.018594514760634884, based on 99.0% confidence level
+T=19 : confidence interval is 0.2769000000000008 +/- 0.01877349410960561, based on 99.0% confidence level
+T=20 : confidence interval is 0.28430000000000066 +/- 0.018978093775551225, based on 99.0% confidence level
+
+Results:
+T=1 : 0.010499999999999978
+T=2 : 0.02200000000000004
+T=3 : 0.034500000000000156
+T=4 : 0.04970000000000029
+T=5 : 0.06790000000000018
+T=6 : 0.09019999999999972
+T=7 : 0.11249999999999946
+T=8 : 0.1334999999999994
+T=9 : 0.15119999999999967
+T=10 : 0.16899999999999965
+T=11 : 0.1842999999999998
+T=12 : 0.20069999999999977
+T=13 : 0.21489999999999992
+T=14 : 0.2269000000000003
+T=15 : 0.2389000000000004
+T=16 : 0.2502000000000005
+T=17 : 0.26050000000000056
+T=18 : 0.26920000000000077
+T=19 : 0.2769000000000008
+T=20 : 0.28430000000000066
+
+---------------------------------------------------------------------
+
+Simulating: R{"client_proportion_fake"}=? [ I=12*T ]
+Property constants: T=1:1:20
+
+Simulation method: CI (Confidence Interval)
+Simulation method parameters: width=unknown, confidence=0.01, number of samples=2000
+Simulation parameters: max path length=20000
+
+Sampling progress: [ 100% ]
+
+Sampling complete: 2000 iterations in 4.59 seconds (average 0.0023)
+Path length statistics: average 2.4e+02, min 240, max 240
+
+Simulation method parameters:
+T=1 : width=3.3994121665896794E-9, confidence=0.01, number of samples=2000
+T=2 : width=0.0027289646843462307, confidence=0.01, number of samples=2000
+T=3 : width=0.004919509491845416, confidence=0.01, number of samples=2000
+T=4 : width=0.007269126291561112, confidence=0.01, number of samples=2000
+T=5 : width=0.009501283591024456, confidence=0.01, number of samples=2000
+T=6 : width=0.011504806730149695, confidence=0.01, number of samples=2000
+T=7 : width=0.013030818804863547, confidence=0.01, number of samples=2000
+T=8 : width=0.014589619899103125, confidence=0.01, number of samples=2000
+T=9 : width=0.01579587870530001, confidence=0.01, number of samples=2000
+T=10 : width=0.01674073447604123, confidence=0.01, number of samples=2000
+T=11 : width=0.017391588333701174, confidence=0.01, number of samples=2000
+T=12 : width=0.017997157067083713, confidence=0.01, number of samples=2000
+T=13 : width=0.018625382905252456, confidence=0.01, number of samples=2000
+T=14 : width=0.019098868208853575, confidence=0.01, number of samples=2000
+T=15 : width=0.019449231733202253, confidence=0.01, number of samples=2000
+T=16 : width=0.01978085329218566, confidence=0.01, number of samples=2000
+T=17 : width=0.01993545852238367, confidence=0.01, number of samples=2000
+T=18 : width=0.020118209020574828, confidence=0.01, number of samples=2000
+T=19 : width=0.020309880751910384, confidence=0.01, number of samples=2000
+T=20 : width=0.020456640662897516, confidence=0.01, number of samples=2000
+
+Simulation result details:
+T=1 : confidence interval is 0.19999999999999293 +/- 3.3994121665896794E-9, based on 99.0% confidence level
+T=2 : confidence interval is 0.20749999999999275 +/- 0.0027289646843462307, based on 99.0% confidence level
+T=3 : confidence interval is 0.22209999999999294 +/- 0.004919509491845416, based on 99.0% confidence level
+T=4 : confidence interval is 0.23999999999999314 +/- 0.007269126291561112, based on 99.0% confidence level
+T=5 : confidence interval is 0.2630999999999946 +/- 0.009501283591024456, based on 99.0% confidence level
+T=6 : confidence interval is 0.2857999999999978 +/- 0.011504806730149695, based on 99.0% confidence level
+T=7 : confidence interval is 0.30900000000000044 +/- 0.013030818804863547, based on 99.0% confidence level
+T=8 : confidence interval is 0.3339000000000024 +/- 0.014589619899103125, based on 99.0% confidence level
+T=9 : confidence interval is 0.35750000000000426 +/- 0.01579587870530001, based on 99.0% confidence level
+T=10 : confidence interval is 0.37800000000000583 +/- 0.01674073447604123, based on 99.0% confidence level
+T=11 : confidence interval is 0.3967000000000065 +/- 0.017391588333701174, based on 99.0% confidence level
+T=12 : confidence interval is 0.41320000000000684 +/- 0.017997157067083713, based on 99.0% confidence level
+T=13 : confidence interval is 0.43070000000000735 +/- 0.018625382905252456, based on 99.0% confidence level
+T=14 : confidence interval is 0.4436000000000079 +/- 0.019098868208853575, based on 99.0% confidence level
+T=15 : confidence interval is 0.45720000000000816 +/- 0.019449231733202253, based on 99.0% confidence level
+T=16 : confidence interval is 0.4685000000000086 +/- 0.01978085329218566, based on 99.0% confidence level
+T=17 : confidence interval is 0.4785000000000085 +/- 0.01993545852238367, based on 99.0% confidence level
+T=18 : confidence interval is 0.4883000000000085 +/- 0.020118209020574828, based on 99.0% confidence level
+T=19 : confidence interval is 0.49850000000000894 +/- 0.020309880751910384, based on 99.0% confidence level
+T=20 : confidence interval is 0.5063000000000089 +/- 0.020456640662897516, based on 99.0% confidence level
+
+Results:
+T=1 : 0.19999999999999293
+T=2 : 0.20749999999999275
+T=3 : 0.22209999999999294
+T=4 : 0.23999999999999314
+T=5 : 0.2630999999999946
+T=6 : 0.2857999999999978
+T=7 : 0.30900000000000044
+T=8 : 0.3339000000000024
+T=9 : 0.35750000000000426
+T=10 : 0.37800000000000583
+T=11 : 0.3967000000000065
+T=12 : 0.41320000000000684
+T=13 : 0.43070000000000735
+T=14 : 0.4436000000000079
+T=15 : 0.45720000000000816
+T=16 : 0.4685000000000086
+T=17 : 0.4785000000000085
+T=18 : 0.4883000000000085
+T=19 : 0.49850000000000894
+T=20 : 0.5063000000000089
+
+---------------------------------------------------------------------
+
+Simulating: R{"log_connections_STHOnly"}=? [ C<=12*T ]
+Property constants: T=1:1:20
+
+Simulation method: CI (Confidence Interval)
+Simulation method parameters: width=unknown, confidence=0.01, number of samples=2000
+Simulation parameters: max path length=20000
+
+Sampling progress: [ 100% ]
+
+Sampling complete: 2000 iterations in 4.638 seconds (average 0.0023)
+Path length statistics: average 2.4e+02, min 240, max 240
+
+Simulation method parameters:
+T=1 : width=0.012804710418489521, confidence=0.01, number of samples=2000
+T=2 : width=0.019413005491790508, confidence=0.01, number of samples=2000
+T=3 : width=0.023382401977008613, confidence=0.01, number of samples=2000
+T=4 : width=0.026713057561425693, confidence=0.01, number of samples=2000
+T=5 : width=0.029876971037570664, confidence=0.01, number of samples=2000
+T=6 : width=0.03277086675089536, confidence=0.01, number of samples=2000
+T=7 : width=0.03524347123047892, confidence=0.01, number of samples=2000
+T=8 : width=0.037112298748034886, confidence=0.01, number of samples=2000
+T=9 : width=0.03876732274636546, confidence=0.01, number of samples=2000
+T=10 : width=0.04036455053655197, confidence=0.01, number of samples=2000
+T=11 : width=0.041948438547104165, confidence=0.01, number of samples=2000
+T=12 : width=0.04345003139810581, confidence=0.01, number of samples=2000
+T=13 : width=0.044566438230208755, confidence=0.01, number of samples=2000
+T=14 : width=0.04570518029596653, confidence=0.01, number of samples=2000
+T=15 : width=0.046769904966888064, confidence=0.01, number of samples=2000
+T=16 : width=0.0471211224072872, confidence=0.01, number of samples=2000
+T=17 : width=0.04795134910311628, confidence=0.01, number of samples=2000
+T=18 : width=0.04828255661763467, confidence=0.01, number of samples=2000
+T=19 : width=0.04880986080895745, confidence=0.01, number of samples=2000
+T=20 : width=0.04942794191044092, confidence=0.01, number of samples=2000
+
+Simulation result details:
+T=1 : confidence interval is 0.051 +/- 0.012804710418489521, based on 99.0% confidence level
+T=2 : confidence interval is 0.116 +/- 0.019413005491790508, based on 99.0% confidence level
+T=3 : confidence interval is 0.174 +/- 0.023382401977008613, based on 99.0% confidence level
+T=4 : confidence interval is 0.2225 +/- 0.026713057561425693, based on 99.0% confidence level
+T=5 : confidence interval is 0.2785 +/- 0.029876971037570664, based on 99.0% confidence level
+T=6 : confidence interval is 0.3405 +/- 0.03277086675089536, based on 99.0% confidence level
+T=7 : confidence interval is 0.3915 +/- 0.03524347123047892, based on 99.0% confidence level
+T=8 : confidence interval is 0.4365 +/- 0.037112298748034886, based on 99.0% confidence level
+T=9 : confidence interval is 0.486 +/- 0.03876732274636546, based on 99.0% confidence level
+T=10 : confidence interval is 0.546 +/- 0.04036455053655197, based on 99.0% confidence level
+T=11 : confidence interval is 0.594 +/- 0.041948438547104165, based on 99.0% confidence level
+T=12 : confidence interval is 0.649 +/- 0.04345003139810581, based on 99.0% confidence level
+T=13 : confidence interval is 0.686 +/- 0.044566438230208755, based on 99.0% confidence level
+T=14 : confidence interval is 0.725 +/- 0.04570518029596653, based on 99.0% confidence level
+T=15 : confidence interval is 0.7645 +/- 0.046769904966888064, based on 99.0% confidence level
+T=16 : confidence interval is 0.805 +/- 0.0471211224072872, based on 99.0% confidence level
+T=17 : confidence interval is 0.838 +/- 0.04795134910311628, based on 99.0% confidence level
+T=18 : confidence interval is 0.871 +/- 0.04828255661763467, based on 99.0% confidence level
+T=19 : confidence interval is 0.904 +/- 0.04880986080895745, based on 99.0% confidence level
+T=20 : confidence interval is 0.9415 +/- 0.04942794191044092, based on 99.0% confidence level
+
+Results:
+T=1 : 0.051
+T=2 : 0.116
+T=3 : 0.174
+T=4 : 0.2225
+T=5 : 0.2785
+T=6 : 0.3405
+T=7 : 0.3915
+T=8 : 0.4365
+T=9 : 0.486
+T=10 : 0.546
+T=11 : 0.594
+T=12 : 0.649
+T=13 : 0.686
+T=14 : 0.725
+T=15 : 0.7645
+T=16 : 0.805
+T=17 : 0.838
+T=18 : 0.871
+T=19 : 0.904
+T=20 : 0.9415
+
+---------------------------------------------------------------------
+
+Simulating: R{"log_connections_STHAndProof"}=? [ C<=12*T ]
+Property constants: T=1:1:20
+
+Simulation method: CI (Confidence Interval)
+Simulation method parameters: width=unknown, confidence=0.01, number of samples=2000
+Simulation parameters: max path length=20000
+
+Sampling progress: [ 100% ]
+
+Sampling complete: 2000 iterations in 4.639 seconds (average 0.0023)
+Path length statistics: average 2.4e+02, min 240, max 240
+
+Simulation method parameters:
+T=1 : width=0.0038560048509977073, confidence=0.01, number of samples=2000
+T=2 : width=0.005872367566037177, confidence=0.01, number of samples=2000
+T=3 : width=0.007659539831807326, confidence=0.01, number of samples=2000
+T=4 : width=0.009168047082437104, confidence=0.01, number of samples=2000
+T=5 : width=0.01066046073858853, confidence=0.01, number of samples=2000
+T=6 : width=0.011879715324608277, confidence=0.01, number of samples=2000
+T=7 : width=0.0139890589147623, confidence=0.01, number of samples=2000
+T=8 : width=0.015961560067825235, confidence=0.01, number of samples=2000
+T=9 : width=0.017181789756255148, confidence=0.01, number of samples=2000
+T=10 : width=0.01896037686392376, confidence=0.01, number of samples=2000
+T=11 : width=0.020527558470700032, confidence=0.01, number of samples=2000
+T=12 : width=0.022120022873147124, confidence=0.01, number of samples=2000
+T=13 : width=0.023623887721469422, confidence=0.01, number of samples=2000
+T=14 : width=0.024508683031874343, confidence=0.01, number of samples=2000
+T=15 : width=0.02602748380252613, confidence=0.01, number of samples=2000
+T=16 : width=0.027327567548917638, confidence=0.01, number of samples=2000
+T=17 : width=0.028170883692140082, confidence=0.01, number of samples=2000
+T=18 : width=0.02911979319198406, confidence=0.01, number of samples=2000
+T=19 : width=0.029889854991318812, confidence=0.01, number of samples=2000
+T=20 : width=0.030887554816976918, confidence=0.01, number of samples=2000
+
+Simulation result details:
+T=1 : confidence interval is 0.0045 +/- 0.0038560048509977073, based on 99.0% confidence level
+T=2 : confidence interval is 0.0105 +/- 0.005872367566037177, based on 99.0% confidence level
+T=3 : confidence interval is 0.018 +/- 0.007659539831807326, based on 99.0% confidence level
+T=4 : confidence interval is 0.026 +/- 0.009168047082437104, based on 99.0% confidence level
+T=5 : confidence interval is 0.0355 +/- 0.01066046073858853, based on 99.0% confidence level
+T=6 : confidence interval is 0.0445 +/- 0.011879715324608277, based on 99.0% confidence level
+T=7 : confidence interval is 0.0595 +/- 0.0139890589147623, based on 99.0% confidence level
+T=8 : confidence interval is 0.079 +/- 0.015961560067825235, based on 99.0% confidence level
+T=9 : confidence interval is 0.0925 +/- 0.017181789756255148, based on 99.0% confidence level
+T=10 : confidence interval is 0.117 +/- 0.01896037686392376, based on 99.0% confidence level
+T=11 : confidence interval is 0.138 +/- 0.020527558470700032, based on 99.0% confidence level
+T=12 : confidence interval is 0.1615 +/- 0.022120022873147124, based on 99.0% confidence level
+T=13 : confidence interval is 0.184 +/- 0.023623887721469422, based on 99.0% confidence level
+T=14 : confidence interval is 0.205 +/- 0.024508683031874343, based on 99.0% confidence level
+T=15 : confidence interval is 0.23 +/- 0.02602748380252613, based on 99.0% confidence level
+T=16 : confidence interval is 0.251 +/- 0.027327567548917638, based on 99.0% confidence level
+T=17 : confidence interval is 0.27 +/- 0.028170883692140082, based on 99.0% confidence level
+T=18 : confidence interval is 0.289 +/- 0.02911979319198406, based on 99.0% confidence level
+T=19 : confidence interval is 0.3055 +/- 0.029889854991318812, based on 99.0% confidence level
+T=20 : confidence interval is 0.331 +/- 0.030887554816976918, based on 99.0% confidence level
+
+Results:
+T=1 : 0.0045
+T=2 : 0.0105
+T=3 : 0.018
+T=4 : 0.026
+T=5 : 0.0355
+T=6 : 0.0445
+T=7 : 0.0595
+T=8 : 0.079
+T=9 : 0.0925
+T=10 : 0.117
+T=11 : 0.138
+T=12 : 0.1615
+T=13 : 0.184
+T=14 : 0.205
+T=15 : 0.23
+T=16 : 0.251
+T=17 : 0.27
+T=18 : 0.289
+T=19 : 0.3055
+T=20 : 0.331
+

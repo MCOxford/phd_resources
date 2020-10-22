@@ -1,0 +1,262 @@
+//author: mco. Timestamp: 2018-07-25
+
+//***INVESTIGATING DATA DISSEMINATION VIA GOSSIP PROTOCOLS FOR CT***
+//
+// In this model we investigate the effective the Chuat et al. protocols are in spreading data. 
+// We shall also measure for efficiency e.g. How many times on average will clients need to contact the log when executing the protocol?
+// Hypothetically, the data spread for both versions of the Chuat et al. protocol should be the same. It should depend on the behaviour of the clients
+// when they connect and gossip with servers. To abstract the scenario we assume clients connect to only ONE server if participating in a round. 
+//
+// NB: This file is adapted from the original honest.prism file so it can used with the simulator. Model checking results will still be preserved. 
+//
+//************************  
+
+//***DESIGN ASSUMPTIONS***
+//
+// 1) Clients and server already have valid and non-empty data (tree size of stored STHs are non-zero) to begin with.
+// 2) Everyone in the network possesses the same knowledge of the log before the new root hash is generated.
+// 3) ALL clients and servers are able to gossip.
+// 4) Audit sets for all clients contain an SCT for each server. This mean clients do not need to audit SCTs as part of the
+//    protocol execution.
+// 5) Two entities are already updated from the start - assume this is a server and a type 3 client.
+//
+//************************   
+
+//***NETWORK MODEL**************
+//
+// Our network comprises of a certain number of clienr each connecting to 5 possible servers.
+//
+// There is only one server of each type in our network. Assume that they only permit secure (HTTPS) connections.
+//
+// We define three 'types' of client.
+//    
+// (1)
+//
+// connect rate - 0.8
+// Pr(connect to server3) = 0.7
+// Pr(connect to server4) = 0
+// Pr(connect to server5) = 0
+//
+// (2)
+//
+// connect rate - 0.6
+// Pr(connect to server3) = 0
+// Pr(connect to server4) = 0.7
+// Pr(connect to server5) = 0
+//
+// (3)
+//
+// connect rate - 0.2
+// Pr(connect to server3) = 0
+// Pr(connect to server4) = 0
+// Pr(connect to server5) = 0.7
+//
+// We assume that each client, when participating in the rounds, connects with server1 and server2 
+// with probabilities 0.02 and 0.28 respectively.
+//
+//******************************
+
+dtmc
+
+//--------------
+// CLIENTS
+//--------------
+
+//These flags are used to make clients connect and gossip in sequence instead of doing it all at once. This helps 
+//to save memory when using the simulator.
+const bool c0_flag = true;
+
+//initial states for each client
+const bool c1_sth_init = false;
+const bool c2_sth_init = false;
+const bool c3_sth_init = false;
+const bool c4_sth_init = false;
+const bool c5_sth_init = true;
+
+//client connect rates
+prob g1= 0.8;
+prob g2= 0.6;
+prob g3= 0.6;
+prob g4= 0.6;
+prob g5= 0.2;
+
+//client profiles
+prob p_1_1 = 1/50;
+prob p_1_2 = 7/25;
+prob p_1_3 = 7/10;
+prob p_1_4 = 0;
+prob p_1_5 = 0;
+
+prob p_2_1 = 1/50;
+prob p_2_2 = 7/25;
+prob p_2_3 = 0;
+prob p_2_4 = 7/10;
+prob p_2_5 = 0;
+
+prob p_3_1 = 1/50;
+prob p_3_2 = 7/25;
+prob p_3_3 = 0;
+prob p_3_4 = 7/10;
+prob p_3_5 = 0;
+
+prob p_4_1 = 1/50;
+prob p_4_2 = 7/25;
+prob p_4_3 = 0;
+prob p_4_4 = 7/10;
+prob p_4_5 = 0;
+
+prob p_5_1 = 1/50;
+prob p_5_2 = 7/25;
+prob p_5_3 = 0;
+prob p_5_4 = 0;
+prob p_5_5 = 7/10;
+
+module Client1 
+
+	//global state.
+	c1 : [0..5] init 0;
+	//connectivity state.
+	c1s : [0..5] init 0;
+	//current STH data stored by the client. 'True' means the client has the latest STH.
+	c1_sth : bool init c1_sth_init;
+	//skip the round?
+	c1_skip : bool init false;
+	//has it had its turn choosing?
+	c1_flag : bool init false;
+
+	//client decides randomly to participate in the round.
+	[] c0_flag & c1=0 -> g1 : (c1'=1) + 1-g1 : (c1'=1) & (c1_skip'=true);
+	//client randomly chooses a server if participating in the round.
+	[] c0_flag & c1_skip=false & c1=1 -> p_1_1 : (c1_flag'=true)&(c1'=2)&(c1s'=1) + p_1_2 : (c1_flag'=true)&(c1'=2)&(c1s'=2) + p_1_3 : (c1_flag'=true)&(c1'=2)&(c1s'=3) + 
+					 p_1_4 : (c1_flag'=true)&(c1'=2)&(c1s'=4) + p_1_5 : (c1_flag'=true)&(c1'=2)&(c1s'=5);
+	[] c0_flag & c1_skip=true & c1=1 -> (c1_flag'=true)&(c1'=2);
+	//client updates itself using data retrieved from server so long as c1_skip=false or c1_sth=true.
+	[update] serverg & c1_skip=false & c1=2 & connected_server_has_sth  -> (c1'=3) & (c1_sth'=true);
+	[update] serverg & c1=2 & ((c1_skip=false & !connected_server_has_sth) | c1_skip=true) -> (c1'=3);
+	//round complete - reset if there is a client who is not yet updated. Otherwise, stop.
+	[round_complete] c1=3 & !clients_all_updated -> (c1'=0) & (c1s'=0) & (c1_skip'=false) & (c1_flag'=false);
+	[round_complete] c1=3 & clients_all_updated -> (c1'=4);
+	//self-looping state - go here when every client is updated.
+	[END] c1=4 -> true;
+
+endmodule
+
+formula connected_server_has_sth = ((c1s=1 & s1_sth) | (c1s=2 & s2_sth) | (c1s=3 & s3_sth) | (c1s=4 & s4_sth) | (c1s=5 & s5_sth));
+formula clients_all_updated = c1_sth&c2_sth&c3_sth&c4_sth&c5_sth;
+formula serverg = s1_flag&s2_flag&s3_flag&s4_flag&s5_flag;
+
+module Client2=Client1[p_1_1=p_2_1,p_1_2=p_2_2,p_1_3=p_2_3,p_1_4=p_2_4,p_1_5=p_2_5,
+g1=g2,c1=c2,c1s=c2s, c1_sth=c2_sth, c2_sth=c1_sth, c1_skip=c2_skip, c1_sth_init = c2_sth_init, c1_flag=c2_flag, c0_flag=c1_flag] endmodule
+
+module Client3=Client1[p_1_1=p_3_1,p_1_2=p_3_2,p_1_3=p_3_3,p_1_4=p_3_4,p_1_5=p_3_5,
+g1=g3,c1=c3,c1s=c3s, c1_sth=c3_sth, c3_sth=c1_sth, c1_skip=c3_skip, c1_sth_init = c3_sth_init, c1_flag=c3_flag, c0_flag=c2_flag] endmodule
+
+module Client4=Client1[p_1_1=p_4_1,p_1_2=p_4_2,p_1_3=p_4_3,p_1_4=p_4_4,p_1_5=p_4_5,
+g1=g4,c1=c4,c1s=c4s, c1_sth=c4_sth, c4_sth=c1_sth, c1_skip=c4_skip, c1_sth_init = c4_sth_init, c1_flag=c4_flag, c0_flag=c3_flag] endmodule
+
+module Client5=Client1[p_1_1=p_5_1,p_1_2=p_5_2,p_1_3=p_5_3,p_1_4=p_5_4,p_1_5=p_5_5,
+g1=g5,c1=c5,c1s=c5s, c1_sth=c5_sth, c5_sth=c1_sth, c1_skip=c5_skip, c1_sth_init = c5_sth_init, c1_flag=c5_flag, c0_flag=c4_flag] endmodule
+
+//--------------
+// SERVERS
+//--------------
+
+const bool s1f_init = true;
+const bool s2f_init = true;
+const bool s3f_init = true;
+const bool s4f_init = true;
+const bool s5f_init = true;
+
+//needed for module relabelling
+const int S1 = 1;
+const int S2 = 2;
+const int S3 = 3;
+const int S4 = 4;
+const int S5 = 5;
+
+//initial states for each server
+const bool s1_init = true;
+const bool s2_init = false;
+const bool s3_init = false;
+const bool s4_init = false;
+const bool s5_init = false;
+
+module Server1
+
+	//does the server have the latest STH?
+	s1_sth : bool init s1_init;
+	s1_flag : bool init s1f_init;
+
+	//update if a connected client has the latest STH
+	[update] !s1_sth & connected_client_has_sth -> (s1_sth'=true);
+	[update] s1_sth | (!s1_sth & !connected_client_has_sth) -> true;
+	//end when every client is updated
+	[round_complete] true -> (s1_flag'=s1f_init);
+	[END] clients_all_updated -> true;
+
+endmodule
+
+formula connected_client_has_sth = (c1s=S1 & c1_sth) | (c2s=S1 & c2_sth) | (c3s=S1 & c3_sth) | (c4s=S1 & c4_sth) | (c5s=S1 & c5_sth);
+
+module Server2=Server1[s1_sth=s2_sth, s2_sth=s1_sth, S1=S2, s1_init=s2_init, s1_flag=s2_flag, s1f_init=s2f_init] endmodule
+module Server3=Server1[s1_sth=s3_sth, s3_sth=s1_sth, S1=S3, s1_init=s3_init, s1_flag=s3_flag, s1f_init=s3f_init] endmodule
+module Server4=Server1[s1_sth=s4_sth, s4_sth=s1_sth, S1=S4, s1_init=s4_init, s1_flag=s4_flag, s1f_init=s4f_init] endmodule
+module Server5=Server1[s1_sth=s5_sth, s5_sth=s1_sth, S1=S5, s1_init=s5_init, s1_flag=s5_flag, s1f_init=s5f_init] endmodule
+
+//--------------
+// FORMULAS
+//--------------
+
+const double f = 1/5;
+
+//Keeps track of the proportion of clients that have the latest STH - max sum should equal 1.
+formula no_clients_updated = (c1_sth?f:0)+(c2_sth?f:0)+(c3_sth?f:0)+(c4_sth?f:0)+(c5_sth?f:0);
+
+//For STH-Only, client requests an extension proof if the retrieved gossip message has a different tree size to what the client has
+formula client1_getConsistency_STHOnly = c1_skip=false & c1=2 & ((c1s=1 & c1_sth!=s1_sth) | (c1s=1 & c1_sth!=s2_sth) | (c1s=1 & c1_sth!=s3_sth) | 
+								 (c1s=1 & c1_sth!=s4_sth) | (c1s=1 & c1_sth!=s5_sth));
+formula client2_getConsistency_STHOnly = c2_skip=false & c2=2 & ((c2s=1 & c2_sth!=s1_sth) | (c2s=1 & c2_sth!=s2_sth) | (c2s=1 & c2_sth!=s3_sth) | 
+								 (c2s=1 & c2_sth!=s4_sth) | (c2s=1 & c2_sth!=s5_sth));
+formula client3_getConsistency_STHOnly = c3_skip=false & c3=2 & ((c3s=1 & c3_sth!=s1_sth) | (c3s=1 & c3_sth!=s2_sth) | (c3s=1 & c3_sth!=s3_sth) | 
+							         (c3s=1 & c3_sth!=s4_sth) | (c3s=1 & c3_sth!=s5_sth));
+formula client4_getConsistency_STHOnly = c4_skip=false & c4=2 & ((c4s=1 & c4_sth!=s1_sth) | (c4s=1 & c4_sth!=s2_sth) | (c4s=1 & c4_sth!=s3_sth) | 
+							  	 (c4s=1 & c4_sth!=s4_sth) | (c4s=1 & c4_sth!=s5_sth));
+formula client5_getConsistency_STHOnly = c5_skip=false & c5=2 & ((c5s=1 & c5_sth!=s1_sth) | (c5s=1 & c5_sth!=s2_sth) | (c5s=1 & c5_sth!=s3_sth) | 
+								 (c5s=1 & c5_sth!=s4_sth) | (c5s=1 & c5_sth!=s5_sth));
+
+//Keeps track of the log connection currently being made using the STH-Only protocol
+formula log_connections_STHOnly = (client1_getConsistency_STHOnly?1:0)+(client2_getConsistency_STHOnly?1:0)+(client3_getConsistency_STHOnly?1:0)+
+				  (client4_getConsistency_STHOnly?1:0)+(client5_getConsistency_STHOnly?1:0);
+
+//For STH-and-Proof, client requests an extension proof if it updated and the connecting server does not.
+formula client1_getConsistency_STHAndProof = c1_skip=false & c1=2 & ((c1s=1 & c1_sth & !s1_sth) | (c1s=1 & c1_sth & !s2_sth) | (c1s=1 & c1_sth & !s3_sth) | 
+								     (c1s=1 & c1_sth & !s4_sth) | (c1s=1 & c1_sth & !s5_sth));
+formula client2_getConsistency_STHAndProof = c2_skip=false & c2=2 & ((c2s=1 & c2_sth & !s1_sth) | (c2s=1 & c2_sth & !s2_sth) | (c2s=1 & c2_sth & !s3_sth) | 
+								     (c2s=1 & c2_sth & !s4_sth) | (c2s=1 & c2_sth & !s5_sth));
+formula client3_getConsistency_STHAndProof = c3_skip=false & c3=2 & ((c3s=1 & c3_sth & !s1_sth) | (c3s=1 & c3_sth & !s2_sth) | (c3s=1 & c3_sth & !s3_sth) | 
+								     (c3s=1 & c3_sth & !s4_sth) | (c3s=1 & c3_sth & !s5_sth));
+formula client4_getConsistency_STHAndProof = c4_skip=false & c4=2 & ((c4s=1 & c4_sth & !s1_sth) | (c4s=1 & c4_sth & !s2_sth) | (c4s=1 & c4_sth & !s3_sth) | 
+							             (c4s=1 & c4_sth & !s4_sth) | (c4s=1 & c4_sth & !s5_sth));
+formula client5_getConsistency_STHAndProof = c5_skip=false & c5=2 & ((c5s=1 & c5_sth & !s1_sth) | (c5s=1 & c5_sth & !s2_sth) | (c5s=1 & c5_sth & !s3_sth) | 
+								     (c5s=1 & c5_sth & !s4_sth) | (c5s=1 & c5_sth & !s5_sth));
+
+//Keeps track of the log connection currently being made using the STH-and-Proof protocol
+formula log_connections_STHAndProof = (client1_getConsistency_STHAndProof?1:0)+(client2_getConsistency_STHAndProof?1:0)+
+				      (client3_getConsistency_STHAndProof?1:0)+(client4_getConsistency_STHAndProof?1:0)+
+				      (client5_getConsistency_STHAndProof?1:0);
+
+//--------------
+// REWARD STRUCTURES
+//--------------
+
+rewards "client_proportion"
+	true : no_clients_updated;
+endrewards
+
+rewards "log_connections_STHOnly"
+	[update] true: log_connections_STHOnly;
+endrewards
+
+rewards "log_connections_STHAndProof"
+	[update] true : log_connections_STHAndProof;
+endrewards

@@ -1,0 +1,837 @@
+PRISM
+=====
+
+Version: 4.6.dev
+Date: Wed Sep 23 01:26:20 BST 2020
+Hostname: [REDACTED]
+Memory limits: cudd=30g, java(heap)=1g
+Command line: prism model-checking/splitworld/splitworld_ext.prism model-checking/splitworld/splitworld_ext.props -m -prop 2 -const 'T=1:1:20' -cuddmaxmem 30g -symm 1 6 -exportresults model-checking/splitworld/splitworld_ext_prop2.res
+
+Parsing model file "model-checking/splitworld/splitworld_ext.prism"...
+
+Type:        DTMC
+Modules:     Client1 Client2 Client3 Client4 Client5 Server1 Server2 Server3 Server4 Server5 
+Variables:   c1 c1s c1_sth c1d c1_skip c2 c2s c2_sth c2d c2_skip c3 c3s c3_sth c3d c3_skip c4 c4s c4_sth c4d c4_skip c5 c5s c5_sth c5d c5_skip s1_sth s1d s2_sth s2d s3_sth s3d s4_sth s4d s5_sth s5d 
+
+Parsing properties file "model-checking/splitworld/splitworld_ext.props"...
+
+6 properties:
+(1) P=? [ F<=4*T "detect" ]
+(2) R{"client_proportion_old"}=? [ I=4*T ]
+(3) R{"client_proportion_real"}=? [ I=4*T ]
+(4) R{"client_proportion_fake"}=? [ I=4*T ]
+(5) R{"log_connections_STHOnly"}=? [ C<=4*T ]
+(6) R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=1
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 13 iterations in 48.84 seconds (average 3.756615, setup 0.00)
+
+Applying symmetry reduction...
+
+Number of states before before symmetry reduction: 371179009
+DD sizes before symmetry reduction:
+trans: 4672857 nodes (52443 terminal), 2105079932 minterms
+transrew[0]: 1 nodes (1 terminal), 0 minterms
+transrew[1]: 1 nodes (1 terminal), 0 minterms
+transrew[2]: 1 nodes (1 terminal), 0 minterms
+transrew[3]: 1 nodes (1 terminal), 0 minterms
+transrew[4]: 1 nodes (1 terminal), 0 minterms
+transrew[5]: 1 nodes (1 terminal), 0 minterms
+Starting quicksort...
+Iteration 1.1
+Iteration 1.2
+Iteration 2.1
+Symmetry complete: -3 iterations, 3 swaps, 85.342 seconds
+
+Time for model construction: 370.703 seconds.
+
+Type:        DTMC
+States:      73145358 (1 initial)
+Transitions: 416113760
+
+Transition matrix: 6901906 nodes (118009 terminal), 416113760 minterms, vars: 65r/65c
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 4): 11.33 sec so far
+Iteration 1 (of 4): 32.81 sec so far
+
+Iterative method: 4 iterations in 33.44 seconds (average 8.360000, setup 0.00)
+
+Value in the initial state: 0.6986956680432382
+
+Time for model checking: 34.156 seconds.
+
+Result: 0.6986956680432382 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=2
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 8): 6.03 sec so far
+Iteration 5 (of 8): 68.86 sec so far
+
+Iterative method: 8 iterations in 73.50 seconds (average 9.187625, setup 0.00)
+
+Value in the initial state: 0.5486894150596124
+
+Time for model checking: 74.75 seconds.
+
+Result: 0.5486894150596124 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=3
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 12): 7.66 sec so far
+Iteration 1 (of 12): 24.67 sec so far
+Iteration 5 (of 12): 83.75 sec so far
+Iteration 7 (of 12): 88.80 sec so far
+Iteration 9 (of 12): 172.19 sec so far
+Iteration 11 (of 12): 177.38 sec so far
+
+Iterative method: 12 iterations in 177.39 seconds (average 14.782583, setup 0.00)
+
+Value in the initial state: 0.44849775239458534
+
+Time for model checking: 180.537 seconds.
+
+Result: 0.44849775239458534 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=4
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 16): 8.22 sec so far
+Iteration 1 (of 16): 21.89 sec so far
+Iteration 5 (of 16): 83.97 sec so far
+Iteration 8 (of 16): 90.16 sec so far
+Iteration 9 (of 16): 160.87 sec so far
+Iteration 10 (of 16): 165.90 sec so far
+Iteration 13 (of 16): 240.02 sec so far
+Iteration 14 (of 16): 248.36 sec so far
+
+Iterative method: 16 iterations in 249.42 seconds (average 15.588812, setup 0.00)
+
+Value in the initial state: 0.40592692841945943
+
+Time for model checking: 253.034 seconds.
+
+Result: 0.40592692841945943 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=5
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 20): 7.69 sec so far
+Iteration 1 (of 20): 18.42 sec so far
+Iteration 5 (of 20): 69.28 sec so far
+Iteration 7 (of 20): 78.07 sec so far
+Iteration 9 (of 20): 151.23 sec so far
+Iteration 12 (of 20): 158.10 sec so far
+Iteration 13 (of 20): 226.91 sec so far
+Iteration 15 (of 20): 232.18 sec so far
+Iteration 17 (of 20): 313.10 sec so far
+Iteration 19 (of 20): 318.11 sec so far
+
+Iterative method: 20 iterations in 318.12 seconds (average 15.905750, setup 0.00)
+
+Value in the initial state: 0.3919958221721801
+
+Time for model checking: 322.569 seconds.
+
+Result: 0.3919958221721801 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=6
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 24): 7.30 sec so far
+Iteration 1 (of 24): 18.73 sec so far
+Iteration 5 (of 24): 79.30 sec so far
+Iteration 8 (of 24): 84.89 sec so far
+Iteration 9 (of 24): 153.47 sec so far
+Iteration 11 (of 24): 183.93 sec so far
+Iteration 13 (of 24): 256.92 sec so far
+Iteration 15 (of 24): 262.29 sec so far
+Iteration 17 (of 24): 335.96 sec so far
+Iteration 18 (of 24): 344.75 sec so far
+Iteration 21 (of 24): 420.33 sec so far
+
+Iterative method: 24 iterations in 425.32 seconds (average 17.721583, setup 0.00)
+
+Value in the initial state: 0.38805910936074794
+
+Time for model checking: 431.135 seconds.
+
+Result: 0.38805910936074794 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=7
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 28): 7.70 sec so far
+Iteration 1 (of 28): 20.02 sec so far
+Iteration 5 (of 28): 80.60 sec so far
+Iteration 8 (of 28): 87.09 sec so far
+Iteration 9 (of 28): 157.53 sec so far
+Iteration 11 (of 28): 162.74 sec so far
+Iteration 13 (of 28): 237.30 sec so far
+Iteration 14 (of 28): 245.75 sec so far
+Iteration 17 (of 28): 321.48 sec so far
+Iteration 20 (of 28): 328.85 sec so far
+Iteration 21 (of 28): 399.22 sec so far
+Iteration 23 (of 28): 404.86 sec so far
+Iteration 25 (of 28): 486.57 sec so far
+
+Iterative method: 28 iterations in 491.38 seconds (average 17.549179, setup 0.00)
+
+Value in the initial state: 0.3870326816131906
+
+Time for model checking: 498.211 seconds.
+
+Result: 0.3870326816131906 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=8
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 32): 7.71 sec so far
+Iteration 1 (of 32): 19.44 sec so far
+Iteration 5 (of 32): 80.69 sec so far
+Iteration 8 (of 32): 86.60 sec so far
+Iteration 9 (of 32): 157.11 sec so far
+Iteration 12 (of 32): 222.87 sec so far
+Iteration 13 (of 32): 295.88 sec so far
+Iteration 14 (of 32): 302.04 sec so far
+Iteration 17 (of 32): 376.33 sec so far
+Iteration 18 (of 32): 385.58 sec so far
+Iteration 21 (of 32): 460.37 sec so far
+Iteration 24 (of 32): 467.64 sec so far
+Iteration 25 (of 32): 540.40 sec so far
+Iteration 27 (of 32): 546.21 sec so far
+Iteration 29 (of 32): 624.68 sec so far
+
+Iterative method: 32 iterations in 628.59 seconds (average 19.643563, setup 0.00)
+
+Value in the initial state: 0.38677620501400645
+
+Time for model checking: 637.144 seconds.
+
+Result: 0.38677620501400645 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=9
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 36): 7.92 sec so far
+Iteration 1 (of 36): 19.93 sec so far
+Iteration 5 (of 36): 79.36 sec so far
+Iteration 8 (of 36): 85.15 sec so far
+Iteration 9 (of 36): 154.43 sec so far
+Iteration 12 (of 36): 162.57 sec so far
+Iteration 13 (of 36): 233.29 sec so far
+Iteration 14 (of 36): 242.14 sec so far
+Iteration 17 (of 36): 316.28 sec so far
+Iteration 20 (of 36): 323.39 sec so far
+Iteration 21 (of 36): 392.25 sec so far
+Iteration 23 (of 36): 397.27 sec so far
+Iteration 25 (of 36): 470.75 sec so far
+Iteration 26 (of 36): 479.25 sec so far
+Iteration 29 (of 36): 553.25 sec so far
+Iteration 32 (of 36): 560.82 sec so far
+Iteration 33 (of 36): 629.37 sec so far
+
+Iterative method: 36 iterations in 633.91 seconds (average 17.608750, setup 0.00)
+
+Value in the initial state: 0.3867134441043455
+
+Time for model checking: 641.625 seconds.
+
+Result: 0.3867134441043455 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=10
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 40): 8.60 sec so far
+Iteration 1 (of 40): 27.23 sec so far
+Iteration 5 (of 40): 78.82 sec so far
+Iteration 7 (of 40): 83.85 sec so far
+Iteration 9 (of 40): 157.56 sec so far
+Iteration 10 (of 40): 166.26 sec so far
+Iteration 13 (of 40): 241.32 sec so far
+Iteration 16 (of 40): 248.79 sec so far
+Iteration 17 (of 40): 318.65 sec so far
+Iteration 18 (of 40): 324.64 sec so far
+Iteration 21 (of 40): 399.15 sec so far
+Iteration 22 (of 40): 408.15 sec so far
+Iteration 25 (of 40): 482.63 sec so far
+Iteration 28 (of 40): 490.15 sec so far
+Iteration 29 (of 40): 559.59 sec so far
+Iteration 32 (of 40): 567.56 sec so far
+Iteration 33 (of 40): 637.36 sec so far
+Iteration 34 (of 40): 646.43 sec so far
+Iteration 36 (of 40): 700.99 sec so far
+Iteration 37 (of 40): 771.34 sec so far
+Iteration 38 (of 40): 780.51 sec so far
+
+Iterative method: 40 iterations in 781.51 seconds (average 19.537850, setup 0.00)
+
+Value in the initial state: 0.3866982188498962
+
+Time for model checking: 789.497 seconds.
+
+Result: 0.3866982188498962 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=11
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 44): 7.74 sec so far
+Iteration 1 (of 44): 18.76 sec so far
+Iteration 5 (of 44): 76.71 sec so far
+Iteration 8 (of 44): 82.41 sec so far
+Iteration 9 (of 44): 148.83 sec so far
+Iteration 11 (of 44): 154.15 sec so far
+Iteration 13 (of 44): 223.28 sec so far
+Iteration 16 (of 44): 231.26 sec so far
+Iteration 17 (of 44): 298.77 sec so far
+Iteration 18 (of 44): 306.08 sec so far
+Iteration 21 (of 44): 376.18 sec so far
+Iteration 24 (of 44): 382.92 sec so far
+Iteration 25 (of 44): 448.85 sec so far
+Iteration 26 (of 44): 454.59 sec so far
+Iteration 29 (of 44): 529.19 sec so far
+Iteration 32 (of 44): 536.05 sec so far
+Iteration 33 (of 44): 600.91 sec so far
+Iteration 36 (of 44): 608.18 sec so far
+Iteration 37 (of 44): 673.81 sec so far
+Iteration 39 (of 44): 679.58 sec so far
+Iteration 40 (of 44): 694.93 sec so far
+Iteration 41 (of 44): 762.65 sec so far
+
+Iterative method: 44 iterations in 767.63 seconds (average 17.446182, setup 0.00)
+
+Value in the initial state: 0.3866945324355201
+
+Time for model checking: 773.572 seconds.
+
+Result: 0.3866945324355201 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=12
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 48): 7.17 sec so far
+Iteration 1 (of 48): 19.22 sec so far
+Iteration 5 (of 48): 73.73 sec so far
+Iteration 8 (of 48): 80.15 sec so far
+Iteration 9 (of 48): 147.10 sec so far
+Iteration 10 (of 48): 155.87 sec so far
+Iteration 13 (of 48): 224.72 sec so far
+Iteration 16 (of 48): 231.63 sec so far
+Iteration 17 (of 48): 295.69 sec so far
+Iteration 18 (of 48): 302.22 sec so far
+Iteration 21 (of 48): 366.25 sec so far
+Iteration 24 (of 48): 373.26 sec so far
+Iteration 25 (of 48): 437.89 sec so far
+Iteration 26 (of 48): 442.94 sec so far
+Iteration 29 (of 48): 513.14 sec so far
+Iteration 32 (of 48): 566.03 sec so far
+Iteration 33 (of 48): 631.64 sec so far
+Iteration 36 (of 48): 638.10 sec so far
+Iteration 37 (of 48): 698.97 sec so far
+Iteration 39 (of 48): 705.90 sec so far
+Iteration 40 (of 48): 769.93 sec so far
+Iteration 41 (of 48): 827.57 sec so far
+Iteration 43 (of 48): 889.78 sec so far
+Iteration 44 (of 48): 954.81 sec so far
+Iteration 45 (of 48): 1013.53 sec so far
+Iteration 47 (of 48): 1073.83 sec so far
+
+Iterative method: 48 iterations in 1073.84 seconds (average 22.371583, setup 0.00)
+
+Value in the initial state: 0.3866936384268784
+
+Time for model checking: 1078.903 seconds.
+
+Result: 0.3866936384268784 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=13
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 52): 7.56 sec so far
+Iteration 1 (of 52): 17.14 sec so far
+Iteration 5 (of 52): 65.45 sec so far
+Iteration 8 (of 52): 105.63 sec so far
+Iteration 9 (of 52): 167.23 sec so far
+Iteration 12 (of 52): 173.19 sec so far
+Iteration 13 (of 52): 229.22 sec so far
+Iteration 16 (of 52): 236.41 sec so far
+Iteration 17 (of 52): 292.94 sec so far
+Iteration 20 (of 52): 300.60 sec so far
+Iteration 21 (of 52): 361.25 sec so far
+Iteration 24 (of 52): 367.65 sec so far
+Iteration 25 (of 52): 423.63 sec so far
+Iteration 28 (of 52): 430.63 sec so far
+Iteration 29 (of 52): 487.29 sec so far
+Iteration 32 (of 52): 494.86 sec so far
+Iteration 33 (of 52): 555.69 sec so far
+Iteration 36 (of 52): 562.14 sec so far
+Iteration 37 (of 52): 619.02 sec so far
+Iteration 40 (of 52): 626.24 sec so far
+Iteration 41 (of 52): 684.00 sec so far
+Iteration 42 (of 52): 690.74 sec so far
+Iteration 45 (of 52): 751.85 sec so far
+Iteration 48 (of 52): 758.25 sec so far
+Iteration 49 (of 52): 814.92 sec so far
+
+Iterative method: 52 iterations in 818.88 seconds (average 15.747596, setup 0.00)
+
+Value in the initial state: 0.3866934209085415
+
+Time for model checking: 821.662 seconds.
+
+Result: 0.3866934209085415 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=14
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 56): 7.67 sec so far
+Iteration 1 (of 56): 22.00 sec so far
+Iteration 5 (of 56): 67.76 sec so far
+Iteration 8 (of 56): 73.93 sec so far
+Iteration 9 (of 56): 131.15 sec so far
+Iteration 10 (of 56): 138.56 sec so far
+Iteration 13 (of 56): 199.40 sec so far
+Iteration 16 (of 56): 249.06 sec so far
+Iteration 17 (of 56): 312.41 sec so far
+Iteration 20 (of 56): 319.14 sec so far
+Iteration 21 (of 56): 375.53 sec so far
+Iteration 24 (of 56): 383.24 sec so far
+Iteration 25 (of 56): 446.21 sec so far
+Iteration 28 (of 56): 453.22 sec so far
+Iteration 29 (of 56): 509.46 sec so far
+Iteration 31 (of 56): 514.48 sec so far
+Iteration 33 (of 56): 574.22 sec so far
+Iteration 34 (of 56): 580.40 sec so far
+Iteration 37 (of 56): 643.07 sec so far
+Iteration 40 (of 56): 649.63 sec so far
+Iteration 41 (of 56): 706.52 sec so far
+Iteration 44 (of 56): 759.12 sec so far
+Iteration 45 (of 56): 818.73 sec so far
+Iteration 47 (of 56): 823.86 sec so far
+Iteration 48 (of 56): 881.35 sec so far
+Iteration 49 (of 56): 944.31 sec so far
+Iteration 52 (of 56): 1006.01 sec so far
+Iteration 53 (of 56): 1065.80 sec so far
+
+Iterative method: 56 iterations in 1070.68 seconds (average 19.119286, setup 0.00)
+
+Value in the initial state: 0.38669336778114927
+
+Time for model checking: 1073.782 seconds.
+
+Result: 0.38669336778114927 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=15
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 60): 6.70 sec so far
+Iteration 1 (of 60): 21.60 sec so far
+Iteration 5 (of 60): 67.48 sec so far
+Iteration 8 (of 60): 73.47 sec so far
+Iteration 9 (of 60): 130.73 sec so far
+Iteration 10 (of 60): 138.90 sec so far
+Iteration 13 (of 60): 199.59 sec so far
+Iteration 16 (of 60): 206.60 sec so far
+Iteration 17 (of 60): 262.90 sec so far
+Iteration 20 (of 60): 270.18 sec so far
+Iteration 21 (of 60): 327.35 sec so far
+Iteration 22 (of 60): 333.74 sec so far
+Iteration 25 (of 60): 394.43 sec so far
+Iteration 28 (of 60): 400.69 sec so far
+Iteration 29 (of 60): 456.86 sec so far
+Iteration 32 (of 60): 463.84 sec so far
+Iteration 33 (of 60): 519.93 sec so far
+Iteration 34 (of 60): 526.75 sec so far
+Iteration 37 (of 60): 585.99 sec so far
+Iteration 40 (of 60): 592.96 sec so far
+Iteration 41 (of 60): 648.41 sec so far
+Iteration 43 (of 60): 654.09 sec so far
+Iteration 45 (of 60): 717.56 sec so far
+Iteration 48 (of 60): 723.32 sec so far
+Iteration 49 (of 60): 778.72 sec so far
+Iteration 51 (of 60): 784.00 sec so far
+Iteration 53 (of 60): 841.79 sec so far
+Iteration 54 (of 60): 846.97 sec so far
+Iteration 57 (of 60): 904.98 sec so far
+Iteration 58 (of 60): 910.99 sec so far
+
+Iterative method: 60 iterations in 911.89 seconds (average 15.198183, setup 0.00)
+
+Value in the initial state: 0.38669335475525823
+
+Time for model checking: 914.593 seconds.
+
+Result: 0.38669335475525823 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=16
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 64): 7.30 sec so far
+Iteration 1 (of 64): 16.49 sec so far
+Iteration 5 (of 64): 56.92 sec so far
+Iteration 6 (of 64): 62.55 sec so far
+Iteration 9 (of 64): 121.80 sec so far
+Iteration 12 (of 64): 128.84 sec so far
+Iteration 13 (of 64): 184.24 sec so far
+Iteration 15 (of 64): 189.30 sec so far
+Iteration 17 (of 64): 247.64 sec so far
+Iteration 18 (of 64): 254.27 sec so far
+Iteration 21 (of 64): 313.64 sec so far
+Iteration 24 (of 64): 372.86 sec so far
+Iteration 25 (of 64): 431.12 sec so far
+Iteration 28 (of 64): 438.90 sec so far
+Iteration 29 (of 64): 498.71 sec so far
+Iteration 32 (of 64): 505.10 sec so far
+Iteration 33 (of 64): 560.70 sec so far
+Iteration 36 (of 64): 567.69 sec so far
+Iteration 37 (of 64): 624.18 sec so far
+Iteration 38 (of 64): 631.92 sec so far
+Iteration 41 (of 64): 691.90 sec so far
+Iteration 44 (of 64): 698.26 sec so far
+Iteration 45 (of 64): 753.99 sec so far
+Iteration 48 (of 64): 761.18 sec so far
+Iteration 49 (of 64): 817.79 sec so far
+Iteration 50 (of 64): 824.38 sec so far
+Iteration 53 (of 64): 884.51 sec so far
+Iteration 56 (of 64): 890.93 sec so far
+Iteration 57 (of 64): 946.54 sec so far
+Iteration 60 (of 64): 953.46 sec so far
+Iteration 61 (of 64): 1010.19 sec so far
+Iteration 63 (of 64): 1019.37 sec so far
+
+Iterative method: 64 iterations in 1019.37 seconds (average 15.927703, setup 0.00)
+
+Value in the initial state: 0.3866933515502853
+
+Time for model checking: 1022.199 seconds.
+
+Result: 0.3866933515502853 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=17
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 68): 7.09 sec so far
+Iteration 1 (of 68): 16.09 sec so far
+Iteration 5 (of 68): 56.06 sec so far
+Iteration 8 (of 68): 62.15 sec so far
+Iteration 9 (of 68): 123.11 sec so far
+Iteration 12 (of 68): 129.53 sec so far
+Iteration 13 (of 68): 184.97 sec so far
+Iteration 15 (of 68): 190.46 sec so far
+Iteration 17 (of 68): 249.25 sec so far
+Iteration 18 (of 68): 255.91 sec so far
+Iteration 21 (of 68): 315.38 sec so far
+Iteration 24 (of 68): 322.08 sec so far
+Iteration 25 (of 68): 377.10 sec so far
+Iteration 28 (of 68): 384.25 sec so far
+Iteration 29 (of 68): 440.05 sec so far
+Iteration 30 (of 68): 446.35 sec so far
+Iteration 33 (of 68): 505.77 sec so far
+Iteration 36 (of 68): 512.39 sec so far
+Iteration 37 (of 68): 567.58 sec so far
+Iteration 40 (of 68): 574.50 sec so far
+Iteration 41 (of 68): 630.44 sec so far
+Iteration 42 (of 68): 636.83 sec so far
+Iteration 44 (of 68): 694.86 sec so far
+Iteration 45 (of 68): 752.40 sec so far
+Iteration 48 (of 68): 803.49 sec so far
+Iteration 49 (of 68): 860.96 sec so far
+Iteration 52 (of 68): 921.90 sec so far
+Iteration 53 (of 68): 980.34 sec so far
+Iteration 56 (of 68): 1047.01 sec so far
+Iteration 57 (of 68): 1107.54 sec so far
+Iteration 59 (of 68): 1168.71 sec so far
+Iteration 60 (of 68): 1231.17 sec so far
+Iteration 61 (of 68): 1293.92 sec so far
+Iteration 63 (of 68): 1353.92 sec so far
+Iteration 64 (of 68): 1415.66 sec so far
+Iteration 65 (of 68): 1476.20 sec so far
+Iteration 66 (of 68): 1484.82 sec so far
+Iteration 67 (of 68): 1543.77 sec so far
+
+Iterative method: 68 iterations in 1543.78 seconds (average 22.702574, setup 0.00)
+
+Value in the initial state: 0.38669335075927763
+
+Time for model checking: 1548.021 seconds.
+
+Result: 0.38669335075927763 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=18
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 72): 7.93 sec so far
+Iteration 1 (of 72): 18.10 sec so far
+Iteration 5 (of 72): 66.18 sec so far
+Iteration 8 (of 72): 71.65 sec so far
+Iteration 9 (of 72): 128.82 sec so far
+Iteration 12 (of 72): 136.10 sec so far
+Iteration 13 (of 72): 193.26 sec so far
+Iteration 14 (of 72): 200.13 sec so far
+Iteration 17 (of 72): 260.70 sec so far
+Iteration 20 (of 72): 267.51 sec so far
+Iteration 21 (of 72): 327.04 sec so far
+Iteration 22 (of 72): 335.15 sec so far
+Iteration 25 (of 72): 396.33 sec so far
+Iteration 28 (of 72): 402.78 sec so far
+Iteration 29 (of 72): 459.44 sec so far
+Iteration 32 (of 72): 466.47 sec so far
+Iteration 33 (of 72): 529.57 sec so far
+Iteration 36 (of 72): 536.15 sec so far
+Iteration 37 (of 72): 592.73 sec so far
+Iteration 40 (of 72): 599.56 sec so far
+Iteration 41 (of 72): 656.25 sec so far
+Iteration 43 (of 72): 661.42 sec so far
+Iteration 45 (of 72): 726.93 sec so far
+Iteration 48 (of 72): 732.12 sec so far
+Iteration 49 (of 72): 788.54 sec so far
+Iteration 52 (of 72): 795.76 sec so far
+Iteration 53 (of 72): 852.88 sec so far
+Iteration 56 (of 72): 860.43 sec so far
+Iteration 57 (of 72): 921.33 sec so far
+Iteration 60 (of 72): 927.74 sec so far
+Iteration 61 (of 72): 984.13 sec so far
+Iteration 64 (of 72): 990.81 sec so far
+Iteration 65 (of 72): 1047.62 sec so far
+Iteration 68 (of 72): 1054.78 sec so far
+Iteration 69 (of 72): 1112.06 sec so far
+Iteration 70 (of 72): 1118.30 sec so far
+
+Iterative method: 72 iterations in 1119.20 seconds (average 15.544458, setup 0.00)
+
+Value in the initial state: 0.3866933505635389
+
+Time for model checking: 1122.368 seconds.
+
+Result: 0.3866933505635389 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=19
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 76): 7.50 sec so far
+Iteration 1 (of 76): 17.04 sec so far
+Iteration 5 (of 76): 58.72 sec so far
+Iteration 6 (of 76): 64.26 sec so far
+Iteration 9 (of 76): 124.62 sec so far
+Iteration 12 (of 76): 131.49 sec so far
+Iteration 13 (of 76): 188.12 sec so far
+Iteration 15 (of 76): 193.33 sec so far
+Iteration 17 (of 76): 253.03 sec so far
+Iteration 18 (of 76): 260.79 sec so far
+Iteration 21 (of 76): 321.63 sec so far
+Iteration 24 (of 76): 328.25 sec so far
+Iteration 25 (of 76): 384.76 sec so far
+Iteration 28 (of 76): 392.42 sec so far
+Iteration 29 (of 76): 449.52 sec so far
+Iteration 30 (of 76): 456.06 sec so far
+Iteration 33 (of 76): 517.03 sec so far
+Iteration 36 (of 76): 524.06 sec so far
+Iteration 37 (of 76): 580.07 sec so far
+Iteration 40 (of 76): 587.41 sec so far
+Iteration 41 (of 76): 644.26 sec so far
+Iteration 42 (of 76): 652.38 sec so far
+Iteration 45 (of 76): 712.74 sec so far
+Iteration 48 (of 76): 719.25 sec so far
+Iteration 49 (of 76): 775.30 sec so far
+Iteration 52 (of 76): 782.28 sec so far
+Iteration 53 (of 76): 844.86 sec so far
+Iteration 56 (of 76): 851.09 sec so far
+Iteration 57 (of 76): 907.37 sec so far
+Iteration 60 (of 76): 913.94 sec so far
+Iteration 61 (of 76): 970.29 sec so far
+Iteration 64 (of 76): 977.43 sec so far
+Iteration 65 (of 76): 1033.88 sec so far
+Iteration 66 (of 76): 1040.11 sec so far
+Iteration 69 (of 76): 1099.30 sec so far
+Iteration 72 (of 76): 1105.58 sec so far
+Iteration 73 (of 76): 1163.44 sec so far
+
+Iterative method: 76 iterations in 1167.16 seconds (average 15.357382, setup 0.00)
+
+Value in the initial state: 0.3866933505149991
+
+Time for model checking: 1170.623 seconds.
+
+Result: 0.3866933505149991 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=20
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 0 (of 80): 6.74 sec so far
+Iteration 1 (of 80): 21.26 sec so far
+Iteration 5 (of 80): 66.35 sec so far
+Iteration 8 (of 80): 72.04 sec so far
+Iteration 9 (of 80): 128.09 sec so far
+Iteration 10 (of 80): 134.58 sec so far
+Iteration 13 (of 80): 194.35 sec so far
+Iteration 16 (of 80): 201.02 sec so far
+Iteration 17 (of 80): 258.84 sec so far
+Iteration 19 (of 80): 264.33 sec so far
+Iteration 21 (of 80): 326.18 sec so far
+Iteration 24 (of 80): 332.46 sec so far
+Iteration 25 (of 80): 390.32 sec so far
+Iteration 28 (of 80): 397.37 sec so far
+Iteration 29 (of 80): 456.77 sec so far
+Iteration 32 (of 80): 462.78 sec so far
+Iteration 33 (of 80): 517.94 sec so far
+Iteration 35 (of 80): 523.59 sec so far
+Iteration 37 (of 80): 581.45 sec so far
+Iteration 40 (of 80): 588.63 sec so far
+Iteration 41 (of 80): 648.27 sec so far
+Iteration 44 (of 80): 654.91 sec so far
+Iteration 45 (of 80): 710.23 sec so far
+Iteration 47 (of 80): 715.67 sec so far
+Iteration 49 (of 80): 773.19 sec so far
+Iteration 52 (of 80): 780.63 sec so far
+Iteration 53 (of 80): 840.21 sec so far
+Iteration 56 (of 80): 846.50 sec so far
+Iteration 57 (of 80): 901.80 sec so far
+Iteration 60 (of 80): 908.34 sec so far
+Iteration 61 (of 80): 963.83 sec so far
+Iteration 63 (of 80): 968.85 sec so far
+Iteration 65 (of 80): 1027.21 sec so far
+Iteration 66 (of 80): 1033.22 sec so far
+Iteration 69 (of 80): 1092.42 sec so far
+Iteration 72 (of 80): 1098.87 sec so far
+Iteration 73 (of 80): 1154.37 sec so far
+Iteration 75 (of 80): 1159.68 sec so far
+Iteration 77 (of 80): 1217.33 sec so far
+Iteration 78 (of 80): 1223.63 sec so far
+
+Iterative method: 80 iterations in 1224.48 seconds (average 15.306000, setup 0.00)
+
+Value in the initial state: 0.3866933505029386
+
+Time for model checking: 1227.968 seconds.
+
+Result: 0.3866933505029386 (value in the initial state)
+
+Exporting results to file "model-checking/splitworld/splitworld_ext_prop2.res"...
+

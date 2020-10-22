@@ -1,0 +1,897 @@
+PRISM
+=====
+
+Version: 4.6.dev
+Date: Thu Sep 24 01:40:07 BST 2020
+Hostname: [REDACTED]
+Memory limits: cudd=30g, java(heap)=1g
+Command line: prism model-checking/splitworld/splitworld_ext.prism model-checking/splitworld/splitworld_ext.props -m -prop 6 -const 'T=1:1:20' -cuddmaxmem 30g -symm 1 6 -exportresults model-checking/splitworld/splitworld_ext_prop6.res
+
+Parsing model file "model-checking/splitworld/splitworld_ext.prism"...
+
+Type:        DTMC
+Modules:     Client1 Client2 Client3 Client4 Client5 Server1 Server2 Server3 Server4 Server5 
+Variables:   c1 c1s c1_sth c1d c1_skip c2 c2s c2_sth c2d c2_skip c3 c3s c3_sth c3d c3_skip c4 c4s c4_sth c4d c4_skip c5 c5s c5_sth c5d c5_skip s1_sth s1d s2_sth s2d s3_sth s3d s4_sth s4d s5_sth s5d 
+
+Parsing properties file "model-checking/splitworld/splitworld_ext.props"...
+
+6 properties:
+(1) P=? [ F<=4*T "detect" ]
+(2) R{"client_proportion_old"}=? [ I=4*T ]
+(3) R{"client_proportion_real"}=? [ I=4*T ]
+(4) R{"client_proportion_fake"}=? [ I=4*T ]
+(5) R{"log_connections_STHOnly"}=? [ C<=4*T ]
+(6) R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=1
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 13 iterations in 50.28 seconds (average 3.867538, setup 0.00)
+
+Applying symmetry reduction...
+
+Number of states before before symmetry reduction: 371179009
+DD sizes before symmetry reduction:
+trans: 4672857 nodes (52443 terminal), 2105079932 minterms
+transrew[0]: 1 nodes (1 terminal), 0 minterms
+transrew[1]: 1 nodes (1 terminal), 0 minterms
+transrew[2]: 1 nodes (1 terminal), 0 minterms
+transrew[3]: 1 nodes (1 terminal), 0 minterms
+transrew[4]: 1 nodes (1 terminal), 0 minterms
+transrew[5]: 1 nodes (1 terminal), 0 minterms
+Starting quicksort...
+Iteration 1.1
+Iteration 1.2
+Iteration 2.1
+Symmetry complete: -3 iterations, 3 swaps, 90.641 seconds
+
+Time for model construction: 385.782 seconds.
+
+Type:        DTMC
+States:      73145358 (1 initial)
+Transitions: 416113760
+
+Transition matrix: 6901906 nodes (118009 terminal), 416113760 minterms, vars: 65r/65c
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 4): 41.10 sec so far
+
+Iterative method: 4 iterations in 42.48 seconds (average 10.620250, setup 0.00)
+
+Value in the initial state: 0.5
+
+Time for model checking: 43.335 seconds.
+
+Result: 0.5 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=2
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 5 (of 8): 138.80 sec so far
+Iteration 6 (of 8): 149.72 sec so far
+
+Iterative method: 8 iterations in 151.33 seconds (average 18.916250, setup 0.00)
+
+Value in the initial state: 0.986925637154557
+
+Time for model checking: 154.399 seconds.
+
+Result: 0.986925637154557 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=3
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 12): 33.93 sec so far
+Iteration 8 (of 12): 169.37 sec so far
+Iteration 9 (of 12): 299.85 sec so far
+Iteration 10 (of 12): 306.45 sec so far
+
+Iterative method: 12 iterations in 308.51 seconds (average 25.708833, setup 0.00)
+
+Value in the initial state: 1.4115424223530266
+
+Time for model checking: 313.337 seconds.
+
+Result: 1.4115424223530266 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=4
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 16): 36.19 sec so far
+Iteration 5 (of 16): 161.24 sec so far
+Iteration 6 (of 16): 167.63 sec so far
+Iteration 9 (of 16): 294.17 sec so far
+Iteration 10 (of 16): 306.91 sec so far
+Iteration 13 (of 16): 437.55 sec so far
+Iteration 15 (of 16): 444.07 sec so far
+
+Iterative method: 16 iterations in 444.07 seconds (average 27.754500, setup 0.00)
+
+Value in the initial state: 1.6723601762580476
+
+Time for model checking: 450.962 seconds.
+
+Result: 1.6723601762580476 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=5
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 20): 27.19 sec so far
+Iteration 5 (of 20): 150.41 sec so far
+Iteration 6 (of 20): 155.67 sec so far
+Iteration 9 (of 20): 280.16 sec so far
+Iteration 10 (of 20): 285.63 sec so far
+Iteration 13 (of 20): 415.16 sec so far
+Iteration 14 (of 20): 421.03 sec so far
+Iteration 17 (of 20): 545.29 sec so far
+Iteration 18 (of 20): 557.87 sec so far
+
+Iterative method: 20 iterations in 559.34 seconds (average 27.966750, setup 0.00)
+
+Value in the initial state: 1.7931581626555078
+
+Time for model checking: 567.694 seconds.
+
+Result: 1.7931581626555078 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=6
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 24): 24.77 sec so far
+Iteration 5 (of 24): 142.72 sec so far
+Iteration 7 (of 24): 148.25 sec so far
+Iteration 9 (of 24): 270.79 sec so far
+Iteration 11 (of 24): 277.16 sec so far
+Iteration 13 (of 24): 403.47 sec so far
+Iteration 14 (of 24): 409.08 sec so far
+Iteration 17 (of 24): 532.65 sec so far
+Iteration 18 (of 24): 538.19 sec so far
+Iteration 21 (of 24): 666.82 sec so far
+Iteration 22 (of 24): 680.03 sec so far
+
+Iterative method: 24 iterations in 681.41 seconds (average 28.391917, setup 0.00)
+
+Value in the initial state: 1.8411641173428932
+
+Time for model checking: 691.054 seconds.
+
+Result: 1.8411641173428932 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=7
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 28): 24.64 sec so far
+Iteration 5 (of 28): 140.06 sec so far
+Iteration 7 (of 28): 145.44 sec so far
+Iteration 9 (of 28): 268.94 sec so far
+Iteration 10 (of 28): 274.09 sec so far
+Iteration 12 (of 28): 395.33 sec so far
+Iteration 13 (of 28): 516.81 sec so far
+Iteration 14 (of 28): 523.12 sec so far
+Iteration 17 (of 28): 650.29 sec so far
+Iteration 18 (of 28): 663.67 sec so far
+Iteration 21 (of 28): 788.66 sec so far
+Iteration 23 (of 28): 794.76 sec so far
+Iteration 25 (of 28): 912.57 sec so far
+Iteration 27 (of 28): 918.72 sec so far
+
+Iterative method: 28 iterations in 918.72 seconds (average 32.811500, setup 0.00)
+
+Value in the initial state: 1.8593913376111555
+
+Time for model checking: 930.044 seconds.
+
+Result: 1.8593913376111555 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=8
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 32): 27.31 sec so far
+Iteration 5 (of 32): 142.75 sec so far
+Iteration 6 (of 32): 148.19 sec so far
+Iteration 9 (of 32): 266.03 sec so far
+Iteration 10 (of 32): 272.21 sec so far
+Iteration 13 (of 32): 388.21 sec so far
+Iteration 14 (of 32): 401.03 sec so far
+Iteration 17 (of 32): 518.76 sec so far
+Iteration 19 (of 32): 524.90 sec so far
+Iteration 20 (of 32): 637.50 sec so far
+Iteration 21 (of 32): 749.59 sec so far
+Iteration 22 (of 32): 755.02 sec so far
+Iteration 25 (of 32): 866.73 sec so far
+Iteration 27 (of 32): 873.17 sec so far
+Iteration 29 (of 32): 982.18 sec so far
+Iteration 30 (of 32): 987.85 sec so far
+
+Iterative method: 32 iterations in 989.39 seconds (average 30.918469, setup 0.00)
+
+Value in the initial state: 1.8664863907138085
+
+Time for model checking: 997.734 seconds.
+
+Result: 1.8664863907138085 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=9
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 36): 30.04 sec so far
+Iteration 5 (of 36): 128.46 sec so far
+Iteration 6 (of 36): 137.73 sec so far
+Iteration 9 (of 36): 247.57 sec so far
+Iteration 11 (of 36): 252.92 sec so far
+Iteration 13 (of 36): 361.89 sec so far
+Iteration 15 (of 36): 367.93 sec so far
+Iteration 17 (of 36): 471.77 sec so far
+Iteration 19 (of 36): 478.00 sec so far
+Iteration 21 (of 36): 585.20 sec so far
+Iteration 22 (of 36): 590.37 sec so far
+Iteration 25 (of 36): 700.53 sec so far
+Iteration 27 (of 36): 705.72 sec so far
+Iteration 29 (of 36): 808.51 sec so far
+Iteration 31 (of 36): 814.72 sec so far
+Iteration 32 (of 36): 914.89 sec so far
+Iteration 33 (of 36): 1016.27 sec so far
+Iteration 34 (of 36): 1021.96 sec so far
+Iteration 35 (of 36): 1118.93 sec so far
+
+Iterative method: 36 iterations in 1118.94 seconds (average 31.081778, setup 0.00)
+
+Value in the initial state: 1.8694095667408814
+
+Time for model checking: 1124.434 seconds.
+
+Result: 1.8694095667408814 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=10
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 40): 23.51 sec so far
+Iteration 5 (of 40): 121.81 sec so far
+Iteration 6 (of 40): 131.76 sec so far
+Iteration 9 (of 40): 235.26 sec so far
+Iteration 11 (of 40): 240.82 sec so far
+Iteration 13 (of 40): 341.94 sec so far
+Iteration 15 (of 40): 347.75 sec so far
+Iteration 17 (of 40): 445.80 sec so far
+Iteration 19 (of 40): 451.76 sec so far
+Iteration 21 (of 40): 551.65 sec so far
+Iteration 22 (of 40): 556.65 sec so far
+Iteration 25 (of 40): 660.14 sec so far
+Iteration 26 (of 40): 668.88 sec so far
+Iteration 28 (of 40): 768.85 sec so far
+Iteration 29 (of 40): 869.57 sec so far
+Iteration 31 (of 40): 875.75 sec so far
+Iteration 32 (of 40): 976.10 sec so far
+Iteration 33 (of 40): 1076.09 sec so far
+Iteration 34 (of 40): 1081.64 sec so far
+Iteration 35 (of 40): 1177.85 sec so far
+Iteration 36 (of 40): 1183.58 sec so far
+Iteration 37 (of 40): 1278.11 sec so far
+Iteration 38 (of 40): 1284.04 sec so far
+Iteration 39 (of 40): 1386.30 sec so far
+
+Iterative method: 40 iterations in 1386.31 seconds (average 34.657725, setup 0.00)
+
+Value in the initial state: 1.8706865681668594
+
+Time for model checking: 1390.491 seconds.
+
+Result: 1.8706865681668594 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=11
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 44): 22.13 sec so far
+Iteration 5 (of 44): 111.54 sec so far
+Iteration 8 (of 44): 117.88 sec so far
+Iteration 9 (of 44): 216.68 sec so far
+Iteration 11 (of 44): 222.54 sec so far
+Iteration 13 (of 44): 323.04 sec so far
+Iteration 14 (of 44): 328.12 sec so far
+Iteration 17 (of 44): 431.10 sec so far
+Iteration 18 (of 44): 440.42 sec so far
+Iteration 21 (of 44): 542.89 sec so far
+Iteration 23 (of 44): 548.54 sec so far
+Iteration 25 (of 44): 649.39 sec so far
+Iteration 27 (of 44): 655.28 sec so far
+Iteration 29 (of 44): 756.11 sec so far
+Iteration 30 (of 44): 761.53 sec so far
+Iteration 32 (of 44): 859.14 sec so far
+Iteration 33 (of 44): 958.56 sec so far
+Iteration 34 (of 44): 967.02 sec so far
+Iteration 36 (of 44): 1068.72 sec so far
+Iteration 37 (of 44): 1167.59 sec so far
+Iteration 38 (of 44): 1172.72 sec so far
+Iteration 39 (of 44): 1270.87 sec so far
+Iteration 40 (of 44): 1369.02 sec so far
+Iteration 41 (of 44): 1469.96 sec so far
+Iteration 42 (of 44): 1569.35 sec so far
+Iteration 43 (of 44): 1673.59 sec so far
+
+Iterative method: 44 iterations in 1673.59 seconds (average 38.036182, setup 0.00)
+
+Value in the initial state: 1.8712705719276688
+
+Time for model checking: 1678.533 seconds.
+
+Result: 1.8712705719276688 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=12
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 48): 22.00 sec so far
+Iteration 5 (of 48): 112.17 sec so far
+Iteration 8 (of 48): 118.77 sec so far
+Iteration 9 (of 48): 217.24 sec so far
+Iteration 11 (of 48): 222.42 sec so far
+Iteration 13 (of 48): 319.89 sec so far
+Iteration 15 (of 48): 326.09 sec so far
+Iteration 17 (of 48): 426.49 sec so far
+Iteration 18 (of 48): 431.62 sec so far
+Iteration 21 (of 48): 533.70 sec so far
+Iteration 22 (of 48): 542.81 sec so far
+Iteration 24 (of 48): 616.68 sec so far
+Iteration 25 (of 48): 715.06 sec so far
+Iteration 26 (of 48): 720.10 sec so far
+Iteration 29 (of 48): 823.70 sec so far
+Iteration 30 (of 48): 833.02 sec so far
+Iteration 32 (of 48): 935.62 sec so far
+Iteration 33 (of 48): 1036.00 sec so far
+Iteration 34 (of 48): 1041.07 sec so far
+Iteration 35 (of 48): 1140.80 sec so far
+Iteration 37 (of 48): 1244.56 sec so far
+Iteration 38 (of 48): 1345.76 sec so far
+Iteration 40 (of 48): 1445.32 sec so far
+Iteration 41 (of 48): 1546.99 sec so far
+Iteration 42 (of 48): 1556.97 sec so far
+Iteration 44 (of 48): 1657.39 sec so far
+Iteration 45 (of 48): 1757.90 sec so far
+Iteration 47 (of 48): 1763.98 sec so far
+
+Iterative method: 48 iterations in 1764.03 seconds (average 36.750542, setup 0.00)
+
+Value in the initial state: 1.871546100173325
+
+Time for model checking: 1769.305 seconds.
+
+Result: 1.871546100173325 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=13
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 52): 23.33 sec so far
+Iteration 5 (of 52): 119.74 sec so far
+Iteration 7 (of 52): 125.15 sec so far
+Iteration 9 (of 52): 224.06 sec so far
+Iteration 11 (of 52): 230.32 sec so far
+Iteration 13 (of 52): 329.16 sec so far
+Iteration 15 (of 52): 335.06 sec so far
+Iteration 17 (of 52): 437.68 sec so far
+Iteration 18 (of 52): 442.98 sec so far
+Iteration 21 (of 52): 550.52 sec so far
+Iteration 23 (of 52): 555.73 sec so far
+Iteration 25 (of 52): 657.11 sec so far
+Iteration 27 (of 52): 662.58 sec so far
+Iteration 29 (of 52): 760.91 sec so far
+Iteration 31 (of 52): 766.97 sec so far
+Iteration 33 (of 52): 869.21 sec so far
+Iteration 34 (of 52): 874.55 sec so far
+Iteration 37 (of 52): 982.46 sec so far
+Iteration 39 (of 52): 988.68 sec so far
+Iteration 40 (of 52): 1089.48 sec so far
+Iteration 41 (of 52): 1189.39 sec so far
+Iteration 42 (of 52): 1194.93 sec so far
+Iteration 43 (of 52): 1292.42 sec so far
+Iteration 44 (of 52): 1393.81 sec so far
+Iteration 45 (of 52): 1495.36 sec so far
+Iteration 46 (of 52): 1578.92 sec so far
+Iteration 47 (of 52): 1680.06 sec so far
+Iteration 48 (of 52): 1780.19 sec so far
+Iteration 49 (of 52): 1881.60 sec so far
+Iteration 50 (of 52): 1983.18 sec so far
+Iteration 51 (of 52): 2084.04 sec so far
+
+Iterative method: 52 iterations in 2084.05 seconds (average 40.077885, setup 0.00)
+
+Value in the initial state: 1.8716787104554413
+
+Time for model checking: 2090.23 seconds.
+
+Result: 1.8716787104554413 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=14
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 56): 27.23 sec so far
+Iteration 5 (of 56): 115.23 sec so far
+Iteration 6 (of 56): 123.67 sec so far
+Iteration 9 (of 56): 222.69 sec so far
+Iteration 11 (of 56): 227.76 sec so far
+Iteration 13 (of 56): 327.95 sec so far
+Iteration 15 (of 56): 333.70 sec so far
+Iteration 17 (of 56): 430.94 sec so far
+Iteration 19 (of 56): 437.15 sec so far
+Iteration 21 (of 56): 538.26 sec so far
+Iteration 23 (of 56): 544.54 sec so far
+Iteration 25 (of 56): 649.31 sec so far
+Iteration 27 (of 56): 654.45 sec so far
+Iteration 29 (of 56): 752.19 sec so far
+Iteration 31 (of 56): 757.64 sec so far
+Iteration 33 (of 56): 855.47 sec so far
+Iteration 35 (of 56): 861.43 sec so far
+Iteration 37 (of 56): 961.85 sec so far
+Iteration 39 (of 56): 968.02 sec so far
+Iteration 41 (of 56): 1065.63 sec so far
+Iteration 42 (of 56): 1070.82 sec so far
+Iteration 44 (of 56): 1148.76 sec so far
+Iteration 45 (of 56): 1247.92 sec so far
+Iteration 46 (of 56): 1252.93 sec so far
+Iteration 47 (of 56): 1351.96 sec so far
+Iteration 48 (of 56): 1452.49 sec so far
+Iteration 49 (of 56): 1551.61 sec so far
+Iteration 50 (of 56): 1654.85 sec so far
+Iteration 52 (of 56): 1757.08 sec so far
+Iteration 53 (of 56): 1856.72 sec so far
+Iteration 54 (of 56): 1957.34 sec so far
+Iteration 55 (of 56): 2057.17 sec so far
+
+Iterative method: 56 iterations in 2057.18 seconds (average 36.735357, setup 0.00)
+
+Value in the initial state: 1.8717433466929445
+
+Time for model checking: 2063.237 seconds.
+
+Result: 1.8717433466929445 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=15
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 60): 23.47 sec so far
+Iteration 5 (of 60): 119.46 sec so far
+Iteration 7 (of 60): 125.44 sec so far
+Iteration 9 (of 60): 225.83 sec so far
+Iteration 10 (of 60): 235.21 sec so far
+Iteration 13 (of 60): 337.85 sec so far
+Iteration 15 (of 60): 343.14 sec so far
+Iteration 17 (of 60): 440.81 sec so far
+Iteration 19 (of 60): 446.74 sec so far
+Iteration 21 (of 60): 547.82 sec so far
+Iteration 22 (of 60): 552.86 sec so far
+Iteration 25 (of 60): 652.39 sec so far
+Iteration 26 (of 60): 657.43 sec so far
+Iteration 29 (of 60): 763.94 sec so far
+Iteration 31 (of 60): 769.25 sec so far
+Iteration 33 (of 60): 867.13 sec so far
+Iteration 35 (of 60): 872.21 sec so far
+Iteration 37 (of 60): 973.28 sec so far
+Iteration 39 (of 60): 979.34 sec so far
+Iteration 41 (of 60): 1080.10 sec so far
+Iteration 42 (of 60): 1085.24 sec so far
+Iteration 44 (of 60): 1188.23 sec so far
+Iteration 45 (of 60): 1292.69 sec so far
+Iteration 47 (of 60): 1395.21 sec so far
+Iteration 48 (of 60): 1496.34 sec so far
+Iteration 49 (of 60): 1597.21 sec so far
+Iteration 50 (of 60): 1697.46 sec so far
+Iteration 51 (of 60): 1798.97 sec so far
+Iteration 52 (of 60): 1900.13 sec so far
+Iteration 53 (of 60): 2000.25 sec so far
+Iteration 55 (of 60): 2109.16 sec so far
+Iteration 56 (of 60): 2186.02 sec so far
+Iteration 57 (of 60): 2287.35 sec so far
+Iteration 58 (of 60): 2389.09 sec so far
+Iteration 59 (of 60): 2489.76 sec so far
+
+Iterative method: 60 iterations in 2489.76 seconds (average 41.496033, setup 0.00)
+
+Value in the initial state: 1.8717751088325056
+
+Time for model checking: 2497.029 seconds.
+
+Result: 1.8717751088325056 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=16
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 64): 26.75 sec so far
+Iteration 5 (of 64): 114.20 sec so far
+Iteration 6 (of 64): 122.62 sec so far
+Iteration 9 (of 64): 225.30 sec so far
+Iteration 11 (of 64): 230.79 sec so far
+Iteration 13 (of 64): 328.66 sec so far
+Iteration 15 (of 64): 334.90 sec so far
+Iteration 17 (of 64): 432.94 sec so far
+Iteration 19 (of 64): 438.67 sec so far
+Iteration 21 (of 64): 540.82 sec so far
+Iteration 22 (of 64): 545.93 sec so far
+Iteration 25 (of 64): 645.98 sec so far
+Iteration 26 (of 64): 655.33 sec so far
+Iteration 29 (of 64): 755.74 sec so far
+Iteration 31 (of 64): 761.00 sec so far
+Iteration 33 (of 64): 861.89 sec so far
+Iteration 35 (of 64): 867.61 sec so far
+Iteration 37 (of 64): 968.64 sec so far
+Iteration 38 (of 64): 973.65 sec so far
+Iteration 40 (of 64): 1073.55 sec so far
+Iteration 41 (of 64): 1175.89 sec so far
+Iteration 42 (of 64): 1182.11 sec so far
+Iteration 43 (of 64): 1288.62 sec so far
+Iteration 44 (of 64): 1390.90 sec so far
+Iteration 45 (of 64): 1492.76 sec so far
+Iteration 46 (of 64): 1594.59 sec so far
+Iteration 48 (of 64): 1696.68 sec so far
+Iteration 49 (of 64): 1797.96 sec so far
+Iteration 51 (of 64): 1804.52 sec so far
+Iteration 52 (of 64): 1906.60 sec so far
+Iteration 53 (of 64): 2009.20 sec so far
+Iteration 55 (of 64): 2111.93 sec so far
+Iteration 56 (of 64): 2214.28 sec so far
+Iteration 57 (of 64): 2320.56 sec so far
+Iteration 58 (of 64): 2422.03 sec so far
+Iteration 59 (of 64): 2523.61 sec so far
+Iteration 60 (of 64): 2625.39 sec so far
+Iteration 61 (of 64): 2726.43 sec so far
+Iteration 63 (of 64): 2827.59 sec so far
+
+Iterative method: 64 iterations in 2827.60 seconds (average 44.181219, setup 0.00)
+
+Value in the initial state: 1.871790800842569
+
+Time for model checking: 2835.601 seconds.
+
+Result: 1.871790800842569 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=17
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 68): 23.51 sec so far
+Iteration 5 (of 68): 121.88 sec so far
+Iteration 7 (of 68): 128.17 sec so far
+Iteration 9 (of 68): 231.56 sec so far
+Iteration 10 (of 68): 240.91 sec so far
+Iteration 13 (of 68): 345.04 sec so far
+Iteration 15 (of 68): 350.62 sec so far
+Iteration 17 (of 68): 452.47 sec so far
+Iteration 19 (of 68): 458.43 sec so far
+Iteration 20 (of 68): 559.20 sec so far
+Iteration 21 (of 68): 661.11 sec so far
+Iteration 22 (of 68): 666.73 sec so far
+Iteration 25 (of 68): 774.99 sec so far
+Iteration 27 (of 68): 780.62 sec so far
+Iteration 29 (of 68): 879.94 sec so far
+Iteration 31 (of 68): 885.38 sec so far
+Iteration 33 (of 68): 985.59 sec so far
+Iteration 35 (of 68): 991.83 sec so far
+Iteration 37 (of 68): 1091.54 sec so far
+Iteration 39 (of 68): 1097.80 sec so far
+Iteration 41 (of 68): 1201.36 sec so far
+Iteration 42 (of 68): 1206.46 sec so far
+Iteration 44 (of 68): 1310.20 sec so far
+Iteration 45 (of 68): 1416.37 sec so far
+Iteration 47 (of 68): 1522.58 sec so far
+Iteration 49 (of 68): 1628.49 sec so far
+Iteration 50 (of 68): 1729.07 sec so far
+Iteration 52 (of 68): 1830.47 sec so far
+Iteration 53 (of 68): 1930.12 sec so far
+Iteration 55 (of 68): 1935.83 sec so far
+Iteration 56 (of 68): 2036.25 sec so far
+Iteration 57 (of 68): 2136.41 sec so far
+Iteration 59 (of 68): 2243.49 sec so far
+Iteration 60 (of 68): 2342.81 sec so far
+Iteration 61 (of 68): 2442.33 sec so far
+Iteration 62 (of 68): 2543.42 sec so far
+Iteration 63 (of 68): 2643.19 sec so far
+Iteration 65 (of 68): 2745.99 sec so far
+Iteration 66 (of 68): 2846.43 sec so far
+
+Iterative method: 68 iterations in 2848.88 seconds (average 41.895338, setup 0.00)
+
+Value in the initial state: 1.8717985816819098
+
+Time for model checking: 2857.019 seconds.
+
+Result: 1.8717985816819098 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=18
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 72): 24.43 sec so far
+Iteration 2 (of 72): 29.95 sec so far
+Iteration 5 (of 72): 121.45 sec so far
+Iteration 6 (of 72): 130.89 sec so far
+Iteration 9 (of 72): 233.32 sec so far
+Iteration 11 (of 72): 238.54 sec so far
+Iteration 13 (of 72): 338.63 sec so far
+Iteration 15 (of 72): 344.25 sec so far
+Iteration 17 (of 72): 441.87 sec so far
+Iteration 19 (of 72): 447.67 sec so far
+Iteration 21 (of 72): 546.54 sec so far
+Iteration 23 (of 72): 552.68 sec so far
+Iteration 25 (of 72): 654.53 sec so far
+Iteration 26 (of 72): 663.70 sec so far
+Iteration 29 (of 72): 765.94 sec so far
+Iteration 31 (of 72): 771.89 sec so far
+Iteration 32 (of 72): 870.55 sec so far
+Iteration 33 (of 72): 970.33 sec so far
+Iteration 34 (of 72): 975.89 sec so far
+Iteration 35 (of 72): 1073.30 sec so far
+Iteration 36 (of 72): 1079.23 sec so far
+Iteration 37 (of 72): 1179.59 sec so far
+Iteration 38 (of 72): 1188.68 sec so far
+Iteration 39 (of 72): 1285.96 sec so far
+Iteration 41 (of 72): 1390.04 sec so far
+Iteration 43 (of 72): 1493.82 sec so far
+Iteration 44 (of 72): 1576.72 sec so far
+Iteration 45 (of 72): 1677.23 sec so far
+Iteration 46 (of 72): 1777.84 sec so far
+Iteration 47 (of 72): 1877.27 sec so far
+Iteration 49 (of 72): 1980.13 sec so far
+Iteration 50 (of 72): 2080.93 sec so far
+Iteration 53 (of 72): 2184.96 sec so far
+Iteration 55 (of 72): 2190.31 sec so far
+Iteration 56 (of 72): 2287.35 sec so far
+Iteration 57 (of 72): 2391.65 sec so far
+Iteration 59 (of 72): 2494.74 sec so far
+Iteration 60 (of 72): 2595.91 sec so far
+Iteration 61 (of 72): 2697.55 sec so far
+Iteration 62 (of 72): 2798.18 sec so far
+Iteration 63 (of 72): 2899.14 sec so far
+Iteration 64 (of 72): 3001.69 sec so far
+Iteration 65 (of 72): 3103.22 sec so far
+Iteration 66 (of 72): 3208.41 sec so far
+Iteration 68 (of 72): 3312.98 sec so far
+Iteration 69 (of 72): 3413.47 sec so far
+Iteration 71 (of 72): 3512.91 sec so far
+
+Iterative method: 72 iterations in 3512.91 seconds (average 48.790486, setup 0.00)
+
+Value in the initial state: 1.8718024494512084
+
+Time for model checking: 3522.764 seconds.
+
+Result: 1.8718024494512084 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=19
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 76): 23.27 sec so far
+Iteration 5 (of 76): 119.24 sec so far
+Iteration 7 (of 76): 124.93 sec so far
+Iteration 9 (of 76): 226.65 sec so far
+Iteration 10 (of 76): 231.79 sec so far
+Iteration 13 (of 76): 336.05 sec so far
+Iteration 14 (of 76): 345.36 sec so far
+Iteration 17 (of 76): 448.48 sec so far
+Iteration 19 (of 76): 454.21 sec so far
+Iteration 20 (of 76): 550.91 sec so far
+Iteration 21 (of 76): 651.53 sec so far
+Iteration 22 (of 76): 656.58 sec so far
+Iteration 25 (of 76): 756.78 sec so far
+Iteration 27 (of 76): 763.09 sec so far
+Iteration 29 (of 76): 862.43 sec so far
+Iteration 31 (of 76): 868.77 sec so far
+Iteration 33 (of 76): 974.58 sec so far
+Iteration 35 (of 76): 979.71 sec so far
+Iteration 37 (of 76): 1081.13 sec so far
+Iteration 39 (of 76): 1087.62 sec so far
+Iteration 40 (of 76): 1187.69 sec so far
+Iteration 41 (of 76): 1288.08 sec so far
+Iteration 42 (of 76): 1293.91 sec so far
+Iteration 43 (of 76): 1395.16 sec so far
+Iteration 45 (of 76): 1503.50 sec so far
+Iteration 46 (of 76): 1604.48 sec so far
+Iteration 48 (of 76): 1708.41 sec so far
+Iteration 49 (of 76): 1808.36 sec so far
+Iteration 51 (of 76): 1912.54 sec so far
+Iteration 52 (of 76): 2013.59 sec so far
+Iteration 53 (of 76): 2115.62 sec so far
+Iteration 54 (of 76): 2216.48 sec so far
+Iteration 55 (of 76): 2322.11 sec so far
+Iteration 56 (of 76): 2421.96 sec so far
+Iteration 57 (of 76): 2522.76 sec so far
+Iteration 58 (of 76): 2623.15 sec so far
+Iteration 59 (of 76): 2723.84 sec so far
+Iteration 60 (of 76): 2785.28 sec so far
+Iteration 61 (of 76): 2886.22 sec so far
+Iteration 62 (of 76): 2991.11 sec so far
+Iteration 63 (of 76): 3090.68 sec so far
+Iteration 65 (of 76): 3190.02 sec so far
+Iteration 66 (of 76): 3290.03 sec so far
+Iteration 69 (of 76): 3389.80 sec so far
+Iteration 71 (of 76): 3395.31 sec so far
+Iteration 73 (of 76): 3496.90 sec so far
+
+Iterative method: 76 iterations in 3500.23 seconds (average 46.055658, setup 0.00)
+
+Value in the initial state: 1.8718043754240088
+
+Time for model checking: 3510.018 seconds.
+
+Result: 1.8718043754240088 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=20
+
+Computing rewards...
+Engine: MTBDD
+
+Starting iterations...
+Iteration 1 (of 80): 24.16 sec so far
+Iteration 5 (of 80): 120.98 sec so far
+Iteration 7 (of 80): 126.90 sec so far
+Iteration 9 (of 80): 225.59 sec so far
+Iteration 11 (of 80): 231.65 sec so far
+Iteration 13 (of 80): 329.99 sec so far
+Iteration 14 (of 80): 335.14 sec so far
+Iteration 17 (of 80): 442.23 sec so far
+Iteration 19 (of 80): 447.96 sec so far
+Iteration 20 (of 80): 546.78 sec so far
+Iteration 21 (of 80): 646.32 sec so far
+Iteration 23 (of 80): 652.49 sec so far
+Iteration 25 (of 80): 750.50 sec so far
+Iteration 27 (of 80): 756.57 sec so far
+Iteration 29 (of 80): 859.37 sec so far
+Iteration 30 (of 80): 869.03 sec so far
+Iteration 33 (of 80): 969.08 sec so far
+Iteration 36 (of 80): 975.82 sec so far
+Iteration 37 (of 80): 1072.15 sec so far
+Iteration 39 (of 80): 1077.36 sec so far
+Iteration 41 (of 80): 1179.67 sec so far
+Iteration 43 (of 80): 1185.73 sec so far
+Iteration 45 (of 80): 1288.07 sec so far
+Iteration 47 (of 80): 1295.54 sec so far
+Iteration 48 (of 80): 1397.46 sec so far
+Iteration 49 (of 80): 1502.52 sec so far
+Iteration 51 (of 80): 1605.83 sec so far
+Iteration 52 (of 80): 1707.10 sec so far
+Iteration 53 (of 80): 1807.77 sec so far
+Iteration 54 (of 80): 1830.56 sec so far
+Iteration 55 (of 80): 1931.92 sec so far
+Iteration 56 (of 80): 2037.63 sec so far
+Iteration 57 (of 80): 2138.97 sec so far
+Iteration 58 (of 80): 2239.96 sec so far
+Iteration 59 (of 80): 2340.37 sec so far
+Iteration 60 (of 80): 2441.38 sec so far
+Iteration 61 (of 80): 2542.05 sec so far
+Iteration 62 (of 80): 2643.19 sec so far
+Iteration 63 (of 80): 2744.11 sec so far
+Iteration 64 (of 80): 2845.50 sec so far
+Iteration 65 (of 80): 2946.48 sec so far
+Iteration 66 (of 80): 3051.70 sec so far
+Iteration 67 (of 80): 3151.27 sec so far
+Iteration 69 (of 80): 3249.78 sec so far
+Iteration 71 (of 80): 3255.41 sec so far
+Iteration 73 (of 80): 3356.06 sec so far
+Iteration 76 (of 80): 3455.40 sec so far
+Iteration 77 (of 80): 3555.77 sec so far
+Iteration 79 (of 80): 3657.28 sec so far
+
+Iterative method: 80 iterations in 3657.29 seconds (average 45.716150, setup 0.00)
+
+Value in the initial state: 1.8718053356389421
+
+Time for model checking: 3667.265 seconds.
+
+Result: 1.8718053356389421 (value in the initial state)
+
+Exporting results to file "model-checking/splitworld/splitworld_ext_prop6.res"...
+

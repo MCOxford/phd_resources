@@ -1,0 +1,14 @@
+const int T1;
+const int T2=20;
+
+P=? [ F<=T1*102 "detect" ]
+
+R{"client_proportion_old"}=? [ I=T2*102 ]
+
+R{"client_proportion_real"}=? [ I=T2*102 ]
+
+R{"client_proportion_fake"}=? [ I=T2*102 ]
+
+R{"log_connections_STHOnly"}=? [ C<=T2*102 ]
+
+R{"log_connections_STHAndProof"}=? [ C<=T2*102 ]

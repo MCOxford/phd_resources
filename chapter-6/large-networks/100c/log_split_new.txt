@@ -1,0 +1,202 @@
+PRISM
+=====
+
+Version: 4.6.dev
+Date: Thu Sep 24 16:18:48 BST 2020
+Hostname: bear-pg0206u14a.bear.cluster
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism large-networks/100c/split_new.prism large-networks/100c/split_new.props -const 'T1=1:1:20' -sim -simpathlen 20000 -simsamples 2000 -exportresults large-networks/100c/split_new.res
+
+Parsing model file "large-networks/100c/split_new.prism"...
+
+Type:        DTMC
+Modules:     Client1 Client2 Client3 Client4 Client5 Client6 Client7 Client8 Client9 Client10 Client11 Client12 Client13 Client14 Client15 Client16 Client17 Client18 Client19 Client20 Client21 Client22 Client23 Client24 Client25 Client26 Client27 Client28 Client29 Client30 Client31 Client32 Client33 Client34 Client35 Client36 Client37 Client38 Client39 Client40 Client41 Client42 Client43 Client44 Client45 Client46 Client47 Client48 Client49 Client50 Client51 Client52 Client53 Client54 Client55 Client56 Client57 Client58 Client59 Client60 Client61 Client62 Client63 Client64 Client65 Client66 Client67 Client68 Client69 Client70 Client71 Client72 Client73 Client74 Client75 Client76 Client77 Client78 Client79 Client80 Client81 Client82 Client83 Client84 Client85 Client86 Client87 Client88 Client89 Client90 Client91 Client92 Client93 Client94 Client95 Client96 Client97 Client98 Client99 Client100 Server1 Server2 Server3 Server4 Server5 
+Variables:   c1 c1s c1_sth c1d c1_skip c1_flag c2 c2s c2_sth c2d c2_skip c2_flag c3 c3s c3_sth c3d c3_skip c3_flag c4 c4s c4_sth c4d c4_skip c4_flag c5 c5s c5_sth c5d c5_skip c5_flag c6 c6s c6_sth c6d c6_skip c6_flag c7 c7s c7_sth c7d c7_skip c7_flag c8 c8s c8_sth c8d c8_skip c8_flag c9 c9s c9_sth c9d c9_skip c9_flag c10 c10s c10_sth c10d c10_skip c10_flag c11 c11s c11_sth c11d c11_skip c11_flag c12 c12s c12_sth c12d c12_skip c12_flag c13 c13s c13_sth c13d c13_skip c13_flag c14 c14s c14_sth c14d c14_skip c14_flag c15 c15s c15_sth c15d c15_skip c15_flag c16 c16s c16_sth c16d c16_skip c16_flag c17 c17s c17_sth c17d c17_skip c17_flag c18 c18s c18_sth c18d c18_skip c18_flag c19 c19s c19_sth c19d c19_skip c19_flag c20 c20s c20_sth c20d c20_skip c20_flag c21 c21s c21_sth c21d c21_skip c21_flag c22 c22s c22_sth c22d c22_skip c22_flag c23 c23s c23_sth c23d c23_skip c23_flag c24 c24s c24_sth c24d c24_skip c24_flag c25 c25s c25_sth c25d c25_skip c25_flag c26 c26s c26_sth c26d c26_skip c26_flag c27 c27s c27_sth c27d c27_skip c27_flag c28 c28s c28_sth c28d c28_skip c28_flag c29 c29s c29_sth c29d c29_skip c29_flag c30 c30s c30_sth c30d c30_skip c30_flag c31 c31s c31_sth c31d c31_skip c31_flag c32 c32s c32_sth c32d c32_skip c32_flag c33 c33s c33_sth c33d c33_skip c33_flag c34 c34s c34_sth c34d c34_skip c34_flag c35 c35s c35_sth c35d c35_skip c35_flag c36 c36s c36_sth c36d c36_skip c36_flag c37 c37s c37_sth c37d c37_skip c37_flag c38 c38s c38_sth c38d c38_skip c38_flag c39 c39s c39_sth c39d c39_skip c39_flag c40 c40s c40_sth c40d c40_skip c40_flag c41 c41s c41_sth c41d c41_skip c41_flag c42 c42s c42_sth c42d c42_skip c42_flag c43 c43s c43_sth c43d c43_skip c43_flag c44 c44s c44_sth c44d c44_skip c44_flag c45 c45s c45_sth c45d c45_skip c45_flag c46 c46s c46_sth c46d c46_skip c46_flag c47 c47s c47_sth c47d c47_skip c47_flag c48 c48s c48_sth c48d c48_skip c48_flag c49 c49s c49_sth c49d c49_skip c49_flag c50 c50s c50_sth c50d c50_skip c50_flag c51 c51s c51_sth c51d c51_skip c51_flag c52 c52s c52_sth c52d c52_skip c52_flag c53 c53s c53_sth c53d c53_skip c53_flag c54 c54s c54_sth c54d c54_skip c54_flag c55 c55s c55_sth c55d c55_skip c55_flag c56 c56s c56_sth c56d c56_skip c56_flag c57 c57s c57_sth c57d c57_skip c57_flag c58 c58s c58_sth c58d c58_skip c58_flag c59 c59s c59_sth c59d c59_skip c59_flag c60 c60s c60_sth c60d c60_skip c60_flag c61 c61s c61_sth c61d c61_skip c61_flag c62 c62s c62_sth c62d c62_skip c62_flag c63 c63s c63_sth c63d c63_skip c63_flag c64 c64s c64_sth c64d c64_skip c64_flag c65 c65s c65_sth c65d c65_skip c65_flag c66 c66s c66_sth c66d c66_skip c66_flag c67 c67s c67_sth c67d c67_skip c67_flag c68 c68s c68_sth c68d c68_skip c68_flag c69 c69s c69_sth c69d c69_skip c69_flag c70 c70s c70_sth c70d c70_skip c70_flag c71 c71s c71_sth c71d c71_skip c71_flag c72 c72s c72_sth c72d c72_skip c72_flag c73 c73s c73_sth c73d c73_skip c73_flag c74 c74s c74_sth c74d c74_skip c74_flag c75 c75s c75_sth c75d c75_skip c75_flag c76 c76s c76_sth c76d c76_skip c76_flag c77 c77s c77_sth c77d c77_skip c77_flag c78 c78s c78_sth c78d c78_skip c78_flag c79 c79s c79_sth c79d c79_skip c79_flag c80 c80s c80_sth c80d c80_skip c80_flag c81 c81s c81_sth c81d c81_skip c81_flag c82 c82s c82_sth c82d c82_skip c82_flag c83 c83s c83_sth c83d c83_skip c83_flag c84 c84s c84_sth c84d c84_skip c84_flag c85 c85s c85_sth c85d c85_skip c85_flag c86 c86s c86_sth c86d c86_skip c86_flag c87 c87s c87_sth c87d c87_skip c87_flag c88 c88s c88_sth c88d c88_skip c88_flag c89 c89s c89_sth c89d c89_skip c89_flag c90 c90s c90_sth c90d c90_skip c90_flag c91 c91s c91_sth c91d c91_skip c91_flag c92 c92s c92_sth c92d c92_skip c92_flag c93 c93s c93_sth c93d c93_skip c93_flag c94 c94s c94_sth c94d c94_skip c94_flag c95 c95s c95_sth c95d c95_skip c95_flag c96 c96s c96_sth c96d c96_skip c96_flag c97 c97s c97_sth c97d c97_skip c97_flag c98 c98s c98_sth c98d c98_skip c98_flag c99 c99s c99_sth c99d c99_skip c99_flag c100 c100s c100_sth c100d c100_skip c100_flag s1_sth s1d s1_flag s2_sth s2d s2_flag s3_sth s3d s3_flag s4_sth s4d s4_flag s5_sth s5d s5_flag 
+
+Parsing properties file "large-networks/100c/split_new.props"...
+
+6 properties:
+(1) P=? [ F<=T1*204 "detect" ]
+(2) R{"client_proportion_old"}=? [ I=T2*204 ]
+(3) R{"client_proportion_real"}=? [ I=T2*204 ]
+(4) R{"client_proportion_fake"}=? [ I=T2*204 ]
+(5) R{"log_connections_STHOnly"}=? [ C<=T2*204 ]
+(6) R{"log_connections_STHAndProof"}=? [ C<=T2*204 ]
+
+---------------------------------------------------------------------
+
+Simulating: P=? [ F<=T1*204 "detect" ]
+Property constants: T1=1:1:20
+
+Simulation method: CI (Confidence Interval)
+Simulation method parameters: width=unknown, confidence=0.01, number of samples=2000
+Simulation parameters: max path length=20000
+
+Sampling progress: [ 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% ]
+
+Sampling complete: 2000 iterations in 332.57 seconds (average 0.17)
+Path length statistics: average 5.4e+02, min 203, max 3263
+
+Simulation method parameters:
+T1=1 : width=0.019215358554607244, confidence=0.01, number of samples=2000
+T1=2 : width=0.0287351884714155, confidence=0.01, number of samples=2000
+T1=3 : width=0.021436197605913934, confidence=0.01, number of samples=2000
+T1=4 : width=0.014699453096081583, confidence=0.01, number of samples=2000
+T1=5 : width=0.010514687482486598, confidence=0.01, number of samples=2000
+T1=6 : width=0.007447523840546635, confidence=0.01, number of samples=2000
+T1=7 : width=0.005732291667294545, confidence=0.01, number of samples=2000
+T1=8 : width=0.0040635651312398305, confidence=0.01, number of samples=2000
+T1=9 : width=0.0025738957394303872, confidence=0.01, number of samples=2000
+T1=10 : width=0.0018209307363497896, confidence=0.01, number of samples=2000
+T1=11 : width=0.0012879146517744502, confidence=0.01, number of samples=2000
+T1=12 : width=0.0012879146517744502, confidence=0.01, number of samples=2000
+T1=13 : width=0.0012879146517744502, confidence=0.01, number of samples=2000
+T1=14 : width=0.0012879146517744502, confidence=0.01, number of samples=2000
+T1=15 : width=0.0012879146517744502, confidence=0.01, number of samples=2000
+T1=16 : width=0.0, confidence=0.01, number of samples=2000
+T1=17 : width=0.0, confidence=0.01, number of samples=2000
+T1=18 : width=0.0, confidence=0.01, number of samples=2000
+T1=19 : width=0.0, confidence=0.01, number of samples=2000
+T1=20 : width=0.0, confidence=0.01, number of samples=2000
+
+Simulation result details:
+T1=1 : confidence interval is 0.1275 +/- 0.019215358554607244, based on 99.0% confidence level
+T1=2 : confidence interval is 0.535 +/- 0.0287351884714155, based on 99.0% confidence level
+T1=3 : confidence interval is 0.834 +/- 0.021436197605913934, based on 99.0% confidence level
+T1=4 : confidence interval is 0.93 +/- 0.014699453096081583, based on 99.0% confidence level
+T1=5 : confidence interval is 0.9655 +/- 0.010514687482486598, based on 99.0% confidence level
+T1=6 : confidence interval is 0.983 +/- 0.007447523840546635, based on 99.0% confidence level
+T1=7 : confidence interval is 0.99 +/- 0.005732291667294545, based on 99.0% confidence level
+T1=8 : confidence interval is 0.995 +/- 0.0040635651312398305, based on 99.0% confidence level
+T1=9 : confidence interval is 0.998 +/- 0.0025738957394303872, based on 99.0% confidence level
+T1=10 : confidence interval is 0.999 +/- 0.0018209307363497896, based on 99.0% confidence level
+T1=11 : confidence interval is 0.9995 +/- 0.0012879146517744502, based on 99.0% confidence level
+T1=12 : confidence interval is 0.9995 +/- 0.0012879146517744502, based on 99.0% confidence level
+T1=13 : confidence interval is 0.9995 +/- 0.0012879146517744502, based on 99.0% confidence level
+T1=14 : confidence interval is 0.9995 +/- 0.0012879146517744502, based on 99.0% confidence level
+T1=15 : confidence interval is 0.9995 +/- 0.0012879146517744502, based on 99.0% confidence level
+T1=16 : confidence interval is 1.0 +/- 0.0, based on 99.0% confidence level
+T1=17 : confidence interval is 1.0 +/- 0.0, based on 99.0% confidence level
+T1=18 : confidence interval is 1.0 +/- 0.0, based on 99.0% confidence level
+T1=19 : confidence interval is 1.0 +/- 0.0, based on 99.0% confidence level
+T1=20 : confidence interval is 1.0 +/- 0.0, based on 99.0% confidence level
+
+Results:
+T1=1 : 0.1275
+T1=2 : 0.535
+T1=3 : 0.834
+T1=4 : 0.93
+T1=5 : 0.9655
+T1=6 : 0.983
+T1=7 : 0.99
+T1=8 : 0.995
+T1=9 : 0.998
+T1=10 : 0.999
+T1=11 : 0.9995
+T1=12 : 0.9995
+T1=13 : 0.9995
+T1=14 : 0.9995
+T1=15 : 0.9995
+T1=16 : 1.0
+T1=17 : 1.0
+T1=18 : 1.0
+T1=19 : 1.0
+T1=20 : 1.0
+
+---------------------------------------------------------------------
+
+Simulating: R{"client_proportion_old"}=? [ I=T2*204 ]
+
+Simulation method: CI (Confidence Interval)
+Simulation method parameters: width=unknown, confidence=0.01, number of samples=2000
+Simulation parameters: max path length=20000
+
+Sampling progress: [ 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% ]
+
+Sampling complete: 2000 iterations in 1825.322 seconds (average 0.91)
+Path length statistics: average 4.1e+03, min 4080, max 4080
+
+Simulation method parameters: width=0.01326431827986405, confidence=0.01, number of samples=2000
+
+Simulation result details: confidence interval is 0.5345149999999992 +/- 0.01326431827986405, based on 99.0% confidence level
+
+Result: 0.5345149999999992
+
+---------------------------------------------------------------------
+
+Simulating: R{"client_proportion_real"}=? [ I=T2*204 ]
+
+Simulation method: CI (Confidence Interval)
+Simulation method parameters: width=unknown, confidence=0.01, number of samples=2000
+Simulation parameters: max path length=20000
+
+Sampling progress: [ 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% ]
+
+Sampling complete: 2000 iterations in 1819.758 seconds (average 0.91)
+Path length statistics: average 4.1e+03, min 4080, max 4080
+
+Simulation method parameters: width=0.015166536262847839, confidence=0.01, number of samples=2000
+
+Simulation result details: confidence interval is 0.4111149999999994 +/- 0.015166536262847839, based on 99.0% confidence level
+
+Result: 0.4111149999999994
+
+---------------------------------------------------------------------
+
+Simulating: R{"client_proportion_fake"}=? [ I=T2*204 ]
+
+Simulation method: CI (Confidence Interval)
+Simulation method parameters: width=unknown, confidence=0.01, number of samples=2000
+Simulation parameters: max path length=20000
+
+Sampling progress: [ 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% ]
+
+Sampling complete: 2000 iterations in 1815.078 seconds (average 0.91)
+Path length statistics: average 4.1e+03, min 4080, max 4080
+
+Simulation method parameters: width=0.005467196514844526, confidence=0.01, number of samples=2000
+
+Simulation result details: confidence interval is 0.06158000000000135 +/- 0.005467196514844526, based on 99.0% confidence level
+
+Result: 0.06158000000000135
+
+---------------------------------------------------------------------
+
+Simulating: R{"log_connections_STHOnly"}=? [ C<=T2*204 ]
+
+Simulation method: CI (Confidence Interval)
+Simulation method parameters: width=unknown, confidence=0.01, number of samples=2000
+Simulation parameters: max path length=20000
+
+Sampling progress: [ 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% ]
+
+Sampling complete: 2000 iterations in 1816.257 seconds (average 0.91)
+Path length statistics: average 4.1e+03, min 4080, max 4080
+
+Simulation method parameters: width=1.453508322734992, confidence=0.01, number of samples=2000
+
+Simulation result details: confidence interval is 52.296 +/- 1.453508322734992, based on 99.0% confidence level
+
+Result: 52.296
+
+---------------------------------------------------------------------
+
+Simulating: R{"log_connections_STHAndProof"}=? [ C<=T2*204 ]
+
+Simulation method: CI (Confidence Interval)
+Simulation method parameters: width=unknown, confidence=0.01, number of samples=2000
+Simulation parameters: max path length=20000
+
+Sampling progress: [ 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% ]
+
+Sampling complete: 2000 iterations in 1808.284 seconds (average 0.9)
+Path length statistics: average 4.1e+03, min 4080, max 4080
+
+Simulation method parameters: width=0.25013066221830693, confidence=0.01, number of samples=2000
+
+Simulation result details: confidence interval is 5.1745 +/- 0.25013066221830693, based on 99.0% confidence level
+
+Result: 5.1745
+
+Exporting results to file "large-networks/100c/split_new.res"...
+

@@ -1,0 +1,2939 @@
+PRISM
+=====
+
+Version: 4.6.dev
+Date: Mon Sep 21 20:47:19 BST 2020
+Hostname: [REDACTED]
+Memory limits: cudd=30g, java(heap)=1g
+Command line: prism model-checking/splitworld/splitworld.prism model-checking/splitworld/splitworld.props -s -const 'T=1:1:20' -cuddmaxmem 30g -symm 1 6 -exportresults model-checking/splitworld/splitworld.res
+
+Parsing model file "model-checking/splitworld/splitworld.prism"...
+
+Type:        DTMC
+Modules:     Client1 Client2 Client3 Client4 Client5 Server1 Server2 Server3 Server4 Server5 
+Variables:   c1 c1s c1_sth c1d c1_skip c2 c2s c2_sth c2d c2_skip c3 c3s c3_sth c3d c3_skip c4 c4s c4_sth c4d c4_skip c5 c5s c5_sth c5d c5_skip s1_sth s1d s2_sth s2d s3_sth s3d s4_sth s4d s5_sth s5d 
+
+Parsing properties file "model-checking/splitworld/splitworld.props"...
+
+6 properties:
+(1) P=? [ F<=4*T "detect" ]
+(2) R{"client_proportion_old"}=? [ I=4*T ]
+(3) R{"client_proportion_real"}=? [ I=4*T ]
+(4) R{"client_proportion_fake"}=? [ I=4*T ]
+(5) R{"log_connections_STHOnly"}=? [ C<=4*T ]
+(6) R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=1
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 25 iterations in 57.62 seconds (average 2.304600, setup 0.00)
+
+Applying symmetry reduction...
+
+Number of states before before symmetry reduction: 123229588
+DD sizes before symmetry reduction:
+trans: 2482746 nodes (2018 terminal), 222990613 minterms
+transrew[0]: 1 nodes (1 terminal), 0 minterms
+transrew[1]: 1 nodes (1 terminal), 0 minterms
+transrew[2]: 1 nodes (1 terminal), 0 minterms
+transrew[3]: 1 nodes (1 terminal), 0 minterms
+transrew[4]: 1 nodes (1 terminal), 0 minterms
+transrew[5]: 1 nodes (1 terminal), 0 minterms
+Starting quicksort...
+Iteration 1.1
+Iteration 1.2
+Iteration 2.1
+Symmetry complete: -3 iterations, 3 swaps, 71.023 seconds
+
+Time for model construction: 352.011 seconds.
+
+Type:        DTMC
+States:      24084553 (1 initial)
+Transitions: 43394303
+
+Transition matrix: 2834927 nodes (4540 terminal), 43394303 minterms, vars: 65r/65c
+
+Prob0: 7 iterations in 2.64 seconds (average 0.376857, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+
+Iterative method: 4 iterations in 13.30 seconds (average 0.165750, setup 12.64)
+
+Value in the initial state: 0.01737793920169907
+
+Time for model checking: 16.621 seconds.
+
+Result: 0.01737793920169907 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=2
+
+Prob0: 7 iterations in 1.31 seconds (average 0.187000, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+
+Iterative method: 8 iterations in 13.97 seconds (average 0.166125, setup 12.64)
+
+Value in the initial state: 0.04116663721928489
+
+Time for model checking: 15.747 seconds.
+
+Result: 0.04116663721928489 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=3
+
+Prob0: 7 iterations in 1.31 seconds (average 0.187857, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+
+Iterative method: 12 iterations in 14.56 seconds (average 0.163083, setup 12.60)
+
+Value in the initial state: 0.09367925317439933
+
+Time for model checking: 16.32 seconds.
+
+Result: 0.09367925317439933 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=4
+
+Prob0: 7 iterations in 1.31 seconds (average 0.186714, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+
+Iterative method: 16 iterations in 15.30 seconds (average 0.166813, setup 12.63)
+
+Value in the initial state: 0.18083055144728033
+
+Time for model checking: 17.009 seconds.
+
+Result: 0.18083055144728033 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=5
+
+Prob0: 7 iterations in 1.30 seconds (average 0.185571, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 15.96 seconds (average 0.166900, setup 12.62)
+
+Value in the initial state: 0.29266671364978797
+
+Time for model checking: 17.687 seconds.
+
+Result: 0.29266671364978797 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=6
+
+Prob0: 7 iterations in 1.30 seconds (average 0.185857, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+
+Iterative method: 24 iterations in 16.62 seconds (average 0.166792, setup 12.61)
+
+Value in the initial state: 0.4111967392543946
+
+Time for model checking: 18.393 seconds.
+
+Result: 0.4111967392543946 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=7
+
+Prob0: 7 iterations in 1.29 seconds (average 0.184429, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+
+Iterative method: 28 iterations in 17.31 seconds (average 0.166821, setup 12.64)
+
+Value in the initial state: 0.5210028184113531
+
+Time for model checking: 19.046 seconds.
+
+Result: 0.5210028184113531 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=8
+
+Prob0: 7 iterations in 1.30 seconds (average 0.186000, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 29 (of 32): 5.01 sec so far
+
+Iterative method: 32 iterations in 18.00 seconds (average 0.167000, setup 12.66)
+
+Value in the initial state: 0.6140430755813285
+
+Time for model checking: 19.703 seconds.
+
+Result: 0.6140430755813285 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=9
+
+Prob0: 7 iterations in 1.19 seconds (average 0.169429, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 29 (of 36): 5.01 sec so far
+
+Iterative method: 36 iterations in 18.69 seconds (average 0.167167, setup 12.67)
+
+Value in the initial state: 0.6887427970608155
+
+Time for model checking: 20.346 seconds.
+
+Result: 0.6887427970608155 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=10
+
+Prob0: 7 iterations in 1.31 seconds (average 0.187000, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 29 (of 40): 5.01 sec so far
+
+Iterative method: 40 iterations in 19.36 seconds (average 0.166975, setup 12.68)
+
+Value in the initial state: 0.7471307220963861
+
+Time for model checking: 21.102 seconds.
+
+Result: 0.7471307220963861 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=11
+
+Prob0: 7 iterations in 1.33 seconds (average 0.190000, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 29 (of 44): 5.01 sec so far
+
+Iterative method: 44 iterations in 20.01 seconds (average 0.167068, setup 12.66)
+
+Value in the initial state: 0.7924528915243355
+
+Time for model checking: 21.758 seconds.
+
+Result: 0.7924528915243355 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=12
+
+Prob0: 7 iterations in 1.17 seconds (average 0.167429, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 30 (of 48): 5.16 sec so far
+
+Iterative method: 48 iterations in 20.65 seconds (average 0.166708, setup 12.65)
+
+Value in the initial state: 0.8278576739289097
+
+Time for model checking: 22.304 seconds.
+
+Result: 0.8278576739289097 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=13
+
+Prob0: 7 iterations in 1.33 seconds (average 0.189714, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 29 (of 52): 5.00 sec so far
+
+Iterative method: 52 iterations in 21.26 seconds (average 0.166750, setup 12.59)
+
+Value in the initial state: 0.8558994806151133
+
+Time for model checking: 23.041 seconds.
+
+Result: 0.8558994806151133 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=14
+
+Prob0: 7 iterations in 1.29 seconds (average 0.184714, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 29 (of 56): 5.01 sec so far
+
+Iterative method: 56 iterations in 22.00 seconds (average 0.166911, setup 12.65)
+
+Value in the initial state: 0.878478340426773
+
+Time for model checking: 23.704 seconds.
+
+Result: 0.878478340426773 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=15
+
+Prob0: 7 iterations in 1.31 seconds (average 0.187571, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 30 (of 60): 5.16 sec so far
+
+Iterative method: 60 iterations in 22.66 seconds (average 0.166600, setup 12.66)
+
+Value in the initial state: 0.8969491571136894
+
+Time for model checking: 24.483 seconds.
+
+Result: 0.8969491571136894 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=16
+
+Prob0: 7 iterations in 1.31 seconds (average 0.187571, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 29 (of 64): 5.00 sec so far
+Iteration 59 (of 64): 10.02 sec so far
+
+Iterative method: 64 iterations in 23.35 seconds (average 0.166906, setup 12.67)
+
+Value in the initial state: 0.9122646097745031
+
+Time for model checking: 25.108 seconds.
+
+Result: 0.9122646097745031 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=17
+
+Prob0: 7 iterations in 1.30 seconds (average 0.185714, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 29 (of 68): 5.01 sec so far
+Iteration 59 (of 68): 10.02 sec so far
+
+Iterative method: 68 iterations in 23.94 seconds (average 0.166971, setup 12.58)
+
+Value in the initial state: 0.9250984668660914
+
+Time for model checking: 25.737 seconds.
+
+Result: 0.9250984668660914 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=18
+
+Prob0: 7 iterations in 1.32 seconds (average 0.188286, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 30 (of 72): 5.14 sec so far
+Iteration 61 (of 72): 10.30 sec so far
+
+Iterative method: 72 iterations in 24.54 seconds (average 0.166236, setup 12.57)
+
+Value in the initial state: 0.9359367487700542
+
+Time for model checking: 26.338 seconds.
+
+Result: 0.9359367487700542 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=19
+
+Prob0: 7 iterations in 1.28 seconds (average 0.183571, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 29 (of 76): 5.02 sec so far
+Iteration 60 (of 76): 10.16 sec so far
+
+Iterative method: 76 iterations in 25.32 seconds (average 0.166513, setup 12.67)
+
+Value in the initial state: 0.9451400138968967
+
+Time for model checking: 27.028 seconds.
+
+Result: 0.9451400138968967 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F<=4*T "detect" ]
+Property constants: T=20
+
+Prob0: 7 iterations in 1.31 seconds (average 0.187429, setup 0.00)
+
+yes = 4026441, no = 0, maybe = 20058112
+
+Computing probabilities...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=39367862] [542.4 MB]
+Creating vector for yes... [dist=2, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [955.8 MB]
+
+Starting iterations...
+Iteration 29 (of 80): 5.01 sec so far
+Iteration 59 (of 80): 10.02 sec so far
+
+Iterative method: 80 iterations in 26.03 seconds (average 0.167050, setup 12.67)
+
+Value in the initial state: 0.9529841250712967
+
+Time for model checking: 27.849 seconds.
+
+Result: 0.9529841250712967 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=1
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 4 iterations in 15.59 seconds (average 0.149000, setup 15.00)
+
+Value in the initial state: 0.7733695850540478
+
+Time for model checking: 15.916 seconds.
+
+Result: 0.7733695850540478 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=2
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 8 iterations in 16.16 seconds (average 0.148125, setup 14.98)
+
+Value in the initial state: 0.7080099691600399
+
+Time for model checking: 16.52 seconds.
+
+Result: 0.7080099691600399 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=3
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 12 iterations in 16.72 seconds (average 0.146750, setup 14.96)
+
+Value in the initial state: 0.6180897548087925
+
+Time for model checking: 17.127 seconds.
+
+Result: 0.6180897548087925 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=4
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 16 iterations in 17.36 seconds (average 0.148375, setup 14.99)
+
+Value in the initial state: 0.5190501683948056
+
+Time for model checking: 17.722 seconds.
+
+Result: 0.5190501683948056 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=5
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 17.91 seconds (average 0.148300, setup 14.94)
+
+Value in the initial state: 0.42611631482110635
+
+Time for model checking: 18.274 seconds.
+
+Result: 0.42611631482110635 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=6
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 24 iterations in 18.56 seconds (average 0.147792, setup 15.01)
+
+Value in the initial state: 0.34928935707336745
+
+Time for model checking: 19.011 seconds.
+
+Result: 0.34928935707336745 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=7
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 28 iterations in 19.11 seconds (average 0.148464, setup 14.95)
+
+Value in the initial state: 0.29179577726012096
+
+Time for model checking: 19.469 seconds.
+
+Result: 0.29179577726012096 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=8
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 32 iterations in 19.67 seconds (average 0.146906, setup 14.97)
+
+Value in the initial state: 0.2519957655670222
+
+Time for model checking: 20.022 seconds.
+
+Result: 0.2519957655670222 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=9
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 36): 5.04 sec so far
+
+Iterative method: 36 iterations in 20.25 seconds (average 0.148056, setup 14.92)
+
+Value in the initial state: 0.22608724663470167
+
+Time for model checking: 20.717 seconds.
+
+Result: 0.22608724663470167 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=10
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 40): 5.03 sec so far
+
+Iterative method: 40 iterations in 20.86 seconds (average 0.146925, setup 14.99)
+
+Value in the initial state: 0.21003200977703487
+
+Time for model checking: 21.226 seconds.
+
+Result: 0.21003200977703487 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=11
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 44): 5.04 sec so far
+
+Iterative method: 44 iterations in 21.52 seconds (average 0.148068, setup 15.01)
+
+Value in the initial state: 0.20047379324707804
+
+Time for model checking: 21.872 seconds.
+
+Result: 0.20047379324707804 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=12
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 48): 5.02 sec so far
+
+Iterative method: 48 iterations in 22.03 seconds (average 0.147854, setup 14.94)
+
+Value in the initial state: 0.1949691528524526
+
+Time for model checking: 22.514 seconds.
+
+Result: 0.1949691528524526 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=13
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 52): 5.04 sec so far
+
+Iterative method: 52 iterations in 22.63 seconds (average 0.148000, setup 14.94)
+
+Value in the initial state: 0.19188602260311657
+
+Time for model checking: 23.001 seconds.
+
+Result: 0.19188602260311657 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=14
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 56): 5.04 sec so far
+
+Iterative method: 56 iterations in 23.31 seconds (average 0.148196, setup 15.01)
+
+Value in the initial state: 0.19019950570078228
+
+Time for model checking: 23.665 seconds.
+
+Result: 0.19019950570078228 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=15
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 34 (of 60): 5.13 sec so far
+
+Iterative method: 60 iterations in 23.82 seconds (average 0.147267, setup 14.98)
+
+Value in the initial state: 0.1892954630947607
+
+Time for model checking: 24.3 seconds.
+
+Result: 0.1892954630947607 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=16
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 64): 5.04 sec so far
+
+Iterative method: 64 iterations in 24.46 seconds (average 0.148094, setup 14.98)
+
+Value in the initial state: 0.18881927427781073
+
+Time for model checking: 24.849 seconds.
+
+Result: 0.18881927427781073 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=17
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 68): 5.04 sec so far
+Iteration 67 (of 68): 10.07 sec so far
+
+Iterative method: 68 iterations in 24.96 seconds (average 0.148029, setup 14.90)
+
+Value in the initial state: 0.18857224583016702
+
+Time for model checking: 25.394 seconds.
+
+Result: 0.18857224583016702 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=18
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 72): 5.03 sec so far
+Iteration 67 (of 72): 10.03 sec so far
+
+Iterative method: 72 iterations in 25.59 seconds (average 0.147500, setup 14.96)
+
+Value in the initial state: 0.1884457967879993
+
+Time for model checking: 25.957 seconds.
+
+Result: 0.1884457967879993 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=19
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 76): 5.04 sec so far
+Iteration 67 (of 76): 10.07 sec so far
+
+Iterative method: 76 iterations in 26.21 seconds (average 0.147553, setup 14.99)
+
+Value in the initial state: 0.18838182636349113
+
+Time for model checking: 26.585 seconds.
+
+Result: 0.18838182636349113 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_old"}=? [ I=4*T ]
+Property constants: T=20
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 80): 5.04 sec so far
+Iteration 67 (of 80): 10.08 sec so far
+
+Iterative method: 80 iterations in 26.84 seconds (average 0.148287, setup 14.98)
+
+Value in the initial state: 0.18834979848857744
+
+Time for model checking: 27.239 seconds.
+
+Result: 0.18834979848857744 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=1
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 4 iterations in 15.74 seconds (average 0.149250, setup 15.15)
+
+Value in the initial state: 0.026630414945952217
+
+Time for model checking: 16.099 seconds.
+
+Result: 0.026630414945952217 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=2
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 8 iterations in 16.32 seconds (average 0.147625, setup 15.14)
+
+Value in the initial state: 0.051919613731606834
+
+Time for model checking: 16.676 seconds.
+
+Result: 0.051919613731606834 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=3
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 12 iterations in 17.01 seconds (average 0.148083, setup 15.23)
+
+Value in the initial state: 0.07781837555174206
+
+Time for model checking: 17.43 seconds.
+
+Result: 0.07781837555174206 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=4
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 16 iterations in 17.49 seconds (average 0.147125, setup 15.13)
+
+Value in the initial state: 0.10281039298858931
+
+Time for model checking: 17.846 seconds.
+
+Result: 0.10281039298858931 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=5
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 18.14 seconds (average 0.148250, setup 15.18)
+
+Value in the initial state: 0.12418346332043866
+
+Time for model checking: 18.512 seconds.
+
+Result: 0.12418346332043866 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=6
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 24 iterations in 18.75 seconds (average 0.148208, setup 15.19)
+
+Value in the initial state: 0.14037727611456802
+
+Time for model checking: 19.171 seconds.
+
+Result: 0.14037727611456802 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=7
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 28 iterations in 19.32 seconds (average 0.147000, setup 15.21)
+
+Value in the initial state: 0.1514744756346833
+
+Time for model checking: 19.673 seconds.
+
+Result: 0.1514744756346833 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=8
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 32 iterations in 19.95 seconds (average 0.148281, setup 15.21)
+
+Value in the initial state: 0.15850918873638076
+
+Time for model checking: 20.313 seconds.
+
+Result: 0.15850918873638076 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=9
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 36): 5.04 sec so far
+
+Iterative method: 36 iterations in 20.49 seconds (average 0.148333, setup 15.15)
+
+Value in the initial state: 0.16271273714577117
+
+Time for model checking: 20.905 seconds.
+
+Result: 0.16271273714577117 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=10
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 40): 5.04 sec so far
+
+Iterative method: 40 iterations in 21.05 seconds (average 0.148250, setup 15.12)
+
+Value in the initial state: 0.16511464765987277
+
+Time for model checking: 21.448 seconds.
+
+Result: 0.16511464765987277 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=11
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 34 (of 44): 5.12 sec so far
+
+Iterative method: 44 iterations in 21.67 seconds (average 0.147000, setup 15.20)
+
+Value in the initial state: 0.16644098270859115
+
+Time for model checking: 22.049 seconds.
+
+Result: 0.16644098270859115 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=12
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 48): 5.05 sec so far
+
+Iterative method: 48 iterations in 22.29 seconds (average 0.148333, setup 15.17)
+
+Value in the initial state: 0.16715420265872488
+
+Time for model checking: 22.723 seconds.
+
+Result: 0.16715420265872488 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=13
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 52): 5.01 sec so far
+
+Iterative method: 52 iterations in 22.83 seconds (average 0.147750, setup 15.14)
+
+Value in the initial state: 0.1675297457590921
+
+Time for model checking: 23.234 seconds.
+
+Result: 0.1675297457590921 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=14
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 56): 5.02 sec so far
+
+Iterative method: 56 iterations in 23.46 seconds (average 0.147857, setup 15.18)
+
+Value in the initial state: 0.16772414543886746
+
+Time for model checking: 23.859 seconds.
+
+Result: 0.16772414543886746 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=15
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 60): 5.03 sec so far
+
+Iterative method: 60 iterations in 24.00 seconds (average 0.147367, setup 15.16)
+
+Value in the initial state: 0.16782336620864666
+
+Time for model checking: 24.433 seconds.
+
+Result: 0.16782336620864666 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=16
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 64): 5.02 sec so far
+
+Iterative method: 64 iterations in 24.72 seconds (average 0.147969, setup 15.25)
+
+Value in the initial state: 0.16787340787058627
+
+Time for model checking: 25.112 seconds.
+
+Result: 0.16787340787058627 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=17
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 68): 5.04 sec so far
+Iteration 67 (of 68): 10.09 sec so far
+
+Iterative method: 68 iterations in 25.26 seconds (average 0.148382, setup 15.17)
+
+Value in the initial state: 0.16789838889490796
+
+Time for model checking: 25.689 seconds.
+
+Result: 0.16789838889490796 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=18
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 72): 5.03 sec so far
+Iteration 67 (of 72): 10.06 sec so far
+
+Iterative method: 72 iterations in 25.81 seconds (average 0.147944, setup 15.16)
+
+Value in the initial state: 0.1679107486115875
+
+Time for model checking: 26.238 seconds.
+
+Result: 0.1679107486115875 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=19
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 76): 5.03 sec so far
+Iteration 67 (of 76): 10.06 sec so far
+
+Iterative method: 76 iterations in 26.45 seconds (average 0.147934, setup 15.21)
+
+Value in the initial state: 0.16791681576524894
+
+Time for model checking: 26.841 seconds.
+
+Result: 0.16791681576524894 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_real"}=? [ I=4*T ]
+Property constants: T=20
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 80): 5.02 sec so far
+Iteration 67 (of 80): 10.05 sec so far
+
+Iterative method: 80 iterations in 27.02 seconds (average 0.147700, setup 15.20)
+
+Value in the initial state: 0.16791977320958823
+
+Time for model checking: 27.487 seconds.
+
+Result: 0.16791977320958823 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=1
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 4 iterations in 15.84 seconds (average 0.147000, setup 15.25)
+
+Value in the initial state: 0.20000000000000004
+
+Time for model checking: 16.185 seconds.
+
+Result: 0.20000000000000004 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=2
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 8 iterations in 16.36 seconds (average 0.147500, setup 15.19)
+
+Value in the initial state: 0.24007041710835367
+
+Time for model checking: 16.723 seconds.
+
+Result: 0.24007041710835367 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=3
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 12 iterations in 17.04 seconds (average 0.148833, setup 15.25)
+
+Value in the initial state: 0.304091869639466
+
+Time for model checking: 17.471 seconds.
+
+Result: 0.304091869639466 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=4
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 16 iterations in 17.52 seconds (average 0.147563, setup 15.16)
+
+Value in the initial state: 0.3781394386166058
+
+Time for model checking: 17.895 seconds.
+
+Result: 0.3781394386166058 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=5
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 18.20 seconds (average 0.148400, setup 15.23)
+
+Value in the initial state: 0.4497002218584558
+
+Time for model checking: 18.562 seconds.
+
+Result: 0.4497002218584558 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=6
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 24 iterations in 18.74 seconds (average 0.146208, setup 15.23)
+
+Value in the initial state: 0.5103333668120652
+
+Time for model checking: 19.184 seconds.
+
+Result: 0.5103333668120652 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=7
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 28 iterations in 19.35 seconds (average 0.148500, setup 15.19)
+
+Value in the initial state: 0.5567297471051963
+
+Time for model checking: 19.743 seconds.
+
+Result: 0.5567297471051963 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=8
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+
+Iterative method: 32 iterations in 19.94 seconds (average 0.147094, setup 15.23)
+
+Value in the initial state: 0.5894950456965978
+
+Time for model checking: 20.304 seconds.
+
+Result: 0.5894950456965978 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=9
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 36): 5.03 sec so far
+
+Iterative method: 36 iterations in 20.54 seconds (average 0.147917, setup 15.21)
+
+Value in the initial state: 0.6112000162195279
+
+Time for model checking: 20.99 seconds.
+
+Result: 0.6112000162195279 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=10
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 34 (of 40): 5.14 sec so far
+
+Iterative method: 40 iterations in 21.05 seconds (average 0.146875, setup 15.17)
+
+Value in the initial state: 0.6248533425630929
+
+Time for model checking: 21.439 seconds.
+
+Result: 0.6248533425630929 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=11
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 44): 5.03 sec so far
+
+Iterative method: 44 iterations in 21.71 seconds (average 0.147955, setup 15.20)
+
+Value in the initial state: 0.6330852240443315
+
+Time for model checking: 22.081 seconds.
+
+Result: 0.6330852240443315 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=12
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 48): 5.04 sec so far
+
+Iterative method: 48 iterations in 22.28 seconds (average 0.148208, setup 15.17)
+
+Value in the initial state: 0.6378766444888234
+
+Time for model checking: 22.759 seconds.
+
+Result: 0.6378766444888234 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=13
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 52): 5.04 sec so far
+
+Iterative method: 52 iterations in 22.93 seconds (average 0.148346, setup 15.21)
+
+Value in the initial state: 0.6405842316377921
+
+Time for model checking: 23.309 seconds.
+
+Result: 0.6405842316377921 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=14
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 34 (of 56): 5.14 sec so far
+
+Iterative method: 56 iterations in 23.44 seconds (average 0.147161, setup 15.20)
+
+Value in the initial state: 0.642076348860351
+
+Time for model checking: 23.884 seconds.
+
+Result: 0.642076348860351 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=15
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 60): 5.05 sec so far
+
+Iterative method: 60 iterations in 24.18 seconds (average 0.148450, setup 15.27)
+
+Value in the initial state: 0.6428811706965935
+
+Time for model checking: 24.593 seconds.
+
+Result: 0.6428811706965935 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=16
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 33 (of 64): 5.04 sec so far
+
+Iterative method: 64 iterations in 24.58 seconds (average 0.147500, setup 15.14)
+
+Value in the initial state: 0.6433073178516037
+
+Time for model checking: 24.934 seconds.
+
+Result: 0.6433073178516037 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=17
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 34 (of 68): 5.13 sec so far
+
+Iterative method: 68 iterations in 25.22 seconds (average 0.147338, setup 15.20)
+
+Value in the initial state: 0.6435293652749257
+
+Time for model checking: 25.694 seconds.
+
+Result: 0.6435293652749257 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=18
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 34 (of 72): 5.12 sec so far
+Iteration 68 (of 72): 10.16 sec so far
+
+Iterative method: 72 iterations in 25.81 seconds (average 0.147208, setup 15.21)
+
+Value in the initial state: 0.6436434546004138
+
+Time for model checking: 26.204 seconds.
+
+Result: 0.6436434546004138 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=19
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 34 (of 76): 5.12 sec so far
+Iteration 69 (of 76): 10.24 sec so far
+
+Iterative method: 76 iterations in 26.05 seconds (average 0.146289, setup 14.94)
+
+Value in the initial state: 0.6437013578712606
+
+Time for model checking: 26.499 seconds.
+
+Result: 0.6437013578712606 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"client_proportion_fake"}=? [ I=4*T ]
+Property constants: T=20
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [956.0 MB]
+
+Starting iterations...
+Iteration 34 (of 80): 5.11 sec so far
+Iteration 69 (of 80): 10.19 sec so far
+
+Iterative method: 80 iterations in 26.76 seconds (average 0.145687, setup 15.11)
+
+Value in the initial state: 0.6437304283018351
+
+Time for model checking: 27.198 seconds.
+
+Result: 0.6437304283018351 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=1
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 4 iterations in 15.63 seconds (average 0.166500, setup 14.96)
+
+Value in the initial state: 0.6331520747297612
+
+Time for model checking: 16.041 seconds.
+
+Result: 0.6331520747297612 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=2
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 8 iterations in 16.31 seconds (average 0.167000, setup 14.97)
+
+Value in the initial state: 1.4490281856399292
+
+Time for model checking: 16.795 seconds.
+
+Result: 1.4490281856399292 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=3
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 12 iterations in 16.95 seconds (average 0.164917, setup 14.97)
+
+Value in the initial state: 2.4364323809289385
+
+Time for model checking: 17.382 seconds.
+
+Result: 2.4364323809289385 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=4
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 16 iterations in 17.66 seconds (average 0.166125, setup 15.00)
+
+Value in the initial state: 3.4990085178088197
+
+Time for model checking: 18.056 seconds.
+
+Result: 3.4990085178088197 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=5
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 18.29 seconds (average 0.166300, setup 14.96)
+
+Value in the initial state: 4.506829837132458
+
+Time for model checking: 18.784 seconds.
+
+Result: 4.506829837132458 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=6
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 24 iterations in 18.95 seconds (average 0.165792, setup 14.97)
+
+Value in the initial state: 5.359992433798538
+
+Time for model checking: 19.38 seconds.
+
+Result: 5.359992433798538 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=7
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 28 iterations in 19.61 seconds (average 0.165964, setup 14.96)
+
+Value in the initial state: 6.0181123851568055
+
+Time for model checking: 20.041 seconds.
+
+Result: 6.0181123851568055 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=8
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 32): 5.14 sec so far
+
+Iterative method: 32 iterations in 20.25 seconds (average 0.165750, setup 14.94)
+
+Value in the initial state: 6.490706456943246
+
+Time for model checking: 20.731 seconds.
+
+Result: 6.490706456943246 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=9
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 36): 5.13 sec so far
+
+Iterative method: 36 iterations in 20.93 seconds (average 0.165722, setup 14.96)
+
+Value in the initial state: 6.812886895359307
+
+Time for model checking: 21.395 seconds.
+
+Result: 6.812886895359307 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=10
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 40): 5.14 sec so far
+
+Iterative method: 40 iterations in 21.59 seconds (average 0.165975, setup 14.95)
+
+Value in the initial state: 7.025171408476139
+
+Time for model checking: 22.038 seconds.
+
+Result: 7.025171408476139 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=11
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 44): 5.15 sec so far
+
+Iterative method: 44 iterations in 22.23 seconds (average 0.166205, setup 14.92)
+
+Value in the initial state: 7.1626866865810594
+
+Time for model checking: 22.776 seconds.
+
+Result: 7.1626866865810594 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=12
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 48): 5.16 sec so far
+
+Iterative method: 48 iterations in 22.93 seconds (average 0.166479, setup 14.94)
+
+Value in the initial state: 7.251750821003548
+
+Time for model checking: 23.389 seconds.
+
+Result: 7.251750821003548 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=13
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 52): 5.15 sec so far
+
+Iterative method: 52 iterations in 23.59 seconds (average 0.166231, setup 14.95)
+
+Value in the initial state: 7.310374818950551
+
+Time for model checking: 24.031 seconds.
+
+Result: 7.310374818950551 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=14
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 56): 5.14 sec so far
+
+Iterative method: 56 iterations in 24.28 seconds (average 0.166125, setup 14.97)
+
+Value in the initial state: 7.350158594340474
+
+Time for model checking: 24.792 seconds.
+
+Result: 7.350158594340474 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=15
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 60): 5.14 sec so far
+
+Iterative method: 60 iterations in 24.88 seconds (average 0.165950, setup 14.93)
+
+Value in the initial state: 7.37827168044946
+
+Time for model checking: 25.342 seconds.
+
+Result: 7.37827168044946 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=16
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 64): 5.13 sec so far
+Iteration 61 (of 64): 10.29 sec so far
+
+Iterative method: 64 iterations in 25.57 seconds (average 0.165969, setup 14.95)
+
+Value in the initial state: 7.399031337492513
+
+Time for model checking: 26.061 seconds.
+
+Result: 7.399031337492513 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=17
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 68): 5.13 sec so far
+Iteration 61 (of 68): 10.25 sec so far
+
+Iterative method: 68 iterations in 26.16 seconds (average 0.165382, setup 14.92)
+
+Value in the initial state: 7.415005318333878
+
+Time for model checking: 26.647 seconds.
+
+Result: 7.415005318333878 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=18
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 72): 5.15 sec so far
+Iteration 61 (of 72): 10.31 sec so far
+
+Iterative method: 72 iterations in 26.82 seconds (average 0.166389, setup 14.84)
+
+Value in the initial state: 7.427723409152668
+
+Time for model checking: 27.261 seconds.
+
+Result: 7.427723409152668 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=19
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 76): 5.17 sec so far
+Iteration 60 (of 76): 10.17 sec so far
+
+Iterative method: 76 iterations in 27.69 seconds (average 0.166711, setup 15.02)
+
+Value in the initial state: 7.43811252517453
+
+Time for model checking: 28.223 seconds.
+
+Result: 7.43811252517453 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHOnly"}=? [ C<=4*T ]
+Property constants: T=20
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 80): 5.16 sec so far
+Iteration 60 (of 80): 10.17 sec so far
+
+Iterative method: 80 iterations in 28.29 seconds (average 0.166600, setup 14.96)
+
+Value in the initial state: 7.446752886297716
+
+Time for model checking: 28.759 seconds.
+
+Result: 7.446752886297716 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=1
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 4 iterations in 15.64 seconds (average 0.167000, setup 14.97)
+
+Value in the initial state: 0.5
+
+Time for model checking: 16.148 seconds.
+
+Result: 0.5 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=2
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 8 iterations in 16.23 seconds (average 0.166250, setup 14.90)
+
+Value in the initial state: 0.9890780314401264
+
+Time for model checking: 16.678 seconds.
+
+Result: 0.9890780314401264 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=3
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 12 iterations in 16.95 seconds (average 0.166333, setup 14.95)
+
+Value in the initial state: 1.5268811549728996
+
+Time for model checking: 17.374 seconds.
+
+Result: 1.5268811549728996 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=4
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 16 iterations in 17.60 seconds (average 0.166687, setup 14.93)
+
+Value in the initial state: 2.0942593597828463
+
+Time for model checking: 18.133 seconds.
+
+Result: 2.0942593597828463 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=5
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 18.31 seconds (average 0.166400, setup 14.98)
+
+Value in the initial state: 2.637411411237987
+
+Time for model checking: 18.805 seconds.
+
+Result: 2.637411411237987 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=6
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 24 iterations in 18.92 seconds (average 0.166375, setup 14.92)
+
+Value in the initial state: 3.1064392191653734
+
+Time for model checking: 19.346 seconds.
+
+Result: 3.1064392191653734 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=7
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+
+Iterative method: 28 iterations in 19.60 seconds (average 0.166571, setup 14.94)
+
+Value in the initial state: 3.4770912714574074
+
+Time for model checking: 20.047 seconds.
+
+Result: 3.4770912714574074 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=8
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 32): 5.16 sec so far
+
+Iterative method: 32 iterations in 20.27 seconds (average 0.166406, setup 14.94)
+
+Value in the initial state: 3.7506852847783536
+
+Time for model checking: 20.798 seconds.
+
+Result: 3.7506852847783536 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=9
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 36): 5.15 sec so far
+
+Iterative method: 36 iterations in 20.90 seconds (average 0.166222, setup 14.91)
+
+Value in the initial state: 3.9433231285328136
+
+Time for model checking: 21.367 seconds.
+
+Result: 3.9433231285328136 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=10
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 29 (of 40): 5.00 sec so far
+
+Iterative method: 40 iterations in 21.60 seconds (average 0.166750, setup 14.93)
+
+Value in the initial state: 4.075331457361312
+
+Time for model checking: 22.045 seconds.
+
+Result: 4.075331457361312 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=11
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 44): 5.16 sec so far
+
+Iterative method: 44 iterations in 22.23 seconds (average 0.165841, setup 14.94)
+
+Value in the initial state: 4.165055652816447
+
+Time for model checking: 22.765 seconds.
+
+Result: 4.165055652816447 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=12
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 48): 5.14 sec so far
+
+Iterative method: 48 iterations in 22.98 seconds (average 0.166167, setup 15.00)
+
+Value in the initial state: 4.226596585265807
+
+Time for model checking: 23.385 seconds.
+
+Result: 4.226596585265807 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=13
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 29 (of 52): 5.00 sec so far
+
+Iterative method: 52 iterations in 23.60 seconds (average 0.166769, setup 14.93)
+
+Value in the initial state: 4.269804931966128
+
+Time for model checking: 24.13 seconds.
+
+Result: 4.269804931966128 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=14
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 56): 5.12 sec so far
+
+Iterative method: 56 iterations in 24.23 seconds (average 0.165821, setup 14.94)
+
+Value in the initial state: 4.301156122844381
+
+Time for model checking: 24.706 seconds.
+
+Result: 4.301156122844381 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=15
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 60): 5.16 sec so far
+
+Iterative method: 60 iterations in 24.84 seconds (average 0.166450, setup 14.86)
+
+Value in the initial state: 4.324748995923258
+
+Time for model checking: 25.285 seconds.
+
+Result: 4.324748995923258 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=16
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 64): 5.17 sec so far
+Iteration 61 (of 64): 10.33 sec so far
+
+Iterative method: 64 iterations in 25.52 seconds (average 0.166531, setup 14.87)
+
+Value in the initial state: 4.343127708881562
+
+Time for model checking: 26.092 seconds.
+
+Result: 4.343127708881562 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=17
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 29 (of 68): 5.00 sec so far
+Iteration 60 (of 68): 10.14 sec so far
+
+Iterative method: 68 iterations in 26.20 seconds (average 0.166279, setup 14.89)
+
+Value in the initial state: 4.357866547484709
+
+Time for model checking: 26.668 seconds.
+
+Result: 4.357866547484709 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=18
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 72): 5.16 sec so far
+Iteration 61 (of 72): 10.29 sec so far
+
+Iterative method: 72 iterations in 26.87 seconds (average 0.166069, setup 14.91)
+
+Value in the initial state: 4.369952393092659
+
+Time for model checking: 27.419 seconds.
+
+Result: 4.369952393092659 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=19
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 76): 5.13 sec so far
+Iteration 61 (of 76): 10.30 sec so far
+
+Iterative method: 76 iterations in 27.49 seconds (average 0.166224, setup 14.85)
+
+Value in the initial state: 4.380021656991981
+
+Time for model checking: 28.001 seconds.
+
+Result: 4.380021656991981 (value in the initial state)
+
+---------------------------------------------------------------------
+
+Model checking: R{"log_connections_STHAndProof"}=? [ C<=4*T ]
+Property constants: T=20
+
+Computing rewards...
+Engine: Sparse
+
+Building sparse matrix... [n=24084553, nnz=43394303] [588.5 MB]
+Creating vector for rewards... [dist=6, compact] [45.9 MB]
+Allocating iteration vectors... [2 x 183.8 MB]
+TOTAL: [1001.9 MB]
+
+Starting iterations...
+Iteration 30 (of 80): 5.14 sec so far
+Iteration 61 (of 80): 10.30 sec so far
+
+Iterative method: 80 iterations in 28.22 seconds (average 0.166263, setup 14.92)
+
+Value in the initial state: 4.388501878740599
+
+Time for model checking: 29.113 seconds.
+
+Result: 4.388501878740599 (value in the initial state)
+
+Exporting results to file "model-checking/splitworld/splitworld.res"...
+
