@@ -1,0 +1,16 @@
+const T;
+
+// To compare against IDTMC model checking results only
+P=? [F<=T*10 "detect" ]
+
+P=? [ F<=T*14 "detect" ]
+
+R{"client_proportion_old"}=? [ I=T*14 ]
+
+R{"client_proportion_real"}=? [ I=T*14 ]
+
+R{"client_proportion_fake"}=? [ I=T*14 ]
+
+R{"log_connections_STHOnly"}=? [ C<=T*14 ]
+
+R{"log_connections_STHAndProof"}=? [ C<=T*14 ] 

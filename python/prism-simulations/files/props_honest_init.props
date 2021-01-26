@@ -1,0 +1,11 @@
+const int T;
+
+// To compare against IDTMC model checking results only
+//label "clients_all_updated" = c1_sth&c2_sth&c3_sth;
+//P=? [F<=T*8 "clients_all_updated" ]
+
+R{"client_proportion"}=? [ I=T*12 ]
+
+R{"log_connections_STHOnly"}=? [ C<=T*12 ]
+
+R{"log_connections_STHAndProof"}=? [ C<=T*12 ]
