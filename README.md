@@ -28,6 +28,6 @@ Code for abstracting IDMTC (as well as DTMC) models can be found [here](https://
 
 ## Acknowledgements
 
-Many thanks to my supervisors [Prof. Dave Parker](www.cs.bham.ac.uk/~parkerdx) and [Prof. Mark Ryan](www.cs.bham.ac.uk/~mdr) for always giving me constructive feedback on my work and making time for me whenever I needed it. I also want to thank [Dr Eike Ritter](https://www.cs.bham.ac.uk/~exr/) and [Dr David Galindo](https://www.birmingham.ac.uk/staff/profiles/computer-science/galindo-david.aspx) for their input. 
+Many thanks to my doctoral supervisors [Prof. Dave Parker](www.cs.bham.ac.uk/~parkerdx) and [Prof. Mark Ryan](www.cs.bham.ac.uk/~mdr) for always giving me constructive feedback on my work and making time for me whenever I needed it. I also want to thank [Dr Eike Ritter](https://www.cs.bham.ac.uk/~exr/) for his input, viva examiners [Dr David Galindo](https://www.birmingham.ac.uk/staff/profiles/computer-science/galindo-david.aspx) and [Prof. Alice Miller](https://www.gla.ac.uk/schools/computing/staff/alicemiller/) for their recommendations and [Robert Hendley](https://www.cs.bham.ac.uk/~rjh/) for acting as Chair.
 
 Some of the verfication results we found was made possible thanks to the [University of Birmingham's BlueBEAR HPC service](http://www.birmingham.ac.uk/bear), which provides a High Performance Computing service to the University's research community.
